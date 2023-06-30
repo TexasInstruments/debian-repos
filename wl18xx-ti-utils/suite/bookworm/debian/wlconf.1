@@ -1,0 +1,71 @@
+.TH WLCONF 1
+
+.SH NAME
+wlconf - Configuration Utility for TI's Wireless Drivers
+
+.SH SYNOPSIS
+.BR "./wlconf [OPTIONS] [COMMANDS]"
+
+.SH OPTIONS
+
+.TP
+\fB -S, --source-struct \fP
+use the structure specified in a C header file
+
+.TP 
+\fB -b, --binary-struct \fP
+specify the binary file where the structure is defined
+
+.TP 
+\fB -i, --input-config \fP
+location of the input binary configuration file
+
+.TP
+\fB -o, --output-config \fP
+location of the output binary configuration file
+
+.TP 
+\fB -X, --ignore-checksum \fP
+ignore file checksum error detection
+
+.SH COMMANDS
+
+.TP
+\fB -D, --create-default \fP
+create default configuration bin file
+
+.TP
+\fB -g, --get \fP
+get the value of the specified element
+print the entire tree if no element is specified
+
+.TP
+\fB -s, --set \fP
+set the value of the specified element
+
+.TP
+\fB -G, --generate-struct \fP
+generate the binary structure from the specified source file
+
+.TP
+\fB -C, --parse-text-file \fP
+parse the specified text config and set the values accordingly
+
+.TP
+\fB -I, --parse-ini \fP
+parse the specified ini file and set the values and set the values
+accordingly in the output binary file
+
+.TP
+\fB -p, --print-struct \fP
+print out the structure
+
+.TP
+\fB -h, --help \fP
+print out the help page
+
+.SH SEE ALSO
+calibrator(1)
+
+.SH AUTHOR
+Texas Instruments

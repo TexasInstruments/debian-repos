@@ -1,0 +1,11 @@
+INTRODUCTION
+------------
+
+The package installs two binaries:
+	1. /usr/bin/calibrator
+	2. /usr/sbin/wlconf/wlconf
+
+Further, the /usr/sbin/wlconf/ directory contains many other
+configuration files, as well as an example for reference.
+
+Please refer to the man pages for information on usage.

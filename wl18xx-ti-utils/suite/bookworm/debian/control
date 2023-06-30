@@ -1,0 +1,15 @@
+Source: wl18xx-ti-utils
+Section: utils 
+Priority: optional
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Build-Depends: debhelper-compat (= 12), libnl-3-dev, libnl-genl-3-dev
+Standards-Version: 4.5.0
+Homepage: https://git.ti.com/cgit/wlink8-wlan/18xx-ti-utils
+
+Package: wl18xx-ti-utils
+Architecture: arm64
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}, ${libnl-3-dev:Depends}
+Description: Configure TI's Wireless Drivers
+ Calibrator is used for performing transmission testing (TX) on WL18xx.
+ wlconf is used for configuring TI's wireless drivers.

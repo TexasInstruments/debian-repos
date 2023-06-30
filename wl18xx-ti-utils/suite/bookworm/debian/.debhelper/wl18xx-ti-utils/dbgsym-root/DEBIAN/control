@@ -1,0 +1,12 @@
+Package: wl18xx-ti-utils-dbgsym
+Source: wl18xx-ti-utils
+Version: 0.8-1
+Auto-Built-Package: debug-symbols
+Architecture: arm64
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Installed-Size: 39
+Depends: wl18xx-ti-utils (= 0.8-1)
+Section: debug
+Priority: optional
+Description: debug symbols for wl18xx-ti-utils
+Build-Ids: 013c8577b0261941bcdc4bbfd9dfb7eb2693ef4c 6b3551f821328c306fda5852cf644909b63518b9
