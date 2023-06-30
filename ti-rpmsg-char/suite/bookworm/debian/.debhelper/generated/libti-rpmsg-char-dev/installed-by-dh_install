@@ -1,0 +1,5 @@
+debian/tmp/usr/lib/aarch64-linux-gnu/libti_rpmsg_char.a
+debian/tmp/usr/include/rproc_id.h
+debian/tmp/usr/include/ti_rpmsg_char.h
+debian/tmp/usr/lib/aarch64-linux-gnu/libti_rpmsg_char.la
+debian/tmp/usr/lib/aarch64-linux-gnu/libti_rpmsg_char.so

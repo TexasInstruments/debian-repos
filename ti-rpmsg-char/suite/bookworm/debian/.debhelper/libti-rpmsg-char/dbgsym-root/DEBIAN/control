@@ -1,0 +1,13 @@
+Package: libti-rpmsg-char-dbgsym
+Source: ti-rpmsg-char
+Version: 0.3.0-1
+Auto-Built-Package: debug-symbols
+Architecture: arm64
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Installed-Size: 38
+Depends: libti-rpmsg-char (= 0.3.0-1)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libti-rpmsg-char
+Build-Ids: 0f8ed4cbe04be6ca9a0b5164dac131d47bfa536d

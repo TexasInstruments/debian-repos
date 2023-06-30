@@ -1,0 +1,30 @@
+Source: ti-rpmsg-char
+Section: libs 
+Priority: optional
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Build-Depends: debhelper-compat (= 13), dh-autoreconf
+Standards-Version: 4.5.1
+Homepage: https://git.ti.com/cgit/rpmsg/ti-rpmsg-char
+Rules-Requires-Root: no
+
+Package: libti-rpmsg-char
+Section: libs
+Architecture: arm64
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: RPMSG-char Utility Library
+ ti-rpmsg-char is a library designed to provide Linux applications an easy means
+ to open and identify rpmsg character devices created by the Linux kernel
+ rpmsg-char driver using the virio-rpmsg-bus transport back-end.
+
+Package: libti-rpmsg-char-dev
+Section: libdevel
+Architecture: arm64
+Multi-Arch: same
+Depends: libti-rpmsg-char
+Description: RPMSG-char Utility Library
+ ti-rpmsg-char is a library designed to provide Linux applications an easy means
+ to open and identify rpmsg character devices created by the Linux kernel
+ rpmsg-char driver using the virio-rpmsg-bus transport back-end.
+ .
+ This package contains development files for libti-rpmsg-char.
