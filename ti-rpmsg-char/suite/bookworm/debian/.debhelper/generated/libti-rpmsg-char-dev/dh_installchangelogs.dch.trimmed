@@ -1,0 +1,5 @@
+ti-rpmsg-char (0.3.0-1) UNRELEASED; urgency=low
+
+  * Initial release.
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Thu, 22 Jun 2023 06:34:14 +0000
