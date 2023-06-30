@@ -1,0 +1,5 @@
+k3conf (0.1-90) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #1037141
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Wed, 14 Jun 2023 08:12:53 +0000

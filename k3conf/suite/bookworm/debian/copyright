@@ -1,0 +1,178 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: k3conf
+Upstream-Contact: Texas Instruments
+Source: https://git.ti.com/cgit/k3conf/k3conf
+
+Files:     common/autoadjust_table.c
+           common/cmd_disable.c
+           common/cmd_dump.c
+           common/cmd_enable.c
+           common/cmd_rw.c
+           common/cmd_set.c
+           common/cmd_show.c
+           common/help.c
+           common/k3conf.c
+           common/mmio.c
+           common/sec_proxy.c
+           common/socinfo.c
+           common/tisci/tisci_clock.c
+           common/tisci/tisci_core.c
+           common/tisci/tisci_device.c
+           include/autoadjust_table.h
+           include/help.h
+           include/k3conf.h
+           include/mmio.h
+           include/sec_proxy.h
+           include/socinfo.h
+           include/tisci.h
+           include/tisci_protocol.h
+           include/version.h
+           soc/am62ax/am62ax_clocks_info.c
+           soc/am62ax/am62ax_clocks_info.h
+           soc/am62ax/am62ax_devices_info.c
+           soc/am62ax/am62ax_devices_info.h
+           soc/am62ax/am62ax_host_info.c
+           soc/am62ax/am62ax_host_info.h
+           soc/am62ax/am62ax_processors_info.c
+           soc/am62ax/am62ax_processors_info.h
+           soc/am62ax/am62ax_rm_info.c
+           soc/am62ax/am62ax_rm_info.h
+           soc/am62ax/am62ax_sec_proxy_info.c
+           soc/am62ax/am62ax_sec_proxy_info.h
+           soc/am62x/am62x_clocks_info.c
+           soc/am62x/am62x_clocks_info.h
+           soc/am62x/am62x_devices_info.c
+           soc/am62x/am62x_devices_info.h
+           soc/am62x/am62x_host_info.c
+           soc/am62x/am62x_host_info.h
+           soc/am62x/am62x_processors_info.c
+           soc/am62x/am62x_processors_info.h
+           soc/am62x/am62x_rm_info.c
+           soc/am62x/am62x_rm_info.h
+           soc/am62x/am62x_sec_proxy_info.c
+           soc/am62x/am62x_sec_proxy_info.h
+           soc/am64x/am64x_clocks_info.c
+           soc/am64x/am64x_clocks_info.h
+           soc/am64x/am64x_devices_info.c
+           soc/am64x/am64x_devices_info.h
+           soc/am64x/am64x_host_info.c
+           soc/am64x/am64x_host_info.h
+           soc/am64x/am64x_processors_info.c
+           soc/am64x/am64x_processors_info.h
+           soc/am64x/am64x_rm_info.c
+           soc/am64x/am64x_rm_info.h
+           soc/am64x/am64x_sec_proxy_info.c
+           soc/am64x/am64x_sec_proxy_info.h
+           soc/am65x/am65x_clocks_info.c
+           soc/am65x/am65x_clocks_info.h
+           soc/am65x/am65x_devices_info.c
+           soc/am65x/am65x_devices_info.h
+           soc/am65x/am65x_host_info.c
+           soc/am65x/am65x_host_info.h
+           soc/am65x/am65x_processors_info.c
+           soc/am65x/am65x_processors_info.h
+           soc/am65x/am65x_rm_info.c
+           soc/am65x/am65x_rm_info.h
+           soc/am65x/am65x_sec_proxy_info.c
+           soc/am65x/am65x_sec_proxy_info.h
+           soc/am65x_sr2/am65x_sr2_clocks_info.c
+           soc/am65x_sr2/am65x_sr2_clocks_info.h
+           soc/am65x_sr2/am65x_sr2_devices_info.c
+           soc/am65x_sr2/am65x_sr2_devices_info.h
+           soc/am65x_sr2/am65x_sr2_host_info.c
+           soc/am65x_sr2/am65x_sr2_host_info.h
+           soc/am65x_sr2/am65x_sr2_processors_info.c
+           soc/am65x_sr2/am65x_sr2_processors_info.h
+           soc/am65x_sr2/am65x_sr2_rm_info.c
+           soc/am65x_sr2/am65x_sr2_rm_info.h
+           soc/am65x_sr2/am65x_sr2_sec_proxy_info.c
+           soc/am65x_sr2/am65x_sr2_sec_proxy_info.h
+           soc/j7200/j7200_clocks_info.c
+           soc/j7200/j7200_clocks_info.h
+           soc/j7200/j7200_devices_info.c
+           soc/j7200/j7200_devices_info.h
+           soc/j7200/j7200_host_info.c
+           soc/j7200/j7200_host_info.h
+           soc/j7200/j7200_processors_info.c
+           soc/j7200/j7200_processors_info.h
+           soc/j7200/j7200_rm_info.c
+           soc/j7200/j7200_rm_info.h
+           soc/j7200/j7200_sec_proxy_info.c
+           soc/j7200/j7200_sec_proxy_info.h
+           soc/j721e/j721e_clocks_info.c
+           soc/j721e/j721e_clocks_info.h
+           soc/j721e/j721e_devices_info.c
+           soc/j721e/j721e_devices_info.h
+           soc/j721e/j721e_host_info.c
+           soc/j721e/j721e_host_info.h
+           soc/j721e/j721e_processors_info.c
+           soc/j721e/j721e_processors_info.h
+           soc/j721e/j721e_rm_info.c
+           soc/j721e/j721e_rm_info.h
+           soc/j721e/j721e_sec_proxy_info.c
+           soc/j721e/j721e_sec_proxy_info.h
+           soc/j721s2/j721s2_clocks_info.c
+           soc/j721s2/j721s2_clocks_info.h
+           soc/j721s2/j721s2_devices_info.c
+           soc/j721s2/j721s2_devices_info.h
+           soc/j721s2/j721s2_host_info.c
+           soc/j721s2/j721s2_host_info.h
+           soc/j721s2/j721s2_processors_info.c
+           soc/j721s2/j721s2_processors_info.h
+           soc/j721s2/j721s2_rm_info.c
+           soc/j721s2/j721s2_rm_info.h
+           soc/j721s2/j721s2_sec_proxy_info.c
+           soc/j721s2/j721s2_sec_proxy_info.h
+           soc/j784s4/j784s4_clocks_info.c
+           soc/j784s4/j784s4_clocks_info.h
+           soc/j784s4/j784s4_devices_info.c
+           soc/j784s4/j784s4_devices_info.h
+           soc/j784s4/j784s4_host_info.c
+           soc/j784s4/j784s4_host_info.h
+           soc/j784s4/j784s4_processors_info.c
+           soc/j784s4/j784s4_processors_info.h
+           soc/j784s4/j784s4_rm_info.c
+           soc/j784s4/j784s4_rm_info.h
+           soc/j784s4/j784s4_sec_proxy_info.c
+           soc/j784s4/j784s4_sec_proxy_info.h
+Copyright: 2010-2023 Texas Instruments Incorporated - https://www.ti.com/
+           2019 Texas Instruments Incorporated - https://www.ti.com/ Lokesh Vutla <lokeshvutla@ti.com>
+           2019 Texas Instruments Incorporated - https://www.ti.com/ Lokesh Vutla <lokeshvutla@ti.com> Nishanth Menon <nm@ti.com>
+License:   __UNKNOWN__
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ Redistributions of source code must retain the above copyright
+ notice, this list of conditions and the following disclaimer.
+ .
+ Redistributions in binary form must reproduce the above copyright
+ notice, this list of conditions and the following disclaimer in the
+ documentation and/or other materials provided with the
+ distribution.
+ .
+ Neither the name of Texas Instruments Incorporated nor the names of
+ its contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files:     .gitignore
+           Makefile
+           README.md
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.
