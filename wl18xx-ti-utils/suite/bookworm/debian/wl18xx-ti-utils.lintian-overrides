@@ -1,0 +1,6 @@
+# we want to ape yocto's build behaviour, which marks these non-elf and
+# non-script files as executables
+wl18xx-ti-utils: executable-not-elf-or-script
+
+# there is no bug filed for uploading to our own repository
+wl18xx-ti-utils: initial-upload-closes-no-bugs

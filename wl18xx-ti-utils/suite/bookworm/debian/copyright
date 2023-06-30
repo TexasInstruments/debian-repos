@@ -1,0 +1,301 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: wl18xx-ti-utils
+Upstream-Contact: Texas Instruments
+Source: <https://git.ti.com/cgit/wilink8-wlan/wl18xx-ti-utils>
+
+Files:     Android.mk
+           Makefile
+           README
+           asi/Android.mk
+           asi/Makefile
+           asi/asi.c
+           asi/asi.h
+           asi/device_mode.h
+           asi/log.c
+           asi/log.h
+           asi/public_types.h
+           asi/sdio_access.h
+           calibrator.c
+           calibrator.h
+           hw/Android.mk
+           hw/firmware/Android.mk
+           hw/firmware/LICENCE
+           hw/firmware/wl1271-fw-multirole-plt.bin
+           hw/firmware/wl1271-fw-multirole-roc.bin
+           hw/firmware/wl1271-nvs.bin
+           hw/firmware/wl127x-fw-4-mr.bin
+           hw/firmware/wl127x-fw-4-plt.bin
+           hw/firmware/wl127x-fw-4-sr.bin
+           hw/firmware/wl128x-fw-4-mr.bin
+           hw/firmware/wl128x-fw-4-plt.bin
+           hw/firmware/wl128x-fw-4-sr.bin
+           hw/firmware/wl128x-fw-multirole-plt.bin
+           hw/firmware/wl128x-fw-multirole-roc.bin
+           hw/fw_logger/Android.mk
+           hw/fw_logger/iliparser.py
+           hw/fw_logger/message.py
+           hw/fw_logger/parser.py
+           hw/fw_logger/wl128x-fw-R4-sr.ili
+           hw/fw_logger/wl12xx-fw-4-mr.ili
+           hw/fw_logger/wl12xx-fw-4-sr.ili
+           hw/ini_files/127x/Android.mk
+           hw/ini_files/127x/RFMD_D_E5.ini
+           hw/ini_files/127x/RFMD_S_3.5.ini
+           hw/ini_files/127x/SKW_S_1.0.ini
+           hw/ini_files/127x/TQS_D_1.0.ini
+           hw/ini_files/127x/TQS_D_1.7.ini
+           hw/ini_files/127x/TQS_HP_D_3.4.ini
+           hw/ini_files/127x/TQS_S_2.5.ini
+           hw/ini_files/127x/TQS_S_2.6.ini
+           hw/ini_files/128x/Android.mk
+           hw/ini_files/128x/RFMD_S_3.5.ini
+           hw/ini_files/128x/SKW_S_1.0.ini
+           hw/ini_files/128x/TQS_D_1.0.ini
+           hw/ini_files/128x/TQS_D_1.7.ini
+           hw/ini_files/128x/TQS_HP_D_3.4.ini
+           hw/ini_files/128x/TQS_S_2.6.ini
+           hw/ini_files/Android.mk
+           ini.c
+           misc_cmds.c
+           nvs.c
+           nvs.h
+           plt.c
+           plt.h
+           scripts/mkcard.sh
+           uim_rfkill/readme.txt
+           wl_logproxy.c
+           wl_logproxy/Makefile
+           wl_logproxy/wl_logproxy.c
+           wlconf/.gitignore
+           wlconf/Android.mk
+           wlconf/Makefile
+           wlconf/configure-device.sh
+           wlconf/default.conf
+           wlconf/dictionary.txt
+           wlconf/example.conf
+           wlconf/example.ini
+           wlconf/official_inis/WL1835MOD_INI.ini
+           wlconf/official_inis/WL1835MOD_INI_C2PC.ini
+           wlconf/official_inis/WL1837MOD_INI_FCC_CE.ini
+           wlconf/official_inis/WL1837MOD_INI_FCC_CE_JP.ini
+           wlconf/official_inis/WL8_COB_INI.ini
+           wlconf/official_inis/WL8_TESTING_INI.ini
+           wlconf/struct.bin
+           wlconf/tests/test-1.11-conf.h
+           wlconf/tests/test-1.13.ini
+           wlconf/tests/test-1.2-conf.bin
+           wlconf/tests/test-1.3-conf.bin
+           wlconf/tests/test-1.4-conf.bin
+           wlconf/tests/test-1.7-conf-larger.bin
+           wlconf/tests/test-1.7-conf-smaller.bin
+           wlconf/tests/test-2.1.conf
+           wlconf/tests/test-2.2.conf
+           wlconf/tests/test-2.3.conf
+           wlconf/tests/test-2.4.conf
+           wlconf/tests/test-3.1.ini
+           wlconf/tests/test-3.2.ini
+           wlconf/tests/test-3.4.ini
+           wlconf/tests/test-3.5.ini
+           wlconf/tests/test-3.6.ini
+           wlconf/tests/test-4.7.struct
+           wlconf/tests/test-valid-conf.bin
+           wlconf/tests/wlconf_unit_test.xlsx
+           wlconf/wl18xx-conf-default.bin
+           wlconf/wlconf-toggle-set.sh
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+Files:     wl18xx_plt.c
+           wl18xx_plt.h
+           wlconf/crc32.c
+           wlconf/crc32.h
+           wlconf/main.c
+           wlconf/wlconf.h
+Copyright: 2011 Texas Instruments
+           2012 Texas Instruments Inc.
+License:   GPL-2.0
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ version 2 as published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ 02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     ini.h
+           wlconf/conf.h
+Copyright: 2009-2010 Nokia Corporation
+License:   GPL-2.0
+ Contact: Luciano Coelho <luciano.coelho@nokia.com>
+ .
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ version 2 as published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ 02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     uim_rfkill/uim.c
+           uim_rfkill/uim.h
+Copyright: __NO_COPYRIGHT__ in: uim_rfkill/uim.c
+           __NO_COPYRIGHT__ in: uim_rfkill/uim.h
+License:   GPL-2.0+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program;if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+ The FSF address in the above text is the old one.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     nl80211.h
+Copyright: 2006-2008 Johannes Berg <johannes@sipsolutions.net>
+           2008 Colin McCabe <colin@cozybit.com>
+           2008 Jouni Malinen <jouni.malinen@atheros.com>
+           2008 Luis Carlos Cobo <luisca@cozybit.com>
+           2008 Michael Buesch <mb@bu3sch.de>
+           2008 Michael Wu <flamingice@sourmilk.net>
+           2008-2009 Luis R. Rodriguez <lrodriguez@atheros.com>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Files:     wlconf/tests/unit_tests.txt
+Copyright: 2012 Texas Instruments Inc.
+License:   GPL-2.0
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 as
+ published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301
+ USA
+ .
+ 1. BINARY FILE VALIDITY CHECKS
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     wlconf/README
+Copyright: 2012 Texas Instruments Inc.
+License:   GPL-2.0
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 as
+ published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301
+ USA
+ .
+ EXAMPLES
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     asi/device_mode.c
+Copyright: __NO_COPYRIGHT__ in: asi/device_mode.c
+License:   __UNKNOWN__
+ PLT utility for wireless chip supported by TI's driver wl12xx
+ .
+ See README and COPYING for more details.
+
+Files:     asi/sdio_access.c
+Copyright: __NO_COPYRIGHT__ in: asi/sdio_access.c
+License:   __UNKNOWN__
+ Description: ASI (Android Sdio Interconnect
+ Author: Arthur Tiv
+ Date: 08/2012
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.
+
+#----------------------------------------------------------------------------
+# License file: COPYING
+ /*
+  * Copyright(c) 1998 - 2010 Texas Instruments. All rights reserved.
+  * All rights reserved.
+  *
+  * Base on code from
+  *  Copyright (c) 2007, 2008, Johannes Berg <johannes@sipsolutions.net>
+  *  Copyright (c) 2007,	Andy Lutomirski
+  *  Copyright (c) 2007, Mike Kershaw
+  *  Copyright (c) 2008-2009, Luis R. Rodriguez <mcgrof@gmail.com>
+  *
+  * Redistribution and use in source and binary forms, with or without
+  * modification, are permitted provided that the following conditions
+  * are met:
+  *
+  *  * Redistributions of source code must retain the above copyright
+  *    notice, this list of conditions and the following disclaimer.
+  *  * Redistributions in binary form must reproduce the above copyright
+  *    notice, this list of conditions and the following disclaimer in
+  *    the documentation and/or other materials provided with the
+  *    distribution.
+  *  * Neither the name Texas Instruments nor the names of its
+  *    contributors may be used to endorse or promote products derived
+  *    from this software without specific prior written permission.
+  *
+  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
