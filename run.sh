@@ -38,6 +38,9 @@ if [ ! -f "${package_full}.tar.gz" ]; then
     if [ ! -d "${package_full}" ]; then
         git clone "${git_repo}" "${package_full}"
     fi
+    cd "${package_full}"
+    git checkout "${last_tested_commit}"
+    cd -
     tar -cvzf "${builddir}/${package_full}.tar.gz" "${package_full}"
     cd ${builddir}
     tar -xzmf "${package_full}.tar.gz"
@@ -54,11 +57,11 @@ run_prep
 patch_dir="${builddir}/${package_full}/debian/patches"
 while read -r patch; do
     if [ -f "${builddir}/series" ]; then
-        if grep -Fxq "$patch" "${builddir}/series" ; then
+        if ! grep -Fxq "$patch" "${builddir}/series" ; then
             continue
         fi
     fi
-    git apply --check "${patch_dir}/${patch}"
+    git apply --check "${patch_dir}/${patch}" --verbose --reject
 done < "${patch_dir}/series"
 cp "${patch_dir}/series" "${builddir}"
 
