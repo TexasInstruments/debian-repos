@@ -1,0 +1,6 @@
+7d993be5ff46bec6eddb946ab8f94d5d  lib/firmware/pru/PRU_Halt.out
+aff0a103aa4dcc7690a22384dbcef630  lib/firmware/pru/PRU_RPMsg_Echo_Interrupt0.out
+6a11122dac3b1733f809e2b16354b1eb  lib/firmware/pru/PRU_RPMsg_Echo_Interrupt1.out
+597c9913e34aec193aa1b456cb125f30  usr/share/doc/pru-pssp/changelog.Debian.gz
+e1489a079d4a92f872cd6528ae857d0e  usr/share/doc/pru-pssp/copyright
+2c587baacd9f5ec1c7fe3225c6f7e77f  usr/share/lintian/overrides/pru-pssp

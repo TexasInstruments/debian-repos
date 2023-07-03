@@ -1,0 +1,30 @@
+Export the PRU_CGT variable
+ .
+ pru-pssp (6.1-1) UNRELEASED; urgency=low
+ .
+   * Initial release. Closes: #nnnn
+     <nnnn is the bug number of your ITP>
+Author: root <>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2023-06-01
+
+--- pru-pssp-6.1.orig/Makefile
++++ pru-pssp-6.1/Makefile
+@@ -1,5 +1,6 @@
+ SUBDIRS=examples pru_cape lib/src
+ TOP_DIR=$(CURDIR)
++export PRU_CGT=/usr/share/ti/cgt-pru
+ export DESTDIR=$(TOP_DIR)
+ prefix=/usr/include
+ HEADER_FILES=$(wilcard include/*.h)

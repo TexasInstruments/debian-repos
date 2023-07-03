@@ -1,0 +1,7 @@
+libpru-pssp-dev: initial-upload-closes-no-bugs
+
+# the entire text is already included in the copyright file
+libpru-pssp-dev: copyright-refers-to-deprecated-bsd-license-file
+
+# it does contain code sections
+libpru-pssp-dev: no-code-sections
