@@ -1,0 +1,198 @@
+Ready Makefiles for Debian packaging
+
+ Ready Makefiles for Debian packaging by adding "install" and
+"uninstall" targets, as well as defining variables such as DESTDIR.
+ .
+ pru-pssp (6.1-1) UNRELEASED; urgency=low
+ .
+   * Initial release. Closes: #nnnn
+     <nnnn is the bug number of your ITP>
+Author: root <>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2023-06-01
+
+--- pru-pssp-6.1.orig/Makefile
++++ pru-pssp-6.1/Makefile
+@@ -1,10 +1,25 @@
+-SUBDIRS=examples pru_cape lib/src labs
++SUBDIRS=examples pru_cape lib/src
++TOP_DIR=$(CURDIR)
++export DESTDIR=$(TOP_DIR)
++prefix=/usr/include
++HEADER_FILES=$(wilcard include/*.h)
+
+ all: $(SUBDIRS)
+
+ $(SUBDIRS):
+ 	@$(MAKE) -C $@
+
++install:
++	install -d $(DESTDIR)$(prefix)
++	cp -r include/* $(DESTDIR)$(prefix)
++	@$(MAKE) -C lib/src install
++	@$(MAKE) -C examples install
++
++uninstall:
++	$(foreach header,$(HEADER_FILES),$(RM) $(DESTDIR)$(prefix)/$(notdir $(header));)
++	@$(MAKE) -C lib/src uninstall
++	@$(MAKE) -C examples uninstall
++
+ clean:
+ 	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clean ); done
+
+--- pru-pssp-6.1.orig/examples/Makefile
++++ pru-pssp-6.1/examples/Makefile
+@@ -5,6 +5,12 @@ all: $(SUBDIRS)
+ $(SUBDIRS):
+ 	@$(MAKE) -C $@
+
++install:
++	@$(MAKE) -C am62x install
++
++uninstall:
++	@$(MAKE) -C am62x uninstall
++
+ clean:
+ 	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clean ); done
+
+--- pru-pssp-6.1.orig/examples/am62x/Makefile
++++ pru-pssp-6.1/examples/am62x/Makefile
+@@ -7,6 +7,16 @@ all: $(SUBDIRS)
+ $(SUBDIRS):
+ 	@$(MAKE) -C $@
+
++install:
++	@$(MAKE) -C PRU_Halt install
++	@$(MAKE) -C PRU_RPMsg_Echo_Interrupt0 install
++	@$(MAKE) -C PRU_RPMsg_Echo_Interrupt1 install
++
++uninstall:
++	@$(MAKE) -C PRU_Halt uninstall
++	@$(MAKE) -C PRU_RPMsg_Echo_Interrupt0 uninstall
++	@$(MAKE) -C PRU_RPMsg_Echo_Interrupt1 uninstall
++
+ clean:
+ 	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clean ); done
+
+--- pru-pssp-6.1.orig/examples/am62x/PRU_Halt/Makefile
++++ pru-pssp-6.1/examples/am62x/PRU_Halt/Makefile
+@@ -43,6 +43,7 @@ MAP=$(GEN_DIR)/$(PROJ_NAME).map
+ SOURCES=$(wildcard *.c)
+ #Using .object instead of .obj in order to not conflict with the CCS build process
+ OBJECTS=$(patsubst %,$(GEN_DIR)/%,$(SOURCES:.c=.object))
++prefix=/lib/firmware/pru
+
+ all: printStart $(TARGET) printEnd
+
+@@ -75,6 +76,13 @@ $(GEN_DIR)/%.object: %.c
+ 	@echo 'Invoking: PRU Compiler'
+ 	$(PRU_CGT)/bin/clpru --include_path=$(PRU_CGT)/include $(INCLUDE) $(CFLAGS) -fe $@ $<
+
++install: $(TARGET)
++	install -d $(DESTDIR)$(prefix)
++	install -m 0755 $(TARGET) $(DESTDIR)$(prefix)
++
++uninstall:
++	-rm -f $(DESTDIR)$(prefix)/$(TARGET)
++
+ .PHONY: all clean
+
+ # Remove the $(GEN_DIR) directory
+--- pru-pssp-6.1.orig/examples/am62x/PRU_RPMsg_Echo_Interrupt0/Makefile
++++ pru-pssp-6.1/examples/am62x/PRU_RPMsg_Echo_Interrupt0/Makefile
+@@ -43,6 +43,7 @@ MAP=$(GEN_DIR)/$(PROJ_NAME).map
+ SOURCES=$(wildcard *.c)
+ #Using .object instead of .obj in order to not conflict with the CCS build process
+ OBJECTS=$(patsubst %,$(GEN_DIR)/%,$(SOURCES:.c=.object))
++prefix=/lib/firmware/pru
+
+ all: printStart $(TARGET) printEnd
+
+@@ -75,6 +76,13 @@ $(GEN_DIR)/%.object: %.c
+ 	@echo 'Invoking: PRU Compiler'
+ 	$(PRU_CGT)/bin/clpru --include_path=$(PRU_CGT)/include $(INCLUDE) $(CFLAGS) -fe $@ $<
+
++install: $(TARGET)
++	install -d $(DESTDIR)$(prefix)
++	install -m 0755 $(TARGET) $(DESTDIR)$(prefix)
++
++uninstall:
++	-rm -f $(DESTDIR)$(prefix)/$(TARGET)
++
+ .PHONY: all clean
+
+ # Remove the $(GEN_DIR) directory
+--- pru-pssp-6.1.orig/examples/am62x/PRU_RPMsg_Echo_Interrupt1/Makefile
++++ pru-pssp-6.1/examples/am62x/PRU_RPMsg_Echo_Interrupt1/Makefile
+@@ -43,6 +43,7 @@ MAP=$(GEN_DIR)/$(PROJ_NAME).map
+ SOURCES=$(wildcard *.c)
+ #Using .object instead of .obj in order to not conflict with the CCS build process
+ OBJECTS=$(patsubst %,$(GEN_DIR)/%,$(SOURCES:.c=.object))
++prefix=/lib/firmware/pru
+
+ all: printStart $(TARGET) printEnd
+
+@@ -75,6 +76,13 @@ $(GEN_DIR)/%.object: %.c
+ 	@echo 'Invoking: PRU Compiler'
+ 	$(PRU_CGT)/bin/clpru --include_path=$(PRU_CGT)/include $(INCLUDE) $(CFLAGS) -fe $@ $<
+
++install: $(TARGET)
++	install -d $(DESTDIR)$(prefix)
++	install -m 0755 $(TARGET) $(DESTDIR)$(prefix)
++
++uninstall:
++	-rm -f $(DESTDIR)$(prefix)/$(TARGET)
++
+ .PHONY: all clean
+
+ # Remove the $(GEN_DIR) directory
+--- pru-pssp-6.1.orig/lib/src/Makefile
++++ pru-pssp-6.1/lib/src/Makefile
+@@ -5,6 +5,12 @@ all: $(SUBDIRS)
+ $(SUBDIRS):
+ 	@$(MAKE) -C $@
+
++install:
++	@$(MAKE) -C rpmsg_lib install
++
++uninstall:
++	@$(MAKE) -C rpmsg_lib uninstall
++
+ clean:
+ 	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clean ); done
+
+--- pru-pssp-6.1.orig/lib/src/rpmsg_lib/Makefile
++++ pru-pssp-6.1/lib/src/rpmsg_lib/Makefile
+@@ -38,6 +38,7 @@ TARGET=$(GEN_DIR)/$(PROJ_NAME).lib
+ SOURCES=$(wildcard *.c)
+ #Using .object instead of .obj in order to not conflict with the CCS build process
+ OBJECTS=$(patsubst %,$(GEN_DIR)/%,$(SOURCES:.c=.object))
++prefix=/usr/lib
+
+ all: printStart $(TARGET) printEnd
+
+@@ -70,6 +71,13 @@ $(GEN_DIR)/%.object: %.c
+ 	@echo 'Invoking: PRU Compiler'
+ 	$(PRU_CGT)/bin/clpru --include_path=$(PRU_CGT)/include $(INCLUDE) $(CFLAGS) -fe $@ $<
+
++install: $(TARGET)
++	install -d $(DESTDIR)$(prefix)
++	install $(TARGET) $(DESTDIR)$(prefix)
++
++uninstall:
++	-rm -f $(DESTDIR)$(prefix)/$(TARGET)
++
+ .PHONY: all clean
+
+ # Remove the $(GEN_DIR) directory

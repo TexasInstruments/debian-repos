@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@  
+
+override_dh_install:
+	dh_install
+	install -d debian/pru-pssp/lib/firmware
+	ln -s /lib/firmware/pru/PRU_Halt.out debian/pru-pssp/lib/firmware/am62x-pru0-fw 
+	ln -s /lib/firmware/pru/PRU_Halt.out debian/pru-pssp/lib/firmware/am62x-pru1-fw 
+
+override_dh_dwz:
+override_dh_strip:
