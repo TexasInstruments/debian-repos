@@ -1,0 +1,10 @@
+./build
+./Makefile
+./hwdefs
+./lws
+./generated
+./copy-to-kernel-tc
+./copy-to-kernel.sh
+./include
+./kernel
+./services
