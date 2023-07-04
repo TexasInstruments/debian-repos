@@ -17,9 +17,9 @@ if [ ! -d ${projdir} ]; then
     exit 1
 fi
 
-mkdir -p "${sourcedir}"
-
 source ${projdir}/version.sh
+
+mkdir -p ${builddir}
 
 if $custom_build ; then
     run_custom_build
@@ -31,6 +31,8 @@ if [ $require_root ] && [ "$EUID" -ne 0 ] ; then
     echo "Exiting"
     exit 1
 fi
+
+mkdir -p "${sourcedir}"
 
 cd ${builddir}
 if [ ! -f "${package_full}.tar.gz" ]; then
