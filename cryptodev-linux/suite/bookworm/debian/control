@@ -1,0 +1,21 @@
+Source: cryptodev-linux
+Section: kernel
+Priority: optional
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Build-Depends: debhelper-compat (= 13), dkms
+Standards-Version: 4.5.1
+Homepage: http://cryptodev-linux.org
+Rules-Requires-Root: no
+#Vcs-Git: https://salsa.debian.org/debian/cryptodev-linux.git
+#Vcs-Browser: https://salsa.debian.org/debian/cryptodev-linux
+
+Package: cryptodev-linux-dkms
+Section: kernel
+Architecture: arm64
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}, dkms
+Description: Linux Kernel device for cryptographic accelerator access
+ Cryptodev-linux is a Linux-kernel device that allows user-space access to
+ hardware cryptographic accelerators. The main idea is to access existing
+ ciphers in kernel space from userspace, thus enabling the re-use of a hardware
+ implementation of a cipher.
