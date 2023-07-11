@@ -6,22 +6,16 @@ export package_version="6.1"
 export package_full="${package_name}-${package_version}"
 export custom_build=true
 export require_root=false
-export last_tested_commit="2b6f5746de558d954e42749b898fcdb4227dce5a"
+export release_tag="09.00.00.006"
 
 function run_custom_build() {
     cd "${builddir}"
     if [ ! -d ${package_name} ]; then
-        git clone "${git_repo}"
+		git clone "${git_repo}" -b "${release_tag}" --single-branch --depth=1
     fi
 
     cd ti-linux-kernel
-    git checkout "$last_tested_commit"
 
-    if [ ! -f generate-image.patch ]; then
-        cp "${projdir}/generate-image.patch" "${builddir}/ti-linux-kernel"
-        git apply generate-image.patch
-    fi
-    
     if [ ! -f ".config" ]; then
         make defconfig ti_arm64_prune.config
     fi
