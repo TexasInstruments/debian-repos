@@ -26,7 +26,7 @@ if $custom_build ; then
     exit 0
 fi
 
-if [ $require_root ] && [ "$EUID" -ne 0 ] ; then
+if [ $require_root = "true" ] && [ "$EUID" -ne 0 ] ; then
     echo "Requires root privileges to execute"
     echo "Exiting"
     exit 1
