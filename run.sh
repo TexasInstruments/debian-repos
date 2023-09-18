@@ -67,16 +67,15 @@ cp -rv "${projdir}/suite/bookworm/debian" "${builddir}/${package_full}/"
 
 run_prep
 
-# Apply un-applied Debian patches
-patch_dir="${builddir}/${package_full}/debian/patches"
-while read -r patch; do
-    if [ -f "${builddir}/series" ]; then
-        if ! grep -Fxq "$patch" "${builddir}/series" ; then
-            continue
-        fi
-    fi
-    git apply --check "${patch_dir}/${patch}" --verbose --reject
-done < "${patch_dir}/series"
-cp "${patch_dir}/series" "${builddir}"
+# Build source package
+dpkg-source -b .
 
+# Extract source package
+cd "${builddir}"
+if [ ! -d "${package_name}_${deb_version}" ]; then
+    dpkg-source -x "${package_name}_${deb_version}.dsc" "${package_name}_${deb_version}"
+fi
+
+# Build binary package
+cd "${package_name}_${deb_version}"
 debuild --no-lintian
