@@ -9,7 +9,7 @@ Rules-Requires-Root: no
 
 Package: libti-rpmsg-char
 Section: libs
-Architecture: arm64
+Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: RPMSG-char Utility Library
@@ -19,8 +19,7 @@ Description: RPMSG-char Utility Library
 
 Package: libti-rpmsg-char-dev
 Section: libdevel
-Architecture: arm64
-Multi-Arch: same
+Architecture: any
 Depends: libti-rpmsg-char
 Description: RPMSG-char Utility Library
  ti-rpmsg-char is a library designed to provide Linux applications an easy means
