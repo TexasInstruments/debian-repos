@@ -45,15 +45,13 @@ mkdir -p "${sourcedir}"
 
 cd ${builddir}
 if [ ! -f "${package_full_ll}.orig.tar.gz" ]; then
-    cd "${sourcedir}"
-    if [ ! -d "${package_full}" ]; then
-        git clone "${git_repo}" "${package_full}"
+    if [ ! -d "${sourcedir}/${package_name}" ]; then
+        git clone "${git_repo}" "${sourcedir}/${package_name}"
     fi
-    cd "${package_full}"
-    git checkout "${last_tested_commit}"
-    cd -
-    tar -cvzf "${builddir}/${package_full_ll}.orig.tar.gz" "${package_full}"
-    cd ${builddir}
+    git -C "${sourcedir}/${package_name}" checkout "${last_tested_commit}"
+    tar -cvzf "${builddir}/${package_full_ll}.orig.tar.gz" \
+      --absolute-names "${sourcedir}/${package_name}" \
+      --transform "s,${sourcedir}/${package_name},${package_full},"
     tar -xzmf "${package_full_ll}.orig.tar.gz"
 fi
 
