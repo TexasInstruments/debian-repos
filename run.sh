@@ -25,6 +25,7 @@ fi
 package_name=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Source)
 deb_version=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Version)
 package_version=$(echo $deb_version | cut -d'-' -f1)
+last_tested_commit=$(echo $package_version | sed 's/.*+//')
 package_full="${package_name}-${package_version}"
 package_full_ll="${package_name}_${package_version}"
 echo "Building " $package_name " version " $deb_version
