@@ -1,9 +1,6 @@
 #!/bin/bash
 
 export git_repo="https://git.ti.com/git/pru-software-support-package/pru-software-support-package.git"
-export package_name="pru-pssp"
-export package_version="6.1"
-export package_full="${package_name}-${package_version}"
 export custom_build=false
 export require_root=true
 export last_tested_commit="75e974590eac2e38b53686e97018c47fc1147042"

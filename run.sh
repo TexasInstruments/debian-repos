@@ -17,6 +17,14 @@ if [ ! -d ${projdir} ]; then
     exit 1
 fi
 
+cd ${projdir}/suite/bookworm/
+package_name=$(dpkg-parsechangelog --show-field Source)
+deb_version=$(dpkg-parsechangelog --show-field Version)
+package_version=$(echo $deb_version | cut -d'-' -f1)
+package_full="${package_name}-${package_version}"
+echo "Building " $package_name " version " $deb_version
+cd -
+
 source ${projdir}/version.sh
 
 mkdir -p ${builddir}
