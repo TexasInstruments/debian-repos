@@ -22,6 +22,7 @@ package_name=$(dpkg-parsechangelog --show-field Source)
 deb_version=$(dpkg-parsechangelog --show-field Version)
 package_version=$(echo $deb_version | cut -d'-' -f1)
 package_full="${package_name}-${package_version}"
+package_full_ll="${package_name}_${package_version}"
 echo "Building " $package_name " version " $deb_version
 cd -
 
@@ -43,7 +44,7 @@ fi
 mkdir -p "${sourcedir}"
 
 cd ${builddir}
-if [ ! -f "${package_full}.tar.gz" ]; then
+if [ ! -f "${package_full_ll}.orig.tar.gz" ]; then
     cd "${sourcedir}"
     if [ ! -d "${package_full}" ]; then
         git clone "${git_repo}" "${package_full}"
@@ -51,9 +52,9 @@ if [ ! -f "${package_full}.tar.gz" ]; then
     cd "${package_full}"
     git checkout "${last_tested_commit}"
     cd -
-    tar -cvzf "${builddir}/${package_full}.tar.gz" "${package_full}"
+    tar -cvzf "${builddir}/${package_full_ll}.orig.tar.gz" "${package_full}"
     cd ${builddir}
-    tar -xzmf "${package_full}.tar.gz"
+    tar -xzmf "${package_full_ll}.orig.tar.gz"
 fi
 
 cd "${builddir}/${package_full}"
