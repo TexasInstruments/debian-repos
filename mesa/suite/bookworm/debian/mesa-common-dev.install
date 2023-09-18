@@ -1,0 +1,4 @@
+usr/include/GL/internal/dri_interface.h
+usr/lib/*/pkgconfig/dri.pc
+usr/share/pkgconfig/wayland-drm.pc
+usr/share/mesa/wayland-drm.xml
