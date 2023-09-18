@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [ "$#" -eq 0 ]; then
     echo "run.sh: missing operands"
     echo "Requires source package name as argument"
@@ -66,7 +68,7 @@ fi
 # Deploy our Debian control files
 cp -rv "${debcontroldir}/debian" "${builddir}/${package_full}/"
 
-run_prep
+run_prep || true
 
 # Build source package
 (cd "${builddir}/${package_full}" && dpkg-source -b .)
