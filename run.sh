@@ -6,10 +6,13 @@ if [ "$#" -eq 0 ]; then
     exit 1
 fi
 
+DEB_SUITE="${DEB_SUITE:-bookworm}"
+
 topdir=$(git rev-parse --show-toplevel)
 projdir="${topdir}/$1"
-builddir="${topdir}/build/$1"
-sourcedir="${builddir}/sources"
+sourcedir="${topdir}/build/sources"
+builddir="${topdir}/build/${DEB_SUITE}/$1"
+debcontroldir="${projdir}/suite/${DEB_SUITE}"
 
 if [ ! -d ${projdir} ]; then
     echo "This project does not exist."
@@ -17,8 +20,8 @@ if [ ! -d ${projdir} ]; then
     exit 1
 fi
 
-package_name=$(cd ${projdir}/suite/bookworm/ && dpkg-parsechangelog --show-field Source)
-deb_version=$(cd ${projdir}/suite/bookworm/ && dpkg-parsechangelog --show-field Version)
+package_name=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Source)
+deb_version=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Version)
 package_version=$(echo $deb_version | cut -d'-' -f1)
 package_full="${package_name}-${package_version}"
 package_full_ll="${package_name}_${package_version}"
@@ -61,7 +64,7 @@ if [ ! -d "${builddir}/${package_full}/debian" ]; then
 fi
 
 # Deploy our Debian control files
-cp -rv "${projdir}/suite/bookworm/debian" "${builddir}/${package_full}/"
+cp -rv "${debcontroldir}/debian" "${builddir}/${package_full}/"
 
 run_prep
 
