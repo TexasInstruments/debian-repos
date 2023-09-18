@@ -52,8 +52,9 @@ if [ ! -f "${package_full_ll}.orig.tar.gz" ]; then
     tar -cvzf "${builddir}/${package_full_ll}.orig.tar.gz" \
       --absolute-names "${sourcedir}/${package_name}" \
       --transform "s,${sourcedir}/${package_name},${package_full},"
-    tar -xzmf "${package_full_ll}.orig.tar.gz"
 fi
+
+tar -xzmf "${package_full_ll}.orig.tar.gz"
 
 cd "${builddir}/${package_full}"
 if [ ! -d "debian" ]; then
