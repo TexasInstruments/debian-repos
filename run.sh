@@ -54,6 +54,7 @@ if [ ! -f "${builddir}/${package_full_ll}.orig.tar.gz" ]; then
     fi
     git -C "${sourcedir}/${package_name}" checkout "${last_tested_commit}"
     tar -cvzf "${builddir}/${package_full_ll}.orig.tar.gz" \
+      --exclude-vcs \
       --absolute-names "${sourcedir}/${package_name}" \
       --transform "s,${sourcedir}/${package_name},${package_full},"
 fi
