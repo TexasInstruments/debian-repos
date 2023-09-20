@@ -8,20 +8,6 @@ export custom_build=false
 export require_root=true
 export last_tested_commit="75e974590eac2e38b53686e97018c47fc1147042"
 
-function copy_files() {
-    cp -rv "${projdir}/suite/bookworm/debian/patches" "${builddir}/${package_full}/debian/"
-    cp -v "${projdir}/suite/bookworm/debian/rules" "${builddir}/${package_full}/debian/"
-    cp -v "${projdir}/suite/bookworm/debian/copyright" "${builddir}/${package_full}/debian/"
-    cp -rv "${projdir}/suite/bookworm/debian/source" "${builddir}/${package_full}/debian/"
-    cp -v "${projdir}/suite/bookworm/debian/changelog" "${builddir}/${package_full}/debian/"
-    cp -v "${projdir}/suite/bookworm/debian/control" "${builddir}/${package_full}/debian/"
-    cp -v "${projdir}/suite/bookworm/debian/watch" "${builddir}/${package_full}/debian/"
-    cp -v "${projdir}/suite/bookworm/debian/libpru-pssp-dev.install" "${builddir}/${package_full}/debian/"
-    cp -v "${projdir}/suite/bookworm/debian/pru-pssp.install" "${builddir}/${package_full}/debian/"
-    cp -v "${projdir}/suite/bookworm/debian/pru-pssp.lintian-overrides" "${builddir}/${package_full}/debian/"
-    cp -v "${projdir}/suite/bookworm/debian/pru-pssp-dev.lintian-overrides" "${builddir}/${package_full}/debian/"
-}
-
 function setup_cgt_pru() {
     cd ${builddir}
 
@@ -44,6 +30,5 @@ function setup_cgt_pru() {
     
 
 function run_prep() {
-    copy_files
     setup_cgt_pru 
 }

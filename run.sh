@@ -53,6 +53,9 @@ if [ ! -d "debian" ]; then
 	debmake
 fi
 
+# Deploy our Debian control files
+cp -rv "${projdir}/suite/bookworm/debian" "${builddir}/${package_full}/"
+
 run_prep
 
 # Apply un-applied Debian patches
