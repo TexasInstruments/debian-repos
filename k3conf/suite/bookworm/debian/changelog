@@ -1,3 +1,11 @@
+k3conf (0.2+git20230830+859e1cc-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+  * Add cmake dependency for latest upstream
+  * Remove trailing spaces and extra newlines
+
+ -- Andrew Davis <afd@ti.com>  Thu, 31 Aug 2023 10:24:24 -0500
+
 k3conf (0.2.53-1) UNRELEASED; urgency=low
 
   * New upstream release.
