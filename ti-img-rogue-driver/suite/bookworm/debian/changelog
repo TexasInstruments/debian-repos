@@ -1,5 +1,5 @@
-ti-img-rogue-driver (6.1-1) UNRELEASED; urgency=low
+ti-img-rogue-driver (23.2.6460340+git20231027+ba7b23d-1) unstable; urgency=low
 
   * Initial release.
 
- -- Suhaas Joshi <s-joshi@ti.com>  Tue, 30 May 2023 05:51:57 +0000
+ -- Andrew Davis <afd@ti.com>  Mon, 30 Oct 2023 17:02:27 -0500

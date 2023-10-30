@@ -1,4 +1,0 @@
-#!/bin/bash
-set -e
-
-dkms remove -m ti-img-rogue-driver -v 6.1 --all || true
