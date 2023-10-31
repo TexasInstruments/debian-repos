@@ -52,6 +52,7 @@ if [ ! -f "${builddir}/${package_full_ll}.orig.tar.gz" ]; then
     if [ ! -d "${sourcedir}/${package_name}" ]; then
         git clone "${git_repo}" "${sourcedir}/${package_name}"
     fi
+    git -C "${sourcedir}/${package_name}" remote update
     git -C "${sourcedir}/${package_name}" checkout "${last_tested_commit}"
     tar -cvzf "${builddir}/${package_full_ll}.orig.tar.gz" \
       --exclude-vcs \
