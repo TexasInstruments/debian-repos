@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-
-dkms add -m ti-img-rogue-driver -v 6.1
-dkms build -m ti-img-rogue-driver -v 6.1 && dkms install -m ti-img-rogue-driver -v 6.1 || true

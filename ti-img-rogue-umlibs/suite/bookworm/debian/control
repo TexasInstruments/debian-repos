@@ -1,0 +1,183 @@
+Source: ti-img-rogue-umlibs
+Section: graphics
+Priority: optional
+Maintainer: Andrew Davis <afd@ti.com>
+Build-Depends:
+ debhelper-compat (= 12),
+ ca-certificates,
+ libdrm-dev,
+ libx11-xcb-dev,
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Vcs-Git: https://git.ti.com/git/graphics/ti-img-rogue-umlibs.git
+Vcs-Browser: https://git.ti.com/cgit/graphics/ti-img-rogue-umlibs
+Homepage: https://git.ti.com/cgit/graphics/ti-img-rogue-umlibs
+
+Package: ti-img-rogue-tools-am62
+Provides: ti-img-rogue-tools
+Conflicts: ti-img-rogue-tools
+Replaces: ti-img-rogue-tools
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU tools for AM62
+ Rogue GPU tools for AM62
+
+Package: ti-img-rogue-firmware-am62
+Provides: ti-img-rogue-firmware
+Conflicts: ti-img-rogue-firmware
+Replaces: ti-img-rogue-firmware
+Depends:
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU firmware for AM62
+ Rogue GPU firmware for AM62
+
+Package: ti-img-rogue-umlibs-am62
+Provides: ti-img-rogue-umlibs
+Conflicts: ti-img-rogue-umlibs
+Replaces: ti-img-rogue-umlibs
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ ti-img-rogue-driver-am62-dkms
+Architecture: arm64
+Description: Rogue GPU userspace libraries for AM62
+ Rogue GPU userspace libraries for AM62
+
+
+Package: ti-img-rogue-tools-am62p
+Provides: ti-img-rogue-tools
+Conflicts: ti-img-rogue-tools
+Replaces: ti-img-rogue-tools
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU tools for AM62P
+ Rogue GPU tools for AM62P
+
+Package: ti-img-rogue-firmware-am62p
+Provides: ti-img-rogue-firmware
+Conflicts: ti-img-rogue-firmware
+Replaces: ti-img-rogue-firmware
+Depends:
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU firmware for AM62P
+ Rogue GPU firmware for AM62P
+
+Package: ti-img-rogue-umlibs-am62p
+Provides: ti-img-rogue-umlibs
+Conflicts: ti-img-rogue-umlibs
+Replaces: ti-img-rogue-umlibs
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ ti-img-rogue-driver-am62p-dkms
+Architecture: arm64
+Description: Rogue GPU userspace libraries for AM62P
+ Rogue GPU userspace libraries for AM62P
+
+
+Package: ti-img-rogue-tools-j721e
+Provides: ti-img-rogue-tools
+Conflicts: ti-img-rogue-tools
+Replaces: ti-img-rogue-tools
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU tools for J721e
+ Rogue GPU tools for J721e
+
+Package: ti-img-rogue-firmware-j721e
+Provides: ti-img-rogue-firmware
+Conflicts: ti-img-rogue-firmware
+Replaces: ti-img-rogue-firmware
+Depends:
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU firmware for J721e
+ Rogue GPU firmware for J721e
+
+Package: ti-img-rogue-umlibs-j721e
+Provides: ti-img-rogue-umlibs
+Conflicts: ti-img-rogue-umlibs
+Replaces: ti-img-rogue-umlibs
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ ti-img-rogue-driver-j721e-dkms
+Architecture: arm64
+Description: Rogue GPU userspace libraries for J721e
+ Rogue GPU userspace libraries for J721e
+
+
+Package: ti-img-rogue-tools-j721s2
+Provides: ti-img-rogue-tools
+Conflicts: ti-img-rogue-tools
+Replaces: ti-img-rogue-tools
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU tools for J721s2
+ Rogue GPU tools for J721s2
+
+Package: ti-img-rogue-firmware-j721s2
+Provides: ti-img-rogue-firmware
+Conflicts: ti-img-rogue-firmware
+Replaces: ti-img-rogue-firmware
+Depends:
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU firmware for J721s2
+ Rogue GPU firmware for J721s2
+
+Package: ti-img-rogue-umlibs-j721s2
+Provides: ti-img-rogue-umlibs
+Conflicts: ti-img-rogue-umlibs
+Replaces: ti-img-rogue-umlibs
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ ti-img-rogue-driver-j721s2-dkms
+Architecture: arm64
+Description: Rogue GPU userspace libraries for J721s2
+ Rogue GPU userspace libraries for J721s2
+
+
+Package: ti-img-rogue-tools-j784s4
+Provides: ti-img-rogue-tools
+Conflicts: ti-img-rogue-tools
+Replaces: ti-img-rogue-tools
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU tools for J784s4
+ Rogue GPU tools for J784s4
+
+Package: ti-img-rogue-firmware-j784s4
+Provides: ti-img-rogue-firmware
+Conflicts: ti-img-rogue-firmware
+Replaces: ti-img-rogue-firmware
+Depends:
+ ${misc:Depends},
+Architecture: arm64
+Description: Rogue GPU firmware for J784s4
+ Rogue GPU firmware for J784s4
+
+Package: ti-img-rogue-umlibs-j784s4
+Provides: ti-img-rogue-umlibs
+Conflicts: ti-img-rogue-umlibs
+Replaces: ti-img-rogue-umlibs
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ ti-img-rogue-driver-j784s4-dkms
+Architecture: arm64
+Description: Rogue GPU userspace libraries for J784s4
+ Rogue GPU userspace libraries for J784s4

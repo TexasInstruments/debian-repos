@@ -1,7 +1,0 @@
-PACKAGE_NAME="ti-img-rogue-driver"
-PACKAGE_VERSION="6.1"
-BUILT_MODULE_NAME[0]="pvrsrvkm"
-DEST_MODULE_LOCATION[0]="/updates/dkms"
-BUILT_MODULE_LOCATION[0]="binary_am62_linux_wayland_release/target_aarch64/"
-AUTOINSTALL="YES"
-MAKE[0]="make ARCH=arm64 KERNELDIR=/usr/src/linux-headers-`uname -r` BUILD=release PVR_BUILD_DIR=am62_linux PVR_WINDOW_SYSTEM=wayland RGX_BVNC='33.15.11.3'"
