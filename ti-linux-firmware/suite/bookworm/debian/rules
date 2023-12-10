@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_test:
+
+# Disable dh_binary and dh_strip
+override_dh_binary:
+override_dh_strip:
+
+override_dh_installdocs:
+
+# Nothing to build for binary blob package
+override_dh_auto_build:
+override_dh_auto_install:
+
+override_dh_missing:
+override_dh_dwz:
