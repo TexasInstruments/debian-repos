@@ -3,19 +3,25 @@
 export git_repo="https://git.ti.com/git/ti-linux-kernel/ti-linux-kernel.git"
 export custom_build=true
 export require_root=false
-export release_tag="09.00.00.006"
+export release_tag="09.01.00.008"
+export package_name="linux-upstream"
+
+export DEBFULLNAME="Sai Sree Kartheek Adivi"
+export DEBEMAIL="s-adivi@ti.com"
+export KDEB_CHANGELOG_DIST=bookworm
 
 function run_custom_build() {
     cd "${builddir}"
     if [ ! -d ${package_name} ]; then
-		git clone "${git_repo}" -b "${release_tag}" --single-branch --depth=1
+        git clone "${git_repo}" -b "${release_tag}" --single-branch --depth=1 ${package_name}
     fi
 
-    cd ti-linux-kernel
-
+    cd ${package_name}
+    
     if [ ! -f ".config" ]; then
-        make defconfig ti_arm64_prune.config
+        make -j $((`nproc`-2)) defconfig ti_arm64_prune.config
+	
     fi
 
-    make bindeb-pkg
+    make -j $((`nproc`-2)) bindeb-pkg LOCALVERSION=-k3
 }
