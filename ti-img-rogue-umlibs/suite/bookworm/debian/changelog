@@ -1,3 +1,12 @@
+ti-img-rogue-umlibs (23.2.6460340+git20230920+d054392-2) unstable; urgency=medium
+
+  * Avoid installing 99-pvr.rules file using 'install' file as it is already
+    handled by rules. Having an 'install' file results in conflict during
+    installation because all firmware, tools and utils packages will have the
+    same file to be installed.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Mon, 11 Dec 2023 13:40:41 +0530
+
 ti-img-rogue-umlibs (23.2.6460340+git20230920+d054392-1) unstable; urgency=medium
 
   * Initial release.
