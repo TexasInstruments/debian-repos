@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 if [ "$#" -eq 0 ]; then
     echo "run.sh: missing operands"
@@ -22,14 +23,8 @@ if [ ! -d ${projdir} ]; then
     exit 1
 fi
 
-source ${projdir}/version.sh
 
 mkdir -p ${builddir}
-
-if $custom_build ; then
-    run_custom_build
-    exit 0
-fi
 
 package_name=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Source)
 deb_version=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Version)
@@ -43,6 +38,13 @@ if [ $require_root = "true" ] && [ "$EUID" -ne 0 ] ; then
     echo "Requires root privileges to execute"
     echo "Exiting"
     exit 1
+fi
+
+source ${projdir}/version.sh
+
+if $custom_build ; then
+    run_custom_build
+    exit 0
 fi
 
 mkdir -p "${sourcedir}"
