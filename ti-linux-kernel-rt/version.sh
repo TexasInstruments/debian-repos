@@ -3,7 +3,7 @@
 export git_repo="https://git.ti.com/git/ti-linux-kernel/ti-linux-kernel.git"
 export custom_build=true
 export require_root=false
-export release_tag="09.01.00.008"
+export release_tag="09.01.00.008-rt"
 export package_name="linux-upstream"
 
 export DEBFULLNAME="Sai Sree Kartheek Adivi"
@@ -19,9 +19,9 @@ function run_custom_build() {
     cd ${package_name}
     
     if [ ! -f ".config" ]; then
-        make -j $((`nproc`-2)) defconfig ti_arm64_prune.config
+        make -j $((`nproc`-2)) defconfig ti_arm64_prune.config ti_rt.config
 	
     fi
 
-    make -j $((`nproc`-2)) bindeb-pkg LOCALVERSION=-k3
+    make -j $((`nproc`-2)) bindeb-pkg LOCALVERSION=-k3-rt
 }

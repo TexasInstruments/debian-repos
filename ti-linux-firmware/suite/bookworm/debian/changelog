@@ -1,0 +1,30 @@
+ti-linux-firmware (09.01.00.008+git20231207+9ee2fedb-2) stable; urgency=medium
+
+  * Firmwares based on 09.01.00.008 tag.
+  * Update symlink for cnm wave firmware.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Fri, 11 Dec 2023 17:10:13 +0530
+
+ti-linux-firmware (09.01.00.008+git20231207+9ee2fedb-1) stable; urgency=medium
+
+  * Firmwares based on 09.01.00.008 tag.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Fri, 07 Dec 2023 21:46:13 +0530
+
+ti-linux-firmware (09.01.00.007+git20231205+9ee2fedb-1) stable; urgency=medium
+
+  * Firmwares based on 09.01.00.007 tag.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Fri, 05 Dec 2023 21:46:13 +0530
+
+ti-linux-firmware (09.01.00.006+git20231129+6dc47e33-1) unstable; urgency=medium
+
+  * Firmwares based on 09.01.00.006 tag.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Fri, 29 Nov 2023 10:44:20 +0530
+
+ti-linux-firmware (09.01.00.004+git20231117+fc8e9ddf-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Fri, 17 Nov 2023 10:44:20 +0530
