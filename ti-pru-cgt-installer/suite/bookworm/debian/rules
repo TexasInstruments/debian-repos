@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+DEB_BUILD_OPTIONS=noautodbgsym
+
+TI_CGT_PRU_INSTALLER_SCRIPT="ti_cgt_pru_2.3.3_armlinuxa8hf_busybox_installer.sh"
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/ ; chmod +x ./$(TI_CGT_PRU_INSTALLER_SCRIPT) ; ./$(TI_CGT_PRU_INSTALLER_SCRIPT) --prefix ./tmp/ --temp `mktemp -d`
+
+override_dh_strip_nondeterminism:
+
+override_dh_strip:

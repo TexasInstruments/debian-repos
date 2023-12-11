@@ -9,7 +9,7 @@ Homepage: https://git.ti.com/cgit/pru-software-support-package/pru-software-supp
 Package: libpru-pssp-dev
 Architecture: arm64
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ti-pru-cgt, ${misc:Depends}, ${shlibs:Depends}
 Description: Development files for PRU-PSSP v6.1.0
  The PRU Software Support Package (PSSP) is an add-on package that provides a
  framework and examples for developing software for the Programmable Real-time 
@@ -22,7 +22,7 @@ Description: Development files for PRU-PSSP v6.1.0
 Package: pru-pssp
 Architecture: arm64
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ti-pru-cgt, ${misc:Depends}, ${shlibs:Depends}
 Description: Programmable Real-time Unit (PRU) Software Support Package v6.1.0
  The PRU Software Support Package (PSSP) is an add-on package that provides a 
  framework and examples for developing software for the Programmable Real-time 
