@@ -1,5 +1,6 @@
-cryptodev-linux (1.13-1) UNRELEASED; urgency=low
+cryptodev-linux (1.13+git20240109+795f5fd-0) unstable; urgency=low
 
   * Initial release.
 
- -- Suhaas Joshi <s-joshi@ti.com>  Tue, 04 Jul 2023 10:51:53 +0000
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Tue, 09 Jan 2024 18:06:53 +0530
+
