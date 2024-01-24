@@ -26,6 +26,8 @@ source ${projdir}/version.sh
 
 mkdir -p ${builddir}
 
+sudo apt install -y ${depends}
+
 if $custom_build ; then
     run_custom_build
     exit 0
