@@ -81,4 +81,4 @@ if [ ! -d "${builddir}/${package_name}_${deb_version}" ]; then
 fi
 
 # Build binary package
-(cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian)
+(cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign)
