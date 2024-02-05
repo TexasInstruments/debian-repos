@@ -1,7 +1,6 @@
 #!/bin/bash
 
 export git_repo="https://git.ti.com/git/pru-software-support-package/pru-software-support-package.git"
-export custom_build=false
 export require_root=true
 
 function setup_cgt_pru() {

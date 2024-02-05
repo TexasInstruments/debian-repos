@@ -1,7 +1,6 @@
 #!/bin/bash
 
 export git_repo="https://github.com/cryptodev-linux/cryptodev-linux.git"
-export custom_build=false
 export require_root=false
 
 function run_prep() {

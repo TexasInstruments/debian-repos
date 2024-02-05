@@ -26,11 +26,6 @@ source ${projdir}/version.sh
 
 mkdir -p ${builddir}
 
-if $custom_build ; then
-    run_custom_build
-    exit 0
-fi
-
 package_name=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Source)
 deb_version=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Version)
 package_version=$(echo $deb_version | sed 's/\(.*\)-.*/\1/')
