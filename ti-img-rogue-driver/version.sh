@@ -3,4 +3,3 @@
 export git_repo="https://git.ti.com/git/graphics/ti-img-rogue-driver.git"
 export custom_build=false
 export require_root=false
-export depends="dkms dh-sequence-dkms dh-dkms"
