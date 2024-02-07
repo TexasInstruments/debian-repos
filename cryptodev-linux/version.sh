@@ -1,7 +1,6 @@
 #!/bin/bash
 
 export git_repo="https://github.com/cryptodev-linux/cryptodev-linux.git"
-export require_root=false
 
 function run_prep() {
     if ! command -v dkms &>/dev/null ; then
