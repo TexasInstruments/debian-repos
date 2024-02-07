@@ -48,22 +48,25 @@ if [ ! -f "${builddir}/${package_full_ll}.orig.tar.gz" ]; then
       --transform "s,${sourcedir}/${package_name},${package_full},"
 fi
 
-# Extract original source tarball
-tar -xzmf "${builddir}/${package_full_ll}.orig.tar.gz" -C "${builddir}"
+# Generate source package if none found
+if [ ! -f "${builddir}/${package_name}_${deb_version}.dsc" ]; then
+    # Extract original source tarball
+    tar -xzmf "${builddir}/${package_full_ll}.orig.tar.gz" -C "${builddir}"
 
-# Add default debian control files if none found
-if [ ! -d "${builddir}/${package_full}/debian" ]; then
-    (cd "${builddir}/${package_full}" && debmake)
+    # Add default debian control files if none found
+    if [ ! -d "${builddir}/${package_full}/debian" ]; then
+        (cd "${builddir}/${package_full}" && debmake)
+    fi
+
+    # Deploy our Debian control files
+    cp -rv "${debcontroldir}/debian" "${builddir}/${package_full}/"
+
+    # Build source package
+    (cd "${builddir}/${package_full}" && dpkg-source -b .)
+
+    # Cleanup intermediate source directory
+    rm -r "${builddir}/${package_full}"
 fi
-
-# Deploy our Debian control files
-cp -rv "${debcontroldir}/debian" "${builddir}/${package_full}/"
-
-# Build source package
-(cd "${builddir}/${package_full}" && dpkg-source -b .)
-
-# Cleanup intermediate source directory
-rm -r "${builddir}/${package_full}"
 
 run_prep || true
 
