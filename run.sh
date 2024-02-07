@@ -62,6 +62,9 @@ cp -rv "${debcontroldir}/debian" "${builddir}/${package_full}/"
 # Build source package
 (cd "${builddir}/${package_full}" && dpkg-source -b .)
 
+# Cleanup intermediate source directory
+rm -r "${builddir}/${package_full}"
+
 run_prep || true
 
 # Extract source package
@@ -71,3 +74,6 @@ fi
 
 # Build binary package
 (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign)
+
+# Cleanup intermediate build directory
+rm -r "${builddir}/${package_name}_${deb_version}"
