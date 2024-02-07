@@ -60,10 +60,10 @@ fi
 # Deploy our Debian control files
 cp -rv "${debcontroldir}/debian" "${builddir}/${package_full}/"
 
-run_prep || true
-
 # Build source package
 (cd "${builddir}/${package_full}" && dpkg-source -b .)
+
+run_prep || true
 
 # Extract source package
 if [ ! -d "${builddir}/${package_name}_${deb_version}" ]; then
