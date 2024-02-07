@@ -75,6 +75,9 @@ if [ ! -d "${builddir}/${package_name}_${deb_version}" ]; then
     dpkg-source -x "${builddir}/${package_name}_${deb_version}.dsc" "${builddir}/${package_name}_${deb_version}"
 fi
 
+# Install build dependencies
+(cd "${builddir}/${package_name}_${deb_version}" && mk-build-deps -ir -t "apt-get -o Debug::pkgProblemResolver=yes -y --no-install-recommends")
+
 # Build binary package
 (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign)
 
