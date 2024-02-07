@@ -34,10 +34,9 @@ package_full="${package_name}-${package_version}"
 package_full_ll="${package_name}_${package_version}"
 echo "Building " $package_name " version " $deb_version
 
-mkdir -p "${sourcedir}"
-
 # Generate original source tarball if none found
 if [ ! -f "${builddir}/${package_full_ll}.orig.tar.gz" ]; then
+    mkdir -p "${sourcedir}"
     if [ ! -d "${sourcedir}/${package_name}" ]; then
         git clone "${git_repo}" "${sourcedir}/${package_name}"
     fi
