@@ -82,7 +82,7 @@ if [ ! -f "${builddir}/${package_name}_${deb_version}_${build_arch}.buildinfo" ]
     (cd "${builddir}/${package_name}_${deb_version}" && mk-build-deps -ir -t "apt-get -o Debug::pkgProblemResolver=yes -y --no-install-recommends")
 
     # Build binary package
-    (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign)
+    (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign || true)
 
     # Cleanup intermediate build directory
     rm -r "${builddir}/${package_name}_${deb_version}"
