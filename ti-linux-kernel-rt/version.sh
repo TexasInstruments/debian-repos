@@ -6,8 +6,6 @@ export require_root=false
 export release_tag="09.02.00.001-rt"
 export package_name="linux-upstream"
 
-export depends="flex bison bc libssl-dev:native kmod cpio"
-
 export DEBFULLNAME="Sai Sree Kartheek Adivi"
 export DEBEMAIL="s-adivi@ti.com"
 export KDEB_CHANGELOG_DIST=bookworm

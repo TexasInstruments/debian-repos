@@ -1,6 +1,11 @@
+cryptodev-linux (1.13+git20231212+5e7121e-1) unstable; urgency=low
+
+  * Update to latest master.
+
+ -- Andrew Davis <afd@ti.com>  Fri, 02 Feb 2024 15:50:12 -0600
+
 cryptodev-linux (1.13+git20240109+795f5fd-0) unstable; urgency=low
 
   * Initial release.
 
  -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Tue, 09 Jan 2024 18:06:53 +0530
-

@@ -26,8 +26,6 @@ source ${projdir}/version.sh
 
 mkdir -p ${builddir}
 
-sudo apt install -y ${depends}
-
 if $custom_build ; then
     run_custom_build
     exit 0
@@ -35,7 +33,7 @@ fi
 
 package_name=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Source)
 deb_version=$(cd ${debcontroldir} && dpkg-parsechangelog --show-field Version)
-package_version=$(echo $deb_version | cut -d'-' -f1)
+package_version=$(echo $deb_version | sed 's/\(.*\)-.*/\1/')
 last_tested_commit=$(echo $package_version | sed 's/.*+//')
 package_full="${package_name}-${package_version}"
 package_full_ll="${package_name}_${package_version}"
@@ -54,8 +52,9 @@ if [ ! -f "${builddir}/${package_full_ll}.orig.tar.gz" ]; then
     if [ ! -d "${sourcedir}/${package_name}" ]; then
         git clone "${git_repo}" "${sourcedir}/${package_name}"
     fi
+    git -C "${sourcedir}/${package_name}" remote update
     git -C "${sourcedir}/${package_name}" checkout "${last_tested_commit}"
-    tar -cvzf "${builddir}/${package_full_ll}.orig.tar.gz" \
+    tar -czf "${builddir}/${package_full_ll}.orig.tar.gz" \
       --exclude-vcs \
       --absolute-names "${sourcedir}/${package_name}" \
       --transform "s,${sourcedir}/${package_name},${package_full},"

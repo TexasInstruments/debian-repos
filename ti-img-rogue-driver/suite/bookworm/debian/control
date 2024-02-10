@@ -14,6 +14,7 @@ Architecture: all
 Depends:
  ${misc:Depends},
  libc-dev | libc,
+ ti-img-rogue-firmware-am62
 Description: Imagination Rogue Kernel Mode Driver for Texas Instruments AM62
  This set of modules provides the kernel mode graphical driver for IMG Rogue GPU on TI AM62.
 
@@ -23,6 +24,7 @@ Architecture: all
 Depends:
  ${misc:Depends},
  libc-dev | libc,
+ ti-img-rogue-firmware-am62p
 Description: Imagination Rogue Kernel Mode Driver for Texas Instruments AM62P
  This set of modules provides the kernel mode graphical driver for IMG Rogue GPU on TI AM62P.
 
@@ -32,6 +34,7 @@ Architecture: all
 Depends:
  ${misc:Depends},
  libc-dev | libc,
+ ti-img-rogue-firmware-j721e
 Description: Imagination Rogue Kernel Mode Driver for Texas Instruments J721e
  This set of modules provides the kernel mode graphical driver for IMG Rogue GPU on TI J721e.
 
@@ -41,6 +44,7 @@ Architecture: all
 Depends:
  ${misc:Depends},
  libc-dev | libc,
+ ti-img-rogue-firmware-j721s2
 Description: Imagination Rogue Kernel Mode Driver for Texas Instruments J721s2
  This set of modules provides the kernel mode graphical driver for IMG Rogue GPU on TI J721s2.
 
@@ -50,5 +54,6 @@ Architecture: all
 Depends:
  ${misc:Depends},
  libc-dev | libc,
+ ti-img-rogue-firmware-j784s4
 Description: Imagination Rogue Kernel Mode Driver for Texas Instruments J784s4
  This set of modules provides the kernel mode graphical driver for IMG Rogue GPU on TI J784s4.

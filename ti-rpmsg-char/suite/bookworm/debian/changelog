@@ -1,4 +1,4 @@
-ti-rpmsg-char (0.6.3+git20231210+369ed24-1) unstable; urgency=low
+ti-rpmsg-char (0.0.0+git20231210+369ed24-1) unstable; urgency=low
 
   * Initial release.
 
