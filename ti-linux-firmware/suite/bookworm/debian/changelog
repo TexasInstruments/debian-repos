@@ -1,3 +1,9 @@
+ti-linux-firmware (09.02.00.004+git20240208+3e26a1e8-1) stable; urgency=medium
+
+  * New upstream release (09.02.00.004).
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Wed, 14 Feb 2024 10:46:05 +0530
+
 ti-linux-firmware (09.01.00.008+git20231207+9ee2fedb-2) stable; urgency=medium
 
   * Firmwares based on 09.01.00.008 tag.

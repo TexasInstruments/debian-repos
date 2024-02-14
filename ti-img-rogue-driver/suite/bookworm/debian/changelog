@@ -1,3 +1,10 @@
+ti-img-rogue-driver (23.3.6512818+git20240131+41a494a-1) unstable; urgency=low
+
+  * Switch upstream to
+    https://git.ti.com/cgit/graphics/ti-img-rogue-driver/log/?h=linuxws/kirkstone/k6.1/23.3.6512818.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Mon, 14 Feb 2024 10:33:59 +0530
+
 ti-img-rogue-driver (23.2.6460340+git20231027+ba7b23d-1) unstable; urgency=low
 
   * Initial release.

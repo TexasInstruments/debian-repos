@@ -1,4 +1,10 @@
-0001-PVR-changes.patch
+0001-fix-gallivm-limit-usage-of-LLVMContextSetOpaquePoint.patch
+0001-freedreno-pm4-Use-unsigned-instead-of-uint-to-fix-mu.patch
+0001-gallium-Fix-build-with-llvm-17.patch
+0001-gbm-backend-fix-gbm-compile-without-dri.patch
+0001-meson.build-check-for-all-linux-host_os-combinations.patch
+0001-meson-misdetects-64bit-atomics-on-mips-clang.patch
+0001-util-format-Check-for-NEON-before-using-it.patch
 07_gallium-fix-build-failure-on-powerpcspe.diff
 path_max.diff
 src_glx_dri_common.h.diff
