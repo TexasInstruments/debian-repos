@@ -1,3 +1,9 @@
+mesa (22.3.5+git20240125+1be98ba8045-1) unstable; urgency=medium
+
+  * Bump-up to the HEAD of https://gitlab.freedesktop.org/StaticRocket/mesa/-/commits/powervr/kirkstone/22.3.5
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Wed, 14 Feb 2024 10:26:51 +0530
+
 mesa (22.3.5+git20230331+54fd9d7dea0-1) unstable; urgency=medium
 
   * Switch upstream to https://gitlab.freedesktop.org/StaticRocket/mesa/-/commits/powervr/kirkstone/22.3.5

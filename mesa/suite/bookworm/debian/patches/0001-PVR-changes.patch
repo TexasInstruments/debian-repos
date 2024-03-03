@@ -1,18 +1,18 @@
 From: Andrew Davis <afd@ti.com>
-Date: Thu, 7 Sep 2023 19:17:28 -0500
-Subject: PVR changes
+Date: Sun, 3 Mar 2024 11:32:16 +0000
+Subject: [PATCH] PVR Changes
 
-Signed-off-by: Andrew Davis <afd@ti.com>
+Signed-off-by: Sai Sree Kartheek Adivi <s-adivi@ti.com>
 ---
  src/gallium/targets/dri/meson.build | 7 ++++++-
  src/gallium/targets/dri/target.c    | 3 +++
  2 files changed, 9 insertions(+), 1 deletion(-)
 
 diff --git a/src/gallium/targets/dri/meson.build b/src/gallium/targets/dri/meson.build
-index 1fd98bc..f2f1da2 100644
+index f1086edadb2..00f68e99a75 100644
 --- a/src/gallium/targets/dri/meson.build
 +++ b/src/gallium/targets/dri/meson.build
-@@ -116,7 +116,12 @@ foreach d : [[with_gallium_kmsro, [
+@@ -117,7 +117,12 @@ foreach d : [[with_gallium_kmsro, [
               [with_gallium_zink, 'zink_dri.so'],
               [with_gallium_d3d12, 'd3d12_dri.so'],
               [with_gallium_asahi, 'asahi_dri.so'],
@@ -23,14 +23,14 @@ index 1fd98bc..f2f1da2 100644
 +               'omapdrm_dri.so',
 +               'tidss_dri.so',
 +             ]],
-              [with_gallium_pvr_alias, gallium_pvr_alias + '_dri.so']]
-   if d[0]
-     gallium_dri_drivers += d[1]
+              [with_gallium_pvr_alias, gallium_pvr_alias + '_dri.so'],
+              [with_gallium_sgx, ['sgx_dri.so', 'pvr_dri.so']],
+              [with_gallium_sgx_alias, gallium_sgx_alias + '_dri.so']]
 diff --git a/src/gallium/targets/dri/target.c b/src/gallium/targets/dri/target.c
-index e66bdaa..e3144e2 100644
+index e83057549c1..6752fe2be75 100644
 --- a/src/gallium/targets/dri/target.c
 +++ b/src/gallium/targets/dri/target.c
-@@ -157,6 +157,9 @@ DEFINE_LOADER_DRM_ENTRYPOINT(d3d12);
+@@ -167,6 +167,9 @@ DEFINE_LOADER_DRM_ENTRYPOINT(d3d12);
  
  #if defined(GALLIUM_PVR)
  DEFINE_LOADER_PVR_ENTRYPOINT(pvr);
