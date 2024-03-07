@@ -1,10 +1,14 @@
 #!/bin/bash
 
 export git_repo="https://git.ti.com/git/pru-software-support-package/pru-software-support-package.git"
-export custom_build=false
-export require_root=true
 
 function setup_cgt_pru() {
+    if [ "$EUID" -ne 0 ] ; then
+        echo "Requires root privileges to build"
+        echo "Exiting"
+        exit 1
+    fi
+
     cd ${builddir}
 
     if [ ! -f ti_cgt_pru_2.3.3_armlinuxa8hf_busybox_installer.sh ] ; then
