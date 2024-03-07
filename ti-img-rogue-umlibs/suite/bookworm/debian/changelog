@@ -1,3 +1,10 @@
+ti-img-rogue-umlibs (23.3.6512818+git20240131+0b9e642-1) unstable; urgency=medium
+
+  * Switch upstream to
+    https://git.ti.com/cgit/graphics/ti-img-rogue-umlibs/log/?h=linuxws/kirkstone/k6.1/23.3.6512818.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Wed, 14 Feb 2024 10:39:41 +0530
+
 ti-img-rogue-umlibs (23.2.6460340+git20230920+d054392-2) unstable; urgency=medium
 
   * Avoid installing 99-pvr.rules file using 'install' file as it is already
