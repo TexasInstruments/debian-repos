@@ -1,3 +1,9 @@
+ti-linux-firmware (09.02.00.009+git20240320+553da685-1) stable; urgency=medium
+
+  * New upstream release (09.02.00.009).
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Sun, 21 Mar 2024 20:25:07 +0530
+
 ti-linux-firmware (09.02.00.008+git20240314+edbfc3e5-1) stable; urgency=medium
 
   * New upstream release (09.02.00.008).
