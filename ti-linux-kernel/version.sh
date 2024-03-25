@@ -3,7 +3,7 @@
 export git_repo="https://git.ti.com/git/ti-linux-kernel/ti-linux-kernel.git"
 export custom_build=true
 export require_root=false
-export release_tag="09.02.00.008"
+export release_tag="09.02.00.009"
 export package_name="linux-upstream"
 
 export DEBFULLNAME="Sai Sree Kartheek Adivi"
