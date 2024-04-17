@@ -1,0 +1,5 @@
+ti-linux-kernel (09.02.00.009-rt-1) bookworm; urgency=low
+
+  * Custom built Linux kernel.
+
+ -- Andrew Davis <afd@ti.com>  Fri, 02 Feb 2024 15:50:12 -0600
