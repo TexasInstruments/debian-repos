@@ -1,5 +1,5 @@
-ti-rpmsg-char (0.0.0+git20231210+369ed24-1) unstable; urgency=low
+ti-rpmsg-char (0.6.6+git20240226+55a6f40-1) bookworm; urgency=low
 
   * Initial release.
 
- -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Thu, 10 Dec 2023 20:34:14 +0530
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Sun, 26 May 2024 00:52:02 +0000
