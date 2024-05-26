@@ -1,3 +1,9 @@
+pru-pssp (6.4.0+git20240415+f3e3996-1) bookworm; urgency=low
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Sat, 25 May 2024 17:02:28 +0000
+
 pru-pssp (6.3.0+git20240205+d09576fa-1) UNRELEASED; urgency=low
 
   * New upstream release
