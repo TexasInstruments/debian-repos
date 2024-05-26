@@ -1,4 +1,4 @@
-Source: ti-linux-kernel
+Source: ti-linux-kernel-rt
 Section: kernel
 Priority: optional
 Maintainer: Andrew Davis <afd@ti.com>
