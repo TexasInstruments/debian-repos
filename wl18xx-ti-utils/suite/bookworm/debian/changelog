@@ -1,5 +1,6 @@
-wl18xx-ti-utils (8.8.2+git20231211+7325bf0-1) unstable; urgency=low
+wl18xx-ti-utils (8.8+git20211214+7325bf0-1) bookworm; urgency=low
 
-  * Initial release.
+  * New upstream release.
 
- -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Fri, 11 Dec 2023 02:04:06 +0530
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Sun, 26 May 2024 00:54:55 +0000
+
