@@ -1,3 +1,9 @@
+mesa (23.2.1+git20240304+b122901-1) bookworm; urgency=low
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Wed, 12 Jun 2024 06:56:18 +0000
+
 mesa (22.3.5+git20240125+1be98ba8045-1) unstable; urgency=medium
 
   * Bump-up to the HEAD of https://gitlab.freedesktop.org/StaticRocket/mesa/-/commits/powervr/kirkstone/22.3.5
