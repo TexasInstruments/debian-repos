@@ -1,3 +1,9 @@
+mesa (23.2.1+git20240304+b12290126ba-1) unstable; urgency=medium
+
+  * Switch upstream to https://gitlab.freedesktop.org/StaticRocket/mesa/-/commits/powervr/kirkstone/22.3.5
+
+ -- Andrew Davis <afd@ti.com>  Sun, 30 Jun 2024 22:05:14 +0530
+
 mesa (22.3.5+git20240125+1be98ba8045-1) unstable; urgency=medium
 
   * Bump-up to the HEAD of https://gitlab.freedesktop.org/StaticRocket/mesa/-/commits/powervr/kirkstone/22.3.5
