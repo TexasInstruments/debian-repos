@@ -76,8 +76,13 @@ if [ ! -f "${builddir}/${package_name}_${deb_version}_${build_arch}.buildinfo" ]
     # Install build dependencies
     (cd "${builddir}/${package_name}_${deb_version}" && mk-build-deps -ir -t "apt-get -o Debug::pkgProblemResolver=yes -y --no-install-recommends")
 
-    # Build binary package
-    (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign || true)
+    # Build debian package.
+    # HACK: There is an issue with building source package for Linux Kernel. So only build binary packages for Linux.
+    if [[ "${package_name}" == "ti-linux-kernel"* ]]; then
+        (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign -b || true)
+    else
+        (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign || true)
+    fi
 
     # Cleanup intermediate build directory
     rm -r "${builddir}/${package_name}_${deb_version}"
