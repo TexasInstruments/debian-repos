@@ -1,3 +1,9 @@
+ti-img-rogue-driver (24.1.6554834+git20240621+81e1890-1) bookworm; urgency=low
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Fri, 05 Jul 2024 16:35:52 +0000
+
 ti-img-rogue-driver (23.3.6512818+git20240214+c89c1ef-1) unstable; urgency=low
 
   * Switch upstream to
