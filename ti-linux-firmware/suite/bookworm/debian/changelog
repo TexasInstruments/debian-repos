@@ -1,3 +1,9 @@
+ti-linux-firmware (10.00.04-1) bookworm; urgency=medium
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Fri, 05 Jul 2024 16:58:44 +0000
+
 ti-linux-firmware (09.02.00.010-1) bookworm; urgency=medium
 
   * New upstream release.
