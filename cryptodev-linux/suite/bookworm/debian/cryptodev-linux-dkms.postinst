@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-dkms add -m cryptodev-linux -v 1.13
-dkms build -m cryptodev-linux -v 1.13 && dkms install -m cryptodev-linux -v 1.13 || true
+dkms add -m cryptodev-linux -v 1.13+git20240703+157a624
+dkms build -m cryptodev-linux -v 1.13+git20240703+157a624 && dkms install -m cryptodev-linux -v 1.13+git20240703+157a624 || true
 
 echo "cryptodev" >>/etc/modules-load.d/cryptodev.conf
