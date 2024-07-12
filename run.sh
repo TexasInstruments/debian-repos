@@ -81,7 +81,7 @@ if [ ! -f "${builddir}/${package_name}_${deb_version}_${build_arch}.buildinfo" ]
     if [[ "${package_name}" == "ti-linux-kernel"* ]]; then
         (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign -b || true)
     else
-        (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign || true)
+        (cd "${builddir}/${package_name}_${deb_version}" && debuild --no-lintian --no-sign -sa || true)
     fi
 
     # Cleanup intermediate build directory
