@@ -1,0 +1,747 @@
+.TH calibrator 1
+.SH NAME
+calibrator - Perform transmission (TX) testing on WL18xx.
+.RS
+WL18xx TX Testing
+
+
+.SH INTRODUCTION
+This section will review the calibrator commands that may be useful when performing transmission (TX) testing on the WL18xx.
+
+.TP
+\fB Prerequisites: \fP
+.IP 1. 4
+Your kernel and modules must be compiled with CONFIG_NL80211_TESTMODE=y. You can check this at run-time as follows:
+        root@am335x-evm:/usr/share/wl18xx#  zcat /proc/config.gz | grep NL80211_TESTMODE
+        CONFIG_NL80211_TESTMODE=y
+
+.fam T
+.fi
+**** Note: If you don't have that configured, be sure to copy over your kernel and reinstall all modules.
+.IP 2. 4
+The wlan0 interface must be shut down. Run ifconfig wlan0 down to disable it and then run ifconfig one more time to verify it has properly shut down.
+.IP 3. 4
+Before using any of the WLAN commands listed below, you should enter the WL18xx device into PLT mode using the following command:
+.PP
+.nf
+.fam C
+        cd /usr/share/wl18xx/
+        calibrator wlan0 plt power_mode on
+
+.fam T
+.fi
+
+.\"==============================================================================="
+
+.SH COMMANDS
+.br
+
+.SH Tune Channel
+.br
+
+.IP \fBPurpose\fP
+The purpose of the tune_channel command is to configure the WL18xx chip to operate in a specific Wifi band and channel.
+
+.PP
+.IP Method
+.RS 2
+The tune_channel command can be called using the following format:
+.RE
+
+.PP
+
+.RS 6
+.TP
+.B
+calibrator wlan0 wl18xx_plt tune_channel <channel> <band> <bandwidth>
+.PP
+Where:
+.RE
+.RS 8
+<channel> is the channel within the wifi band. See the picture below for details.
+.RE
+.RS 8
+<band> is the wifi band. Ex: 0 means we are in g band equal to 1 means we are in a band
+.RE
+.RS 8
+<bandwidth> is the bandwidth allocation. Use one of the following values
+.RE
+.PP
+.RS 10
+.IP Channel
+1-14
+.IP Band
+.br
+0 (2.4 GHz)
+.IP Bandwidth
+0/1 (20 MHz)
+.br
+2 (40 MHz Upper Primary) 
+.br
+3 (40 MHz Lower Primary) 
+.br
+.RE
+*** Note: Channel tune must be executed before any other calibrator activities. There is no default channel tuned.
+
+.IP Examples
+The following tune_channel example configures the chip to operate in the 2.4 GHz band at channel 1 without high-throughput.
+.nf
+.fam C
+.RS 10
+ calibrator wlan0 wl18xx_plt tune_channel 1 0 0
+.RE
+.fam T
+.fi
+
+.\"--------------------------------------------------------------------
+
+.PP
+.SH Set TX Power
+.PP
+.IP Purpose
+.br
+The set_tx_power command can be used to set the transmission power of the Wl18xx device.
+.PP
+.IP Method
+.br
+To set TX power, first boot into PLT mode using the power_mode command, then select the channel to use with 
+the tune_channel command. Finally, you can set the power using the set_tx_power command in the following manner:
+.PP
+.IP Syntax
+.br
+calibrator wlan0 wl18xx_plt set_tx_power <output_power> <level> <band> <primary_channel> <2nd_channel> <antenna>
+<non_serving_channel> <channel_limitation> <internal> <gain_calculation> <analog_gain_control_id> <post_dpd_gain>
+
+Where:
+.PP
+
+.\"START OF THE TABLE"
+
+.RS 8
+.IP "Parameter: output_power"
+.RE
+
+.RS 16
+.IP Options
+0: (0-20000)
+.br
+1: (0-20000)
+.br
+2: (\fB-15000\fP - (\fB-4000\fP))
+.br
+According to parameter 10 (gain_calculation):
+.br
+.RE
+
+.RS 16
+.IP Description
+0 (Normal): Desired output power supplied in dBmX1000 at 125 resolution (1/8 dB) 
+i.e. 16.125[dBm] = 16125
+.br
+1 (Debug): Desired output power supplied in dBmX1000 at 125 resolution (1/8 dB) 
+i.e. 16.125[dBm] = 16125
+.br
+2 (Override): Desired BO from PSAT supplied in dBmX1000 at 125 resolution (1/8 dB) 
+i.e. \fB-10.375\fP[dBm] = \fB-10375\fP
+.br
+.RE
+
+.RS 16
+.IP Remarks
+Override mode is supported from FW version 8.9.0.0.20 and calibrator version 0.80
+.RE
+
+
+.RS 8
+.IP "Parameter: level"
+.RE
+
+.RS 16
+.IP Options
+0-3 
+.RE    
+
+.RS 16
+.IP Description
+System support for different pre-configurable power levels in operational mode.
+.RE
+
+.RS 16
+.IP Remarks
+For PLT usage power level should be configured to 0
+.RE
+
+.RS 8
+.IP "Parameter: band"
+.RE
+    
+.RS 16
+.IP Options
+0: 2.4GHz
+.br
+1: 5GHz
+.br
+2: 4.9GHz (JP)
+.br
+.RE
+
+.RS 16
+.IP Description
+Operation Band
+.RE
+
+.RS 16
+.IP Remarks
+.RE
+
+.RS 8
+.IP "Parameter: channel_number"  
+.RE
+.RS 16
+.IP Options
+Channel according to used band  
+.IP Description
+Channel according to used band  
+.IP Remarks
+Same as configured in channel of tune channel command
+.RE
+
+.RS 8
+.IP "Parameter: primary_channel_location"        
+.RE
+.RS 16
+.IP Options
+\fB-1\fP: 40MHz Lower Primary
+.br
+0: 20MHZ
+.br
+1: 40MHz Upper Primary
+.br
+.IP Description
+20/40MHz usage  
+.IP Remarks
+Same as configured in bandwidth of tune channel command:
+\fB-1\fP = 3 (40MHz Lower Primary)
+.br
+0 = 0/1 (20MHz)
+.br
+1 = 2 (40MHz Upper Primary)
+.br
+.RE
+
+.RS 8
+.IP "Parameter: antenna" 
+.RE
+.RS 16
+.IP Options
+0-3
+.IP Description
+Used for TX antenna select:
+.br
+0: Auto Mode: The FW will automatically selects which TX paths to calculate the power for (based on how many 
+antennas are assembled, band, BW and etc.)
+.br
+1: TX1: Force TX power calculation for TX1 path
+.br
+2: TX2: Force TX power calculation for TX2 path
+.br
+3: Both TX1&TX2: Force TX power calculation for both TX paths
+.IP Remarks
+.RE
+
+.RS 8
+.IP "Parameter: non_serving_channel"     
+.RE
+.RS 16
+.IP Options
+0-1     
+.IP Description
+0: Serving
+.br
+1: Non Serving
+.br
+The power settings will be set only for non serving rate groups (basic rates only)
+.IP Remarks
+.RE
+
+.RS 8
+.IP "Parameter: channel_limitation"      
+.RE
+.RS 16
+.IP Options
+0-1     
+.IP Description
+0: Disabled
+.br
+1: Enabled
+.br
+Disable/Enable whether to use the channel power limits from the ini file
+.IP Remarks
+.RE
+
+.RS 8
+.IP "Parameter: internal"        
+.RE
+.RS 16
+.IP Options
+Not Supported   
+.IP Description
+Internal Usage  
+.IP Remarks
+Default 0
+.RE
+
+.RS 8
+.IP "Parameter: gain_calculation_mode"
+.RE   
+.RS 16
+.IP Options
+0-2     
+.IP Description
+0: Normal - The BO (digital gain) and the analog gain (VGA/iPA/mixer) are being calculated 
+and set using FW defines
+.br
+1: Debug - No BO limits at max analog gain settings - at max gain combination there will 
+be no limits for the available BO (digital gain)
+.br
+2: Override - The analog gain and the digital gain are overridden, i.e. the use can choose 
+which of the analog gain combinations he wants to use (choose 1 of the 4 available 
+combinations) and the user can set the digital gain (digital BO as required)
+.br
+.IP Remarks
+Option 2 is supported starting from FW 8.9.0.0.20 and calibrator version 0.80
+.RE
+
+.RS 8
+.IP "Parameter: analog_gain_control_id"  
+.RE
+.RS 16
+.IP Options
+0-4     
+.IP Description
+Analog settings index   
+.IP Remarks
+For debug purpose only: This indicator is used to indicate the user's chosen analog gain
+.RE
+
+.RS 8
+.IP "Parameter: post_dpd_gain"   
+.RE
+.RS 16
+.IP Options
+Not Supported   
+.IP Description
+Not Supported   
+.IP Remarks
+Default 0
+.RE
+
+.\"END OF THE TABLE"
+
+**** Note: There are no default values.
+
+.IP Examples
+One example that matches the 'tune_channel' example above is:
+.br
+.nf
+.fam C
+.RS 10
+ calibrator wlan0 wl18xx_plt set_tx_power 16125 0 0 1 0 0 0 0 0 0 0 0
+.RE
+.fam T
+.fi
+
+.\"-----------------------------------------------------------------------------------------------
+
+.SH TX Continuous Test
+.IP Purpose
+The purpose of the TX Continuous test to perform continuous transmission to evaluate the WLAN transmission quality.
+.IP Method
+.br
+TX Continuous test sends packets of data to the air, where the data packets parameters are controlled by the PLT 
+command and include parameters such as transmitted rate, transmitted power, destination MAC address, etc\.\.\.
+.IP Syntax
+.br
+calibrator wlan0 wl18xx_plt start_tx <delay> <rate> <size> <mode> <data_type> <gi> <options1>
+<options2> <source MAC> <dest MAC> <channel_width>
+.br
+Where
+.PP
+.RS 10
+.IP <delay>
+.br
+Delay between packets in microseconds
+.IP <rate>
+.br
+Tx rate, supported rates are given in table below
+.IP <size>
+.br
+Size of data field in MPDU (in bytes, up to FW 8.9.0.0.19 and Calibrator 0.79: 0-2000, 
+from FW 8.9.0.0.20 and Calibrator 0.80: 0-4065)
+.IP <mode>
+.br
+Number of packets (0 - endless)
+.IP <data_type>
+.br
+Not Supported -  default 0
+.IP <gi>
+.br
+Guard interval
+.br
+0 – long
+.br
+1 - short
+.IP <options1>
+.br
+Unused Field   - default 0
+.IP <options2>
+.br
+Supported options according to bitmap:
+.br  
+Bit 1: Override CCA (FW 8.9.0.0.2: 0-Don't override, 1-Override)
+.br
+Bit 2: Fixed/Incremental Sequence Number (FW 8.9.0.0.20: 0-Incremental, 1-Fixed)
+.IP "<source MAC>"
+.br
+Source MAC address (xx:xx:xx:xx:xx:xx)
+.IP "<dest MAC>"
+.br
+Destination MAC address (xx:xx:xx:xx:xx:xx)
+<channel width> Channel width
+0 – 20 MHz
+1 – 40 MHz
+.PP
+.RE
+
+<rate> transmission rate:
+.PP
+-------------------------------------------------------------------------------------------
+
+.B
+11b				11g             	11n                     MIMO / 40M
+.br
+-------------------------------------------------------------------------------------------
+.TP
+.B
+0 = 1.0 Mbps 		4 = 6.0 Mbps    12 = 6.5 Mbps (MCS0)    20 = MCS8 / MCS4 at 40MHz
+
+.TP
+.B
+1 = 2.0 Mbps 		5 = 9.0 Mbps    13 = 13.0 Mbps (MCS1)   21 = MCS9 / MCS5 at 40MHz
+
+.TP
+.B
+2 = 5.0 Mbps 		6 = 12.0 Mbps   14 = 19.5 Mbps (MCS2)   22 = MCS10 / MCS6 at 40MHz
+
+.TP
+.B
+3 = 11.0 Mbps 		7 = 18.0 Mbps   15 = 26.0 Mbps (MCS3)   23 = MCS11 / MCS7 at 40MHz
+
+.TP
+.B
+				8 = 24.0 Mbps 	16 = 39.0Mbps (MCS4)	24 = MCS12 / MCS7,40MHz SGI
+
+.TP
+.B
+				9 = 36.0 Mbps 	17 = 52.0 Mbps  (MCS5)	25 = MCS13
+
+.TP
+.B
+				10 = 48.0 Mbps 18 = 58.5 Mbps (MCS6)	26 = MCS14
+
+.TP
+.B
+				11 = 54.0 Mbps 19 = 65.0 Mbps (MCS7)	27 = MCS15
+.RS 1
+---------------------------------------------------------------------------------------------
+.RE
+.PP
+Examples
+.PP
+The following is an example on how to use the start_tx command (and other commands) to generate packets.
+.PP
+To set the system in PLT mode, use the power_mode command. This command also loads the PLT firmware if not previously loaded.
+.PP
+The next step is to define channel, band, and bandwidth using the tune_channel command & set the desired TX_power.
+.PP
+Use the start_tx command to generate packets. It is important that each start_tx command is followed by the tx_stop command, 
+which stops the transmission. Finally, use the power_mode command to reset the system to operational mode.
+.RE
+.PP
+
+**** Note: Correct antenna setting are taken from loaded FW with INI settings. assure settings with:
+.PP
+cd /lib/firmware/ti-connectivity/
+.br
+wlconf \fB-i\fP /lib/firmware/ti-connectivity/wl18xx-conf.bin \fB--get\fP // list all system parameters 
+.br
+If needed set the correct num of Ant (example for \fB2x2.4G\fP(MIMO), 1x5G):
+.br
+wlconf \fB-i\fP /lib/firmware/ti-connectivity/wl18xx-conf.bin \fB--set\fP wl18xx.phy.number_of_assembled_ant2_4=0x02 // Set 2 Ant for MIMO
+.br
+wlconf \fB-i\fP /lib/firmware/ti-connectivity/wl18xx-conf.bin \fB--set\fP wl18xx.phy.number_of_assembled_ant5=0x01 // Set 1 Ant for 5G
+.br
+.PP
+
+
+.IP "(0) 11B"
+calibrator wlan0 wl18xx_plt stop_tx
+.br
+calibrator wlan0 wl18xx_plt tune_channel 7 0 1
+.br
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 7 0 0 0 1 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt start_tx 500 3 500 0 0 1 0 0 00:11:22:33:44:55 01:02:03:04:05:06 0
+.IP "(1) 20MHz"
+calibrator wlan0 wl18xx_plt stop_tx
+.br
+calibrator wlan0 wl18xx_plt tune_channel 7 0 1
+.br
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 7 0 0  0 1 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt start_tx 400 19 3000 0 0 1 0 0 00:11:22:33:44:55 01:02:03:04:05:06 0
+.IP "(2) 20MHz Primary Upper"
+calibrator wlan0 wl18xx_plt stop_tx
+.br
+calibrator wlan0 wl18xx_plt tune_channel 7 0 2
+.br
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 7 1 0  0 1 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt start_tx 400 19 3000 0 0 1 0 0 00:11:22:33:44:55 01:02:03:04:05:06 0
+.IP "(3) 20MHz Primary Lower"
+calibrator wlan0 wl18xx_plt stop_tx
+.br
+calibrator wlan0 wl18xx_plt tune_channel 7 0 3
+.br
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 7 \fB-1\fP 0  0 1 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt start_tx 400 19 3000 0 0 1 0 0 00:11:22:33:44:55 01:02:03:04:05:06 0
+.IP "(4) 40MHz Primary Upper"
+calibrator wlan0 wl18xx_plt stop_tx
+.br
+calibrator wlan0 wl18xx_plt tune_channel 7 0 2
+.br
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 7 1 0  0 1 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt start_tx 300 19 4000 0 0 1 0 0 00:11:22:33:44:55 01:02:03:04:05:06 1
+.IP "(5) 40MHz Primary Lower"
+calibrator wlan0 wl18xx_plt stop_tx
+.br
+calibrator wlan0 wl18xx_plt tune_channel 7 0 3
+.br
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 7 \fB-1\fP 0  0 1 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt start_tx 300 19 4000 0 0 1 0 0 00:11:22:33:44:55 01:02:03:04:05:06 1
+.IP "20MHz MIMO"
+calibrator wlan0 wl18xx_plt stop_tx
+.br
+calibrator wlan0 wl18xx_plt tune_channel 7 0 1
+.br
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 7 0 0 0 1 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt start_tx 300 27 4065 0 0 0 0 0 00:11:22:33:44:55 01:02:03:04:05:06 0
+.PP
+.IP "5GHz TX:"
+.IP "20MHz"
+calibrator wlan0 wl18xx_plt stop_tx
+.br
+calibrator wlan0 wl18xx_plt tune_channel 36 1 1
+.br
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 1 36 0 0 0 1 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt start_tx 400 19 3000 0 0 0 0 0 00:11:22:33:44:55 01:02:03:04:05:06 0
+.IP "40MHz Upper Primary"
+calibrator wlan0 wl18xx_plt stop_tx
+.br
+calibrator wlan0 wl18xx_plt tune_channel 36 1 2
+.br
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 1 36 1 0 0 1 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt start_tx 400 19 3000 0 0 0 0 0 00:11:22:33:44:55 01:02:03:04:05:06 1
+.PP
+
+.PP
+.SH TX Tone Test
+
+.IP Purpose
+.br
+The purpose of the tx_tone command is to create and transmit a carrier wave that can be modulated with a fixed audio tone.
+.IP Method
+.br
+The tx_tone command can be called using the following format:
+.nf
+.fam C
+                 calibrator wlan0 wl18xx_plt tx_tone_start <mode> <bin index> <antenna mode> <gain index> 
+
+.fam T
+.fi
+The tx_tone command can be stopped using the following format:
+.nf
+.fam C
+                 calibrator wlan0 wl18xx_plt tx_tone_stop 
+.fam T
+.fi
+.PP
+Where:
+.PP
+.RS 10
+.br
+.IP "<mode>"
+Possible values
+.br 
+0 - transmit silence
+.br 
+1 - transmit carrier feedthrough
+.br 
+2 - transmit single tone 
+.IP "<bin index>"
+Possible values from \fB-32\fP to +32 in OFDM bins 
+.IP "<antenna mode>"
+Possible values:
+.br
+0 - automatic antenna selection
+.br
+1. use TX chain 1
+.br
+2. use TX chain 2
+.IP "<gain index>"
+Possible values:
+.br
+2.4GHz
+.br
+- 0-4 
+.IP "5GHz"
+- 0-1
+.RE
+
+.PP
+Note:
+.RS
+1. Silence – TX chain is ON and operational but no signal is transmitted.
+.br
+2. Carrier Feed Through – TX chain is ON and operational and the LO leakage is transmitted.
+.br
+3. Single Tone – TX chain is ON and operational and a sinusoidal signal is transmitted with
+the following configuration options:
+.br
+       a. Analog Gain Step
+.br
+       b. Offset from carrier frequency (in OFDM bins)
+.PP
+.RE
+
+Examples
+.PP
+The following examples show how to use the tone test:
+.PP
+// 2.4GHz Transmit Silence
+.br
+calibrator wlan0 plt power_mode on
+.br
+calibrator wlan0 wl18xx_plt tune_channel 6 0 0
+.br
+calibrator wlan0 wl18xx_plt tx_tone_start 0 0 0 0
+.br
+calibrator wlan0 wl18xx_plt tx_tone_stop
+.PP
+// 2.4GHz Transmit Carrier Feed Through
+.br
+calibrator wlan0 plt power_mode on
+.br
+calibrator wlan0 wl18xx_plt tune_channel 6 0 0
+.br
+calibrator wlan0 wl18xx_plt tx_tone_start 1 0 0 0
+.br
+calibrator wlan0 wl18xx_plt tx_tone_stop
+.PP
+// 2.4GHz Transmit Single Tone
+.br
+calibrator wlan0 plt power_mode on
+.br
+calibrator wlan0 wl18xx_plt tune_channel 6 0 0
+.br
+calibrator wlan0 wl18xx_plt tx_tone_start 2 0 0 0
+.br
+calibrator wlan0 wl18xx_plt tx_tone_stop
+.PP
+// 2.4GHz Transmit Single Tone with \fB-5MHz\fP offset from the LO
+.br
+calibrator wlan0 plt power_mode on
+.br
+calibrator wlan0 wl18xx_plt tune_channel 6 0 0
+.br
+calibrator wlan0 wl18xx_plt tx_tone_start 2 \fB-5\fP 0 0
+.br
+calibrator wlan0 wl18xx_plt tx_tone_stop
+.PP
+// 2.4GHz Transmit Single Tone with \fB-5MHz\fP offset from the LO on lowest PA gain step
+.br
+calibrator wlan0 plt power_mode on
+.br
+calibrator wlan0 wl18xx_plt tune_channel 6 0 0
+.br
+calibrator wlan0 wl18xx_plt tx_tone_start 2 \fB-5\fP 0 4
+.br
+calibrator wlan0 wl18xx_plt tx_tone_stop
+.PP
+
+.\"===========================================================================
+
+.PP
+
+.SH ANT1 & ANT2 Assembly Validation for Production
+
+.IP Purpose 
+A simple, fast and cheap solution to assure both RF paths are functional. The target is to establish connection with 
+remote AP once using SISO scheme, first on ANT1 and later on ANT2.
+.IP Method
+.br
+The procedure should be very simple:
+.IP \(bu 3
+Download the WLAN driver, change wl_conf (INI) parameter that modified the main antenna to be (ANT2 SISO, BG1)
+.IP \(bu 3
+Establish connection with AP using BG2 (ANT2 - MIMO)
+.IP \(bu 3
+Configure the platform back to the original configuration
+.IP \(bu 3
+Establish Connection with AP after booting using the main antenna (ANT1 SISO, BG2)
+.IP \(bu 3
+The following sequence will be required for the testing procedure:
+
+.IP "* Configuration changed to BG1 primary #"
+.br
+sh sta_stop.sh
+.br
+sh unload_wlcore.sh
+.br
+cd /usr/sbin/wlconf
+.br
+"./wlconf \fB-i\fP /lib/firmware/ti-connectivity/wl18xx-conf.bin \fB-o\fP /lib/firmware/ti-connectivity/wl18xx-conf.bin \fB--set\fP wl18xx.phy.spare0=0x08"
+.br
+.IP " * Connected to the AP with SSID = \"AP_NAME\" using BG1 #"
+.br
+cd /usr/share/wl18xx
+.br
+sh load_wlcore.sh
+.br
+sh sta_start.sh
+.br
+sh sta_connect-ex.sh "AP_NAME"
+.IP "* Configuration changed back to BG2 primary #"
+.br
+sh sta_stop.sh
+.br
+sh unload_wlcore.sh
+.br
+cd /usr/sbin/wlconf
+.br
+"./wlconf \fB-i\fP /lib/firmware/ti-connectivity/wl18xx-conf.bin \fB-o\fP /lib/firmware/ti-connectivity/wl18xx-conf.bin \fB--set\fP wl18xx.phy.spare0=0x00"
+.PP
+Re-connect to AP with default SISO on ANT1.
+.PP
+
+.SH SEE ALSO
+wlconf(1)
+
+.SH AUTHORS
+Texas Instruments

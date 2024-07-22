@@ -1,0 +1,18 @@
+pru-pssp (6.4.0+git20240415+f3e3996-1) trixie; urgency=low
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Sat, 25 May 2024 17:02:28 +0000
+
+pru-pssp (6.3.0+git20240205+d09576fa-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Fix versioning
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Mon, 05 Feb 2024 14:30:00 +0000
+
+pru-pssp (6.1-1) UNRELEASED; urgency=low
+
+  * Initial release.
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Thu, 01 Jun 2023 04:31:20 +0000

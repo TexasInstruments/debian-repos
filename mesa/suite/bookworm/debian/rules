@@ -116,6 +116,11 @@ else
 	ifneq (,$(filter $(DEB_HOST_ARCH), $(VALGRIND_ARCHS)))
 		confflags_VALGRIND += -Dvalgrind=enabled
 	endif
+
+	# WSL supports only amd64 and arm64
+	ifneq (,$(filter amd64 arm64,$(DEB_HOST_ARCH)))
+		GALLIUM_DRIVERS += d3d12
+	endif
   endif
 
   # Build intel drivers on archs where libdrm-intel is installed
@@ -187,7 +192,6 @@ confflags += \
 	-Dgallium-omx=disabled \
 	-Db_ndebug=true \
 	-Dbuild-tests=true \
-	-Dtools=drm-shim \
 	$(confflags_DIRECT_RENDERING) \
 	$(confflags_GBM) \
 	$(confflags_DRI3) \
@@ -199,7 +203,6 @@ confflags += \
 	$(confflags_VALGRIND)
 
 override_dh_clean: regen_control
-	sed -i 's/-.*//' VERSION
 	rm -rf .pc
 	rm -rf build
 	rm -rf configure bin/config.guess bin/config.sub config.h.in
@@ -211,7 +214,6 @@ override_dh_clean: regen_control
 	dh_clean
 
 override_dh_auto_configure:
-	dpkg-parsechangelog | awk '/^Version:/ {print $$2}' > VERSION
 	$(buildflags) dh_auto_configure -- \
 		$(confflags)
 

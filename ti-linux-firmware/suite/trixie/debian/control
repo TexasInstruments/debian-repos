@@ -1,0 +1,100 @@
+Source: ti-linux-firmware
+Section: kernel
+Priority: optional
+Maintainer: Sai Sree Kartheek Adivi <s-adivi@ti.com>
+Build-Depends:
+ debhelper-compat (= 12),
+ ca-certificates,
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Vcs-Git: https://git.ti.com/git/processor-firmware/ti-linux-firmware.git
+Vcs-Browser: https://git.ti.com/cgit/processor-firmware/ti-linux-firmware
+Homepage: https://git.ti.com/cgit/processor-firmware/ti-linux-firmware
+
+Package: firmware-ti-ipc-am62
+Provides: firmware-ti-ipc
+Conflicts: firmware-ti-ipc
+Replaces: firmware-ti-ipc
+Depends: ${misc:Depends}
+Architecture: all
+Description: TI IPC firmware for AM62
+ This package provides TI IPC firmwares for remoteprocs on AM62
+
+Package: firmware-ti-ipc-am62p
+Provides: firmware-ti-ipc
+Conflicts: firmware-ti-ipc
+Replaces: firmware-ti-ipc
+Depends: ${misc:Depends}
+Architecture: all
+Description: TI IPC firmware for AM62P
+ This package provides TI IPC firmwares for remoteprocs on AM62P
+
+Package: firmware-ti-ipc-am62a
+Provides: firmware-ti-ipc
+Conflicts: firmware-ti-ipc
+Replaces: firmware-ti-ipc
+Depends: ${misc:Depends}
+Architecture: all
+Description: TI IPC firmware for AM62A
+ This package provides TI IPC firmwares for remoteprocs on AM62A
+
+Package: firmware-ti-ipc-am64
+Provides: firmware-ti-ipc
+Conflicts: firmware-ti-ipc
+Replaces: firmware-ti-ipc
+Depends: ${misc:Depends}
+Architecture: all
+Description: TI IPC firmware for AM64
+ This package provides TI IPC firmwares for remoteprocs on AM64
+
+Package: firmware-ti-ipc-j721e
+Provides: firmware-ti-ipc
+Conflicts: firmware-ti-ipc
+Replaces: firmware-ti-ipc
+Depends: ${misc:Depends}
+Architecture: all
+Description: TI IPC firmware for J721E
+ This package provides TI IPC firmwares for remoteprocs on J721E
+
+Package: firmware-ti-ipc-j721s2
+Provides: firmware-ti-ipc
+Conflicts: firmware-ti-ipc
+Replaces: firmware-ti-ipc
+Depends: ${misc:Depends}
+Architecture: all
+Description: TI IPC firmware for J721S2
+ This package provides TI IPC firmwares for remoteprocs on J721S2
+
+Package: firmware-ti-ipc-j784s4
+Provides: firmware-ti-ipc
+Conflicts: firmware-ti-ipc
+Replaces: firmware-ti-ipc
+Depends: ${misc:Depends}
+Architecture: all
+Description: TI IPC firmware for J784S4
+ This package provides TI IPC firmwares for remoteprocs on J784S4
+
+Package: firmware-cnm-wave
+Depends: ${misc:Depends}
+Architecture: all
+Description: Chips&Media codec firmware for TI Platforms
+ cnm wave521C combined decoder and encoder firmware for TI platforms
+
+Package: firmware-ti-prueth-am64
+Depends: ${misc:Depends}
+Architecture: all
+Description: PRU Ethernet firmware for AM64
+ This package provides PRU Ethernet firmware for AM64
+
+Package: firmware-ti-pruhsr-am64
+Depends: ${misc:Depends}
+Architecture: all
+Description: PRU HSR firmware for AM64
+ This package provides PRU HSR firmware for AM64
+
+Package: firmware-ti-prusw-am64
+Depends: ${misc:Depends}
+Architecture: all
+Description: PRU Ethernet Switch firmware for AM64
+ This package provides PRU Ethernet Switch firmware for AM64
+

@@ -1,0 +1,37 @@
+k3conf (0.3+git20240306+85a7433-1) trixie; urgency=low
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Sat, 25 May 2024 16:31:55 +0000
+
+k3conf (0.3+git20240207+cadf723-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Sun, 03 Mar 2024 14:22:05 +0530
+
+k3conf (0.3+git20240202+f4dd78a-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrew Davis <afd@ti.com>  Fri, 02 Feb 2024 15:50:12 +0000
+
+k3conf (0.2+git20230830+859e1cc-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+  * Add cmake dependency for latest upstream
+  * Remove trailing spaces and extra newlines
+
+ -- Andrew Davis <afd@ti.com>  Thu, 31 Aug 2023 10:24:24 -0500
+
+k3conf (0.2.53-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Andrew Davis <afd@ti.com>  Wed, 19 Jul 2023 09:13:12 +0000
+
+k3conf (0.1-90) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #1037141
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Wed, 14 Jun 2023 08:12:53 +0000

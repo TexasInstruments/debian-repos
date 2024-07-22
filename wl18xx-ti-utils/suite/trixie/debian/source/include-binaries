@@ -1,0 +1,9 @@
+calibrator.o
+ini.o
+misc_cmds.o
+nvs.o
+plt.o
+wl18xx_plt.o
+wlconf/crc32.o
+wlconf/main.o
+calibrator.1.ex

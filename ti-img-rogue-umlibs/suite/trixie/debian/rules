@@ -1,0 +1,44 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+# Disable dh_strip
+override_dh_strip:
+
+# Nothing to build for binary blob package
+override_dh_auto_build:
+
+override_dh_auto_install:
+	for plat in am62 am62p j721e j721s2 j784s4 ; do \
+		TARGET_PRODUCT=$${plat}_linux dh_auto_install --destdir=debian/ti-img-rogue-umlibs-$${plat}/ ; \
+		install -m755 -d debian/ti-img-rogue-umlibs-$${plat}/etc/udev/rules.d/ ; \
+		cp debian/99-pvr.rules debian/ti-img-rogue-umlibs-$${plat}/etc/udev/rules.d/ ; \
+		# Fixup lib for multiarch ; \
+		install -m755 -d debian/ti-img-rogue-umlibs-$${plat}/usr/lib/${DEB_HOST_MULTIARCH}/ ; \
+		mv debian/ti-img-rogue-umlibs-$${plat}/usr/lib/*.so* \
+		    debian/ti-img-rogue-umlibs-$${plat}/usr/lib/${DEB_HOST_MULTIARCH}/ ; \
+		# Split out firmware ; \
+		install -m755 -d debian/ti-img-rogue-firmware-$${plat}/lib/firmware/ ; \
+		mv debian/ti-img-rogue-umlibs-$${plat}/lib/firmware \
+		    debian/ti-img-rogue-firmware-$${plat}/lib/ ; \
+		# Split out tools ; \
+		install -m755 -d debian/ti-img-rogue-tools-$${plat}/usr/bin/ ; \
+		mv debian/ti-img-rogue-umlibs-$${plat}/usr/bin \
+		    debian/ti-img-rogue-tools-$${plat}/usr/ ; \
+	done
+
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+	for plat in am62 am62p j721e j721s2 j784s4 ; do \
+		sed -i s/'ti-img-rogue-umlibs-[^ ]*'/ti-img-rogue-umlibs-$${plat}/g debian/ti-img-rogue-tools-$${plat}.substvars ; \
+	done
+
+# Skip dwz since the umlibs binaries don't have any debug info.
+override_dh_dwz:
+

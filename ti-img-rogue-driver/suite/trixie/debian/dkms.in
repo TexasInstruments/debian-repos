@@ -1,0 +1,8 @@
+PACKAGE_NAME="ti-img-rogue-driver"
+PACKAGE_VERSION="#MODULE_VERSION#"
+BUILT_MODULE_NAME[0]="pvrsrvkm"
+DEST_MODULE_LOCATION[0]=/extra
+BUILT_MODULE_LOCATION[0]="binary_@SOC_NAME@_linux_wayland_release/target_aarch64/"
+AUTOINSTALL="YES"
+MAKE[0]="make KERNELDIR=${kernel_source_dir} BUILD=release PVR_BUILD_DIR=@SOC_NAME@_linux"
+CLEAN="make KERNELDIR=${kernel_source_dir} BUILD=release PVR_BUILD_DIR=@SOC_NAME@_linux clean"

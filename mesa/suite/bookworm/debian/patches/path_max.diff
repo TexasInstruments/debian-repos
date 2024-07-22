@@ -1,6 +1,6 @@
 --- a/src/util/tests/cache_test.cpp
 +++ b/src/util/tests/cache_test.cpp
-@@ -82,8 +82,8 @@ check_directories_created(void *mem_ctx,
+@@ -81,8 +81,8 @@ check_directories_created(void *mem_ctx,
  {
     bool sub_dirs_created = false;
  
@@ -21,12 +21,12 @@
 +#define PATH_MAX (4096)
 +#endif
 +
- static bool error = false;
+ bool error = false;
  
  static void
 --- a/src/gallium/auxiliary/pipe-loader/pipe_loader.c
 +++ b/src/gallium/auxiliary/pipe-loader/pipe_loader.c
-@@ -42,6 +42,10 @@
+@@ -43,6 +43,10 @@
  #define PATH_MAX _MAX_PATH
  #endif
  
