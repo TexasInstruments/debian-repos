@@ -1,9 +1,3 @@
-ti-linux-kernel (10.00.04-rt-1) bookworm; urgency=medium
-
-  * New upstream release.
-
- -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Mon, 01 Jul 2024 16:07:04 +0530
-
 ti-linux-kernel-rt (09.02.00.010-rt-1) bookworm; urgency=medium
 
   * New upstream release.

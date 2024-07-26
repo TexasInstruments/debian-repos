@@ -1,0 +1,31 @@
+Source: pru-pssp
+Section: libs
+Priority: optional
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.5.0
+Homepage: https://git.ti.com/cgit/pru-software-support-package/pru-software-support-package
+
+Package: libpru-pssp-dev
+Architecture: arm64
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Development files for PRU-PSSP v6.1.0
+ The PRU Software Support Package (PSSP) is an add-on package that provides a
+ framework and examples for developing software for the Programmable Real-time 
+ Unit  sub-system and Industrial Communication Sub-System (PRU-ICSS) in the 
+ supported TI processors.  The PRU-ICSS achieves deterministic, real-time 
+ processing, direct access to I/Os and meets ultra-low-latency requirements.
+ .
+ This package contains development files for PRU-PSSP.
+
+Package: pru-pssp
+Architecture: arm64
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Programmable Real-time Unit (PRU) Software Support Package v6.1.0
+ The PRU Software Support Package (PSSP) is an add-on package that provides a 
+ framework and examples for developing software for the Programmable Real-time 
+ Unit  sub-system and Industrial Communication Sub-System (PRU-ICSS) in the 
+ supported TI processors.  The PRU-ICSS achieves deterministic, real-time 
+ processing, direct access to I/Os and meets ultra-low-latency requirements.

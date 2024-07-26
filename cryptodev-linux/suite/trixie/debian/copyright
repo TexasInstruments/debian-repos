@@ -1,0 +1,93 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cryptodev-linux
+Upstream-Contact: <preferred name and address to reach the upstream project>
+Source: https://github.com/cryptodev-linux/cryptodev-linux
+
+Files:     .gitignore
+           AUTHORS
+           INSTALL
+           Makefile
+           NEWS
+           README.md
+           cipherapi.h
+           cryptlib.h
+           crypto/cryptodev.h
+           cryptodev_int.h
+           examples/aes-gcm.c
+           examples/aes-gcm.h
+           examples/aes-sha1.c
+           examples/aes-sha1.h
+           examples/aes.c
+           examples/aes.h
+           examples/sha-copy.c
+           examples/sha-copy.h
+           examples/sha.c
+           examples/sha.h
+           lib/Makefile
+           lib/benchmark.h
+           lib/combo.c
+           lib/hash.c
+           lib/hash.h
+           lib/main.c
+           lib/threshold.c
+           lib/threshold.h
+           tests/Makefile
+           tests/async_cipher.c
+           tests/async_hmac.c
+           tests/asynchelper.h
+           tests/cipher-aead-srtp.c
+           tests/cipher-aead.c
+           tests/cipher-gcm.c
+           tests/cipher.c
+           tests/cipher_comp.c
+           tests/hash_comp.c
+           tests/hmac.c
+           tests/hmac_comp.c
+           tests/openssl_wrapper.c
+           tests/openssl_wrapper.h
+           tests/testhelper.h
+           util.h
+           zc.h
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+Files:     tests/async_speed.c
+           tests/fullspeed.c
+           tests/hashcrypt_speed.c
+           tests/sha_speed.c
+           tests/speed.c
+Copyright: 2010-2011 Phil Sutter <phil.sutter@viprinet.com>
+License:   /usr/share/common-licenses/GPL-2
+
+Files:     cryptlib.c
+           util.c
+           zc.c
+Copyright: 2009-2013 Nikos Mavrogiannopoulos <nmav@gnutls.org>
+           2010 Michael Weiser
+           2010 Phil Sutter
+           2011 Maxim Levitsky
+           2011-2012 OpenSSL Software Foundation, Inc.
+License:   /usr/share/common-licenses/GPL-2
+
+Files:     ioctl.c
+           main.c
+Copyright: 2004 Michal Ludvig <mludvig@logix.net.nz>, SuSE Labs
+           2009-2013 Nikos Mavrogiannopoulos <nmav@gnutls.org>
+           2010 Phil Sutter
+License:   /usr/share/common-licenses/GPL-2
+
+Files:     authenc.c
+Copyright: 2011-2012 OpenSSL Software Foundation, Inc.
+License:   /usr/share/common-licenses/GPL-2
+
+Files:     lib/benchmark.c
+Copyright: 2011 Free Software Foundation, Inc.
+License:   /usr/share/common-licenses/GPL-3
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.
+
+#----------------------------------------------------------------------------
+# License file: COPYING
+# License: /usr/share/common-licenses/GPL-2

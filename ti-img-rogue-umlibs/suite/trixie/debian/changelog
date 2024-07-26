@@ -1,0 +1,27 @@
+ti-img-rogue-umlibs (24.1.6554834+git20240613+707e042-1) trixie; urgency=low
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Mon, 01 Jul 2024 16:39:50 +0000
+
+ti-img-rogue-umlibs (23.3.6512818+git20240131+0b9e642-1) unstable; urgency=medium
+
+  * Switch upstream to
+    https://git.ti.com/cgit/graphics/ti-img-rogue-umlibs/log/?h=linuxws/kirkstone/k6.1/23.3.6512818.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Wed, 14 Feb 2024 10:39:41 +0530
+
+ti-img-rogue-umlibs (23.2.6460340+git20230920+d054392-2) unstable; urgency=medium
+
+  * Avoid installing 99-pvr.rules file using 'install' file as it is already
+    handled by rules. Having an 'install' file results in conflict during
+    installation because all firmware, tools and utils packages will have the
+    same file to be installed.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Mon, 11 Dec 2023 13:40:41 +0530
+
+ti-img-rogue-umlibs (23.2.6460340+git20230920+d054392-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Andrew Davis <afd@ti.com>  Mon, 30 Oct 2023 11:14:20 -0500

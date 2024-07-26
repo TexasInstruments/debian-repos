@@ -1,0 +1,102 @@
+Ready Makefile for Debian packaging
+ Ready Makefile for Debian packaging by introducing "install" and
+"uninstall" targets. Also merge install instructions of wlconf/Makefile
+to the top-level one.
+ .
+ wl18xx-ti-utils (0.8-1) UNRELEASED; urgency=low
+ .
+   * Initial release. Closes: #nnnn
+     <nnnn is the bug number of your ITP>
+Author: root <>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2023-05-26
+
+--- wl18xx-ti-utils-0.8.orig/Makefile
++++ wl18xx-ti-utils-0.8/Makefile
+@@ -1,6 +1,6 @@
+ CC = $(CROSS_COMPILE)gcc
+ CFLAGS = -O2 -Wall
+-CFLAGS += -I$(NFSROOT)/usr/include -I$(NFSROOT)/include
++CFLAGS += -I$(NFSROOT)/usr/include -I$(NFSROOT)/include -I$(NFSROOT)/usr/include/libnl3
+ 
+ ifdef NLROOT
+ CFLAGS += -I${NLROOT}
+@@ -9,21 +9,25 @@ endif
+ LDFLAGS += -L$(NFSROOT)/lib
+ LIBS += -lm
+ 
+-ifeq ($(NLVER),3)
+-	CFLAGS+=-DCONFIG_LIBNL32
+-	LIBS += -lnl-3 -lnl-genl-3
+-else
+-	CFLAGS+=-DCONFIG_LIBNL20
+-	LIBS += -lnl -lnl-genl
+-endif
++CFLAGS+=-DCONFIG_LIBNL32
++LIBS += -lnl-3 -lnl-genl-3
++
++OBJS_CAL = nvs.o misc_cmds.o calibrator.o plt.o wl18xx_plt.o ini.o
++OBJS_WLCONF = wlconf/crc32.o wlconf/main.o
+ 
+-OBJS = nvs.o misc_cmds.o calibrator.o plt.o wl18xx_plt.o ini.o
++DESTDIR = debian/tmp
++prefix_cal = /usr/bin
++prefix_wlconf = /usr/sbin
+ 
+ %.o: %.c calibrator.h nl80211.h plt.h nvs_dual_band.h
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+-all: $(OBJS) 
+-	$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o calibrator
++wlconf/%.o: wlconf/%.c wlconf/wlconf.h wlconf/crc32.h wlconf/conf.h
++	$(CC) $(CFLAGS) $(WLCONF_DIR) -c -o $@ $<
++
++all: $(OBJS_CAL) $(OBJS_WLCONF) 
++	$(CC) $(LDFLAGS) $(OBJS_CAL) $(LIBS) -o calibrator
++	$(CC) $(LDFLAGS) $(OBJS_WLCONF) $(LIBS) -o wlconf/wlconf 
+ 
+ uim:
+ 	$(CC) $(CFLAGS) $(LDFLAGS) uim_rfkill/$@.c -o $@
+@@ -33,8 +37,28 @@ static: $(OBJS)
+ 
+ install:
+ 	@echo Copy files to $(NFSROOT)/usr/bin
+-	@cp -f ./calibrator $(NFSROOT)/usr/bin
+-	@chmod 755 $(NFSROOT)/usr/bin/calibrator
++	install -d $(DESTDIR)$(prefix_cal)
++	install -m 0755 calibrator $(DESTDIR)$(prefix_cal)
++	install -d $(DESTDIR)$(prefix_wlconf)
++	install -d $(DESTDIR)$(prefix_wlconf)/wlconf/
++	install -d $(DESTDIR)$(prefix_wlconf)/wlconf/official_inis/
++	install -d $(DESTDIR)/lib/firmware/ti-connectivity/
++
++	install -m 0755 wlconf/wlconf $(DESTDIR)$(prefix_wlconf)/wlconf
++	install -m 0755 wlconf/dictionary.txt $(DESTDIR)$(prefix_wlconf)/wlconf
++	install -m 0755 wlconf/struct.bin $(DESTDIR)$(prefix_wlconf)/wlconf/
++	install -m 0755 wlconf/default.conf $(DESTDIR)$(prefix_wlconf)/wlconf/
++	install -m 0755 wlconf/wl18xx-conf-default.bin $(DESTDIR)$(prefix_wlconf)/wlconf/
++	install -m 0755 wlconf/wl18xx-conf-default.bin $(DESTDIR)/lib/firmware/ti-connectivity/wl18xx-conf.bin
++	install -m 0755 wlconf/README $(DESTDIR)$(prefix_wlconf)/wlconf/
++	install -m 0755 wlconf/example.conf $(DESTDIR)$(prefix_wlconf)/wlconf/
++	install -m 0755 wlconf/example.ini $(DESTDIR)$(prefix_wlconf)/wlconf/
++	install -m 0755 wlconf/configure-device.sh $(DESTDIR)$(prefix_wlconf)/wlconf/
++	install -m 0755 wlconf/official_inis/* $(DESTDIR)$(prefix_wlconf)/wlconf/official_inis/
++
++uninstall:
++	-rm -f $(DESTDIR)$(prefix_cal)/calibrator
++	-rm -rf $(DESTDIR)$(prefix_wlconf)
+ 
+ clean:
+-	@rm -f *.o calibrator uim
++	@rm -f *.o calibrator

@@ -36,6 +36,14 @@ To build a package, the syntax is:
 ./run.sh <package-name>
 ```
 
+> [!NOTE]  
+> The default suite is `trixie`. To build for `bookworm`, set `DEB_SUITE` to 
+> `bookworm` in your environment
+>
+> ```sh
+> DEB_SUITE=bookworm ./run.sh <package-name>
+> ```
+
 This command carries out all necessary steps to build the package. The
 package and all related files are then stored in `build/<package-name>`.
 Note that certain packages may require root privileges.

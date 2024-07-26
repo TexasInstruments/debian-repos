@@ -1,0 +1,17 @@
+ti-linux-kernel (10.00.04-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Mon, 01 Jul 2024 16:06:04 +0530
+
+ti-linux-kernel (09.02.00.010-1) bookworm; urgency=medium
+
+  * New upstream release.
+
+ -- Sai Sree Kartheek Adivi <s-adivi@ti.com>  Sat, 25 May 2024 17:16:04 +0000
+
+ti-linux-kernel (09.02.00.009-1) bookworm; urgency=low
+
+  * Custom built Linux kernel.
+
+ -- Andrew Davis <afd@ti.com>  Fri, 02 Feb 2024 15:50:12 -0600

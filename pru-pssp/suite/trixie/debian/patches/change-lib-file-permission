@@ -1,0 +1,31 @@
+Install rpmsg_lib.lib as non-executable
+ .
+ pru-pssp (6.1-1) UNRELEASED; urgency=low
+ .
+   * Initial release.
+Author: Suhaas Joshi <s-joshi@ti.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2023-06-23
+
+--- pru-pssp-6.1.orig/lib/src/rpmsg_lib/Makefile
++++ pru-pssp-6.1/lib/src/rpmsg_lib/Makefile
+@@ -73,7 +73,7 @@ $(GEN_DIR)/%.object: %.c
+ 
+ install: $(TARGET)
+ 	install -d $(DESTDIR)$(prefix)
+-	install $(TARGET) $(DESTDIR)$(prefix)
++	install -m 644 $(TARGET) $(DESTDIR)$(prefix)
+ 
+ uninstall:
+ 	-rm -f $(DESTDIR)$(prefix)/$(TARGET)

@@ -8,7 +8,7 @@ if [ "$#" -eq 0 ]; then
     exit 1
 fi
 
-DEB_SUITE="${DEB_SUITE:-bookworm}"
+DEB_SUITE="${DEB_SUITE:-trixie}"
 
 topdir=$(git rev-parse --show-toplevel)
 projdir="${topdir}/$1"

@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+%:
+	dh $@
+
+# Nothing to clean, configure, or build (this all happens after installation using dkms)
+override_dh_auto_clean:
+override_dh_auto_configure:
+override_dh_auto_build:
+override_dh_auto_test:
+
+override_dh_auto_install:
+	for plat in am62 am62p j721e j721s2 j784s4 ; do \
+		INSTALLDIR=debian/${DEB_SOURCE}-$${plat}-dkms/usr/src/${DEB_SOURCE}-${DEB_VERSION_UPSTREAM} ; \
+		install -m755 -d $${INSTALLDIR} ; \
+		for f in build generated hwdefs include kernel lws services Makefile ; do \
+			cp -a $$f $${INSTALLDIR} ; \
+		done ; \
+	done
+
+override_dh_dkms:
+	for plat in am62 am62p j721e j721s2 j784s4 ; do \
+		sed "s/@SOC_NAME@/$${plat}/" debian/dkms.in > debian/ti-img-rogue-driver-$${plat}-dkms.dkms ; \
+	done
+	dh_dkms -V
