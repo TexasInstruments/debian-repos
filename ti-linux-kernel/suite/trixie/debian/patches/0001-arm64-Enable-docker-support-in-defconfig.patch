@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>0001-arm64-Enable-docker-support-in-defconfig.patch « linux-ti-staging « linux « recipes-kernel - edgeai/meta-edgeai - Unnamed repository; edit this file 'description' to name the repository.
+</title>
+<meta name='generator' content='cgit v1.2.3-54-g00ecf'/>
+<meta name='robots' content='index, nofollow'/>
+<link rel='stylesheet' type='text/css' href='/static_cgit/cgit.css'/>
+<script type='text/javascript' src='/cgit.js'></script>
+<link rel='shortcut icon' href='/favicon.ico'/>
+<link rel='alternate' title='Atom feed' href='https://git.ti.com/cgit/edgeai/meta-edgeai/atom/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch?h=scarthgap' type='application/atom+xml'/>
+<link rel='vcs-git' href='https://git.ti.com/git/edgeai/meta-edgeai.git' title='edgeai/meta-edgeai Git repository'/>
+<link rel='vcs-git' href='https://git.ti.com/cgit/edgeai/meta-edgeai' title='edgeai/meta-edgeai Git repository'/>
+<link rel='vcs-git' href='git://git.ti.com/edgeai/meta-edgeai.git' title='edgeai/meta-edgeai Git repository'/>
+<link rel='vcs-git' href='http://git.ti.com/git/edgeai/meta-edgeai.git' title='edgeai/meta-edgeai Git repository'/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.80, maximum-scale=2, minimum-scale=0.80, shrink-to-fit=no">
+<meta name="referrer" content="same-origin">
+<meta name="keywords" content="ti-linux-kernel, processor-sdk, processor-firmware, glsdk, android-sdk, android, sensortag, simplelink, sitara-linux, sitara-dss-files, wilink8, jacinto, device-ti, keystone-rtos, keystone-linux, hardware-ti">
+<meta name="description" content="Texas Instruments Git Open Source Repositories">
+<link rel="canonical" href="https://git.ti.com/cgit">
+<link rel="apple-touch-icon" type="image/x-icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/ticom.global.css">
+</head>
+<body>
+<header id="tiHeader" data-language="en-us">
+<div class="top">
+<ul>
+<li id="top_logo">
+<a id="en_US_logo_link" target="_blank" href="//www.ti.com" rel="noopener" aria-label="Texas Instruments Logo"></a>
+</li>
+</ul>
+</div>
+<div class="nav">
+<ul>
+<li><a href="/cgit" class="nav">CGit</a></li>
+<li><a href="/gitweb" class="nav">Gitweb</a></li>
+</ul>
+</div>
+</header>
+<main>
+<div id='cgit'><table id='header'>
+<tr>
+<td class='logo' rowspan='2'><a href='/cgit/'><img src='/static_cgit/cgit.png' alt='cgit logo'/></a></td>
+<td class='main'><a href='/cgit/'>index</a> : <a href='/cgit/edgeai/meta-edgeai/'>edgeai/meta-edgeai</a></td><td class='form'><form method='get'>
+<select name='h' onchange='this.form.submit();'>
+<option value='kirkstone'>kirkstone</option>
+<option value='kirkstone-next'>kirkstone-next</option>
+<option value='scarthgap' selected='selected'>scarthgap</option>
+<option value='scarthgap-next'>scarthgap-next</option>
+</select> <input type='submit' value='switch'/></form></td></tr>
+<tr><td class='sub'>Unnamed repository; edit this file 'description' to name the repository.
+</td><td class='sub right'>Scott (ITS) Allen</td></tr></table>
+<table class='tabs'><tr><td>
+<a href='/cgit/edgeai/meta-edgeai/about/?h=scarthgap'>about</a><a href='/cgit/edgeai/meta-edgeai/?h=scarthgap'>summary</a><a href='/cgit/edgeai/meta-edgeai/refs/?h=scarthgap'>refs</a><a href='/cgit/edgeai/meta-edgeai/log/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch?h=scarthgap'>log</a><a class='active' href='/cgit/edgeai/meta-edgeai/tree/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch?h=scarthgap'>tree</a><a href='/cgit/edgeai/meta-edgeai/commit/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch?h=scarthgap'>commit</a><a href='/cgit/edgeai/meta-edgeai/diff/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch?h=scarthgap'>diff</a><a href='/cgit/edgeai/meta-edgeai/stats/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch?h=scarthgap'>stats</a></td><td class='form'><form class='right' method='get' action='/cgit/edgeai/meta-edgeai/log/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch'>
+<input type='hidden' name='h' value='scarthgap'/><select name='qt'>
+<option value='grep'>log msg</option>
+<option value='author'>author</option>
+<option value='committer'>committer</option>
+<option value='range'>range</option>
+</select>
+<input class='txt' type='search' size='10' name='q' value=''/>
+<input type='submit' value='search'/>
+</form>
+</td></tr></table>
+<div class='path'>path: <a href='/cgit/edgeai/meta-edgeai/tree/?h=scarthgap'>root</a>/<a href='/cgit/edgeai/meta-edgeai/tree/recipes-kernel?h=scarthgap'>recipes-kernel</a>/<a href='/cgit/edgeai/meta-edgeai/tree/recipes-kernel/linux?h=scarthgap'>linux</a>/<a href='/cgit/edgeai/meta-edgeai/tree/recipes-kernel/linux/linux-ti-staging?h=scarthgap'>linux-ti-staging</a>/<a href='/cgit/edgeai/meta-edgeai/tree/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch?h=scarthgap'>0001-arm64-Enable-docker-support-in-defconfig.patch</a></div><div class='content'>blob: 71a44c90d6323345aed97a746880f461829aefdc (<a href='/cgit/edgeai/meta-edgeai/plain/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch?h=scarthgap'>plain</a>) (<a href='/cgit/edgeai/meta-edgeai/blame/recipes-kernel/linux/linux-ti-staging/0001-arm64-Enable-docker-support-in-defconfig.patch?h=scarthgap'>blame</a>)
+<table summary='blob content' class='blob'>
+<tr><td class='linenumbers'><pre><a id='n1' href='#n1'>1</a>
+<a id='n2' href='#n2'>2</a>
+<a id='n3' href='#n3'>3</a>
+<a id='n4' href='#n4'>4</a>
+<a id='n5' href='#n5'>5</a>
+<a id='n6' href='#n6'>6</a>
+<a id='n7' href='#n7'>7</a>
+<a id='n8' href='#n8'>8</a>
+<a id='n9' href='#n9'>9</a>
+<a id='n10' href='#n10'>10</a>
+<a id='n11' href='#n11'>11</a>
+<a id='n12' href='#n12'>12</a>
+<a id='n13' href='#n13'>13</a>
+<a id='n14' href='#n14'>14</a>
+<a id='n15' href='#n15'>15</a>
+<a id='n16' href='#n16'>16</a>
+<a id='n17' href='#n17'>17</a>
+<a id='n18' href='#n18'>18</a>
+<a id='n19' href='#n19'>19</a>
+<a id='n20' href='#n20'>20</a>
+<a id='n21' href='#n21'>21</a>
+<a id='n22' href='#n22'>22</a>
+<a id='n23' href='#n23'>23</a>
+<a id='n24' href='#n24'>24</a>
+<a id='n25' href='#n25'>25</a>
+<a id='n26' href='#n26'>26</a>
+<a id='n27' href='#n27'>27</a>
+<a id='n28' href='#n28'>28</a>
+<a id='n29' href='#n29'>29</a>
+<a id='n30' href='#n30'>30</a>
+<a id='n31' href='#n31'>31</a>
+<a id='n32' href='#n32'>32</a>
+<a id='n33' href='#n33'>33</a>
+<a id='n34' href='#n34'>34</a>
+<a id='n35' href='#n35'>35</a>
+<a id='n36' href='#n36'>36</a>
+<a id='n37' href='#n37'>37</a>
+<a id='n38' href='#n38'>38</a>
+<a id='n39' href='#n39'>39</a>
+<a id='n40' href='#n40'>40</a>
+<a id='n41' href='#n41'>41</a>
+<a id='n42' href='#n42'>42</a>
+<a id='n43' href='#n43'>43</a>
+<a id='n44' href='#n44'>44</a>
+<a id='n45' href='#n45'>45</a>
+<a id='n46' href='#n46'>46</a>
+<a id='n47' href='#n47'>47</a>
+<a id='n48' href='#n48'>48</a>
+<a id='n49' href='#n49'>49</a>
+<a id='n50' href='#n50'>50</a>
+<a id='n51' href='#n51'>51</a>
+<a id='n52' href='#n52'>52</a>
+<a id='n53' href='#n53'>53</a>
+<a id='n54' href='#n54'>54</a>
+<a id='n55' href='#n55'>55</a>
+<a id='n56' href='#n56'>56</a>
+<a id='n57' href='#n57'>57</a>
+<a id='n58' href='#n58'>58</a>
+<a id='n59' href='#n59'>59</a>
+<a id='n60' href='#n60'>60</a>
+<a id='n61' href='#n61'>61</a>
+<a id='n62' href='#n62'>62</a>
+<a id='n63' href='#n63'>63</a>
+<a id='n64' href='#n64'>64</a>
+<a id='n65' href='#n65'>65</a>
+<a id='n66' href='#n66'>66</a>
+<a id='n67' href='#n67'>67</a>
+<a id='n68' href='#n68'>68</a>
+<a id='n69' href='#n69'>69</a>
+<a id='n70' href='#n70'>70</a>
+<a id='n71' href='#n71'>71</a>
+<a id='n72' href='#n72'>72</a>
+<a id='n73' href='#n73'>73</a>
+<a id='n74' href='#n74'>74</a>
+<a id='n75' href='#n75'>75</a>
+<a id='n76' href='#n76'>76</a>
+<a id='n77' href='#n77'>77</a>
+<a id='n78' href='#n78'>78</a>
+<a id='n79' href='#n79'>79</a>
+<a id='n80' href='#n80'>80</a>
+<a id='n81' href='#n81'>81</a>
+<a id='n82' href='#n82'>82</a>
+<a id='n83' href='#n83'>83</a>
+<a id='n84' href='#n84'>84</a>
+<a id='n85' href='#n85'>85</a>
+<a id='n86' href='#n86'>86</a>
+<a id='n87' href='#n87'>87</a>
+<a id='n88' href='#n88'>88</a>
+<a id='n89' href='#n89'>89</a>
+<a id='n90' href='#n90'>90</a>
+<a id='n91' href='#n91'>91</a>
+<a id='n92' href='#n92'>92</a>
+<a id='n93' href='#n93'>93</a>
+<a id='n94' href='#n94'>94</a>
+<a id='n95' href='#n95'>95</a>
+<a id='n96' href='#n96'>96</a>
+<a id='n97' href='#n97'>97</a>
+<a id='n98' href='#n98'>98</a>
+<a id='n99' href='#n99'>99</a>
+<a id='n100' href='#n100'>100</a>
+<a id='n101' href='#n101'>101</a>
+<a id='n102' href='#n102'>102</a>
+<a id='n103' href='#n103'>103</a>
+<a id='n104' href='#n104'>104</a>
+<a id='n105' href='#n105'>105</a>
+<a id='n106' href='#n106'>106</a>
+<a id='n107' href='#n107'>107</a>
+<a id='n108' href='#n108'>108</a>
+<a id='n109' href='#n109'>109</a>
+<a id='n110' href='#n110'>110</a>
+<a id='n111' href='#n111'>111</a>
+<a id='n112' href='#n112'>112</a>
+<a id='n113' href='#n113'>113</a>
+<a id='n114' href='#n114'>114</a>
+<a id='n115' href='#n115'>115</a>
+<a id='n116' href='#n116'>116</a>
+<a id='n117' href='#n117'>117</a>
+<a id='n118' href='#n118'>118</a>
+<a id='n119' href='#n119'>119</a>
+<a id='n120' href='#n120'>120</a>
+<a id='n121' href='#n121'>121</a>
+<a id='n122' href='#n122'>122</a>
+<a id='n123' href='#n123'>123</a>
+<a id='n124' href='#n124'>124</a>
+<a id='n125' href='#n125'>125</a>
+<a id='n126' href='#n126'>126</a>
+<a id='n127' href='#n127'>127</a>
+<a id='n128' href='#n128'>128</a>
+<a id='n129' href='#n129'>129</a>
+<a id='n130' href='#n130'>130</a>
+<a id='n131' href='#n131'>131</a>
+<a id='n132' href='#n132'>132</a>
+<a id='n133' href='#n133'>133</a>
+<a id='n134' href='#n134'>134</a>
+<a id='n135' href='#n135'>135</a>
+<a id='n136' href='#n136'>136</a>
+<a id='n137' href='#n137'>137</a>
+<a id='n138' href='#n138'>138</a>
+<a id='n139' href='#n139'>139</a>
+<a id='n140' href='#n140'>140</a>
+<a id='n141' href='#n141'>141</a>
+<a id='n142' href='#n142'>142</a>
+<a id='n143' href='#n143'>143</a>
+<a id='n144' href='#n144'>144</a>
+<a id='n145' href='#n145'>145</a>
+<a id='n146' href='#n146'>146</a>
+<a id='n147' href='#n147'>147</a>
+<a id='n148' href='#n148'>148</a>
+<a id='n149' href='#n149'>149</a>
+<a id='n150' href='#n150'>150</a>
+<a id='n151' href='#n151'>151</a>
+<a id='n152' href='#n152'>152</a>
+<a id='n153' href='#n153'>153</a>
+<a id='n154' href='#n154'>154</a>
+<a id='n155' href='#n155'>155</a>
+<a id='n156' href='#n156'>156</a>
+<a id='n157' href='#n157'>157</a>
+<a id='n158' href='#n158'>158</a>
+<a id='n159' href='#n159'>159</a>
+<a id='n160' href='#n160'>160</a>
+<a id='n161' href='#n161'>161</a>
+<a id='n162' href='#n162'>162</a>
+<a id='n163' href='#n163'>163</a>
+<a id='n164' href='#n164'>164</a>
+<a id='n165' href='#n165'>165</a>
+<a id='n166' href='#n166'>166</a>
+<a id='n167' href='#n167'>167</a>
+<a id='n168' href='#n168'>168</a>
+<a id='n169' href='#n169'>169</a>
+<a id='n170' href='#n170'>170</a>
+<a id='n171' href='#n171'>171</a>
+<a id='n172' href='#n172'>172</a>
+<a id='n173' href='#n173'>173</a>
+<a id='n174' href='#n174'>174</a>
+<a id='n175' href='#n175'>175</a>
+<a id='n176' href='#n176'>176</a>
+<a id='n177' href='#n177'>177</a>
+<a id='n178' href='#n178'>178</a>
+<a id='n179' href='#n179'>179</a>
+<a id='n180' href='#n180'>180</a>
+<a id='n181' href='#n181'>181</a>
+<a id='n182' href='#n182'>182</a>
+<a id='n183' href='#n183'>183</a>
+<a id='n184' href='#n184'>184</a>
+<a id='n185' href='#n185'>185</a>
+</pre></td>
+<td class='lines'><pre><code>From c03c2002fc5ea79916ee4f5c42a39fe4d70fb8c7 Mon Sep 17 00:00:00 2001
+From: Chirag Shilwant &lt;c-shilwant@ti.com&gt;
+Date: Tue, 6 Jun 2023 21:57:48 +0530
+Subject: [PATCH] arm64: Enable docker support in defconfig
+
+The arm64 defconfig does not support the docker usecase.
+
+Enable the missing configuration options.
+
+The resulting .config was validated with [1].
+
+...
+
+Generally Necessary:
+- CONFIG_NAMESPACES: missing
+- CONFIG_NET_NS: missing
+- CONFIG_PID_NS: missing
+- CONFIG_IPC_NS: missing
+- CONFIG_UTS_NS: missing
+
+Optional Features:
+- CONFIG_USER_NS: missing
+- CONFIG_MEMCG_SWAP: missing (cgroup swap accounting is currently enabled)
+- CONFIG_BLK_DEV_THROTTLING: missing
+- CONFIG_CGROUP_NET_PRIO: missing
+- CONFIG_CFS_BANDWIDTH: missing
+- CONFIG_RT_GROUP_SCHED: missing
+- CONFIG_IP_NF_TARGET_REDIRECT: missing
+- CONFIG_IP_VS_NFCT: missing
+- CONFIG_IP_VS_PROTO_TCP: missing
+- CONFIG_IP_VS_PROTO_UDP: missing
+- CONFIG_EXT3_FS_XATTR: missing
+- CONFIG_EXT3_FS_POSIX_ACL: missing
+- CONFIG_EXT3_FS_SECURITY: missing (enable these ext3 configs if you are using ext3 as backing filesystem)
+- CONFIG_EXT4_FS_SECURITY: missing (enable these ext4 configs if you are using ext4 as backing filesystem)
+- Network Drivers:
+  - "overlay":
+      Optional (for encrypted networks):
+      - CONFIG_CRYPTO_SEQIV: missing
+      - CONFIG_XFRM: missing
+      - CONFIG_XFRM_USER: missing
+      - CONFIG_XFRM_ALGO: missing
+      - CONFIG_INET_ESP: missing
+...
+
+[1] https://raw.githubusercontent.com/moby/moby/v20.10.12/contrib/check-config.sh
+
+Signed-off-by: Chirag Shilwant &lt;c-shilwant@ti.com&gt;
+Signed-off-by: Vignesh Raghavendra &lt;vigneshr@ti.com&gt;
+---
+ arch/arm64/configs/defconfig | 31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
+
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index f8047c965270..f3c5421c90e7 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -17,6 +17,8 @@ CONFIG_IKCONFIG_PROC=y
+ CONFIG_NUMA_BALANCING=y
+ CONFIG_MEMCG=y
+ CONFIG_BLK_CGROUP=y
++CONFIG_CFS_BANDWIDTH=y
++CONFIG_RT_GROUP_SCHED=y
+ CONFIG_CGROUP_PIDS=y
+ CONFIG_CGROUP_FREEZER=y
+ CONFIG_CGROUP_HUGETLB=y
+@@ -25,7 +27,12 @@ CONFIG_CGROUP_DEVICE=y
+ CONFIG_CGROUP_CPUACCT=y
+ CONFIG_CGROUP_PERF=y
+ CONFIG_CGROUP_BPF=y
++CONFIG_NAMESPACES=y
++CONFIG_UTS_NS=y
++CONFIG_IPC_NS=y
+ CONFIG_USER_NS=y
++CONFIG_PID_NS=y
++CONFIG_NET_NS=y
+ CONFIG_SCHED_AUTOGROUP=y
+ CONFIG_BLK_DEV_INITRD=y
+ CONFIG_KALLSYMS_ALL=y
+@@ -120,6 +127,7 @@ CONFIG_KVM=y
+ CONFIG_JUMP_LABEL=y
+ CONFIG_MODULES=y
+ CONFIG_MODULE_UNLOAD=y
++CONFIG_BLK_DEV_THROTTLING=y
+ # CONFIG_CORE_DUMP_DEFAULT_ELF_HEADERS is not set
+ # CONFIG_COMPAT_BRK is not set
+ CONFIG_MEMORY_HOTPLUG=y
+@@ -127,6 +135,9 @@ CONFIG_MEMORY_HOTREMOVE=y
+ CONFIG_KSM=y
+ CONFIG_MEMORY_FAILURE=y
+ CONFIG_TRANSPARENT_HUGEPAGE=y
++CONFIG_XFRM=y
++CONFIG_XFRM_ALGO=y
++CONFIG_XFRM_USER=y
+ CONFIG_NET=y
+ CONFIG_PACKET=y
+ CONFIG_XDP_SOCKETS=y
+@@ -134,11 +145,16 @@ CONFIG_IP_MULTICAST=y
+ CONFIG_IP_PNP=y
+ CONFIG_IP_PNP_DHCP=y
+ CONFIG_IP_PNP_BOOTP=y
++CONFIG_INET_ESP=y
+ CONFIG_IPV6=m
+ CONFIG_NETFILTER=y
+ CONFIG_BRIDGE_NETFILTER=m
+ CONFIG_NF_CONNTRACK=m
+ CONFIG_NF_CONNTRACK_EVENTS=y
++CONFIG_NF_CONNTRACK_FTP=m
++CONFIG_NF_CONNTRACK_TFTP=m
++CONFIG_NF_NAT_FTP=m
++CONFIG_NF_NAT_TFTP=m
+ CONFIG_NETFILTER_XT_MARK=m
+ CONFIG_NETFILTER_XT_TARGET_CHECKSUM=m
+ CONFIG_NETFILTER_XT_TARGET_LOG=m
+@@ -146,11 +162,16 @@ CONFIG_NETFILTER_XT_MATCH_ADDRTYPE=m
+ CONFIG_NETFILTER_XT_MATCH_CONNTRACK=m
+ CONFIG_NETFILTER_XT_MATCH_IPVS=m
+ CONFIG_IP_VS=m
++CONFIG_IP_VS_PROTO_TCP=y
++CONFIG_IP_VS_PROTO_UDP=y
++CONFIG_IP_VS_RR=m
++CONFIG_IP_VS_NFCT=y
+ CONFIG_IP_NF_IPTABLES=m
+ CONFIG_IP_NF_FILTER=m
+ CONFIG_IP_NF_TARGET_REJECT=m
+ CONFIG_IP_NF_NAT=m
+ CONFIG_IP_NF_TARGET_MASQUERADE=m
++CONFIG_IP_NF_TARGET_REDIRECT=m
+ CONFIG_IP_NF_MANGLE=m
+ CONFIG_IP6_NF_IPTABLES=m
+ CONFIG_IP6_NF_FILTER=m
+@@ -176,6 +197,7 @@ CONFIG_NET_CLS_FW=m
+ CONFIG_NET_CLS_U32=m
+ CONFIG_CLS_U32_MARK=y
+ CONFIG_NET_CLS_FLOW=m
++CONFIG_NET_CLS_CGROUP=m
+ CONFIG_NET_CLS_FLOWER=m
+ CONFIG_NET_EMATCH=y
+ CONFIG_NET_EMATCH_CMP=m
+@@ -198,6 +220,7 @@ CONFIG_NET_ACT_GATE=m
+ CONFIG_HSR=m
+ CONFIG_QRTR_SMD=m
+ CONFIG_QRTR_TUN=m
++CONFIG_CGROUP_NET_PRIO=y
+ CONFIG_CAN=m
+ CONFIG_BT=m
+ CONFIG_BT_HIDP=m
+@@ -339,11 +362,15 @@ CONFIG_PATA_OF_PLATFORM=y
+ CONFIG_MD=y
+ CONFIG_BLK_DEV_MD=m
+ CONFIG_BLK_DEV_DM=m
++CONFIG_DM_THIN_PROVISIONING=m
+ CONFIG_DM_MIRROR=m
+ CONFIG_DM_ZERO=m
+ CONFIG_NETDEVICES=y
++CONFIG_DUMMY=m
+ CONFIG_MACVLAN=m
+ CONFIG_MACVTAP=m
++CONFIG_IPVLAN=m
++CONFIG_VXLAN=m
+ CONFIG_TUN=y
+ CONFIG_VETH=m
+ CONFIG_VIRTIO_NET=y
+@@ -1572,7 +1599,10 @@ CONFIG_HTE_TEGRA194=y
+ CONFIG_HTE_TEGRA194_TEST=m
+ CONFIG_EXT2_FS=y
+ CONFIG_EXT3_FS=y
++CONFIG_EXT3_FS_POSIX_ACL=y
++CONFIG_EXT3_FS_SECURITY=y
+ CONFIG_EXT4_FS_POSIX_ACL=y
++CONFIG_EXT4_FS_SECURITY=y
+ CONFIG_BTRFS_FS=m
+ CONFIG_BTRFS_FS_POSIX_ACL=y
+ CONFIG_FANOTIFY=y
+@@ -1600,6 +1630,7 @@ CONFIG_SECURITY=y
+ CONFIG_CRYPTO_USER=y
+ CONFIG_CRYPTO_TEST=m
+ CONFIG_CRYPTO_ECHAINIV=y
++CONFIG_CRYPTO_SEQIV=y
+ CONFIG_CRYPTO_MICHAEL_MIC=m
+ CONFIG_CRYPTO_ANSI_CPRNG=y
+ CONFIG_CRYPTO_USER_API_HASH=m
+-- 
+2.34.1
+
+</code></pre></td></tr></table>
+</div> <!-- class=content -->
+<div class='footer'>generated by <a target='blank' href='https://git.zx2c4.com/cgit/about/'>cgit v1.2.3</a> (<a target='blank' href='https://git-scm.com/'>git 2.39.2</a>)</div>
+</div>
+</main>
+
+<footer id="tiFooter">
+<div class="link">
+<p><a id="EN_US_footer_copyright" href="//www.ti.com/corp/docs/legal/copyright.shtml" target="_blank" rel="noopener">&copy; Copyright 1995-<span id="copyear">2023</span></a> Texas Instruments Incorporated. All rights reserved.<br/>
+<a id="EN_US_footer_trademarks" href="//www.ti.com/corp/docs/legal/trademark/trademrk.htm" target="_blank" rel="noopener">Trademarks</a> | <a id="EN_US_footer_privacy" href="//www.ti.com/corp/docs/legal/privacy.shtml" target="_blank" rel="noopener">Privacy policy</a> | <a id="EN_US_footer_termUse" href="//www.ti.com/corp/docs/legal/termsofuse.shtml" target="_blank" rel="noopener">Terms of use</a> | <a id="EN_US_footer_termSale" href="//www.ti.com/lsds/ti/legal/termsofsale.page" target="_blank" rel="noopener">Terms of sale</a></p>
+</div>
+</footer>
+
+<div>
+</div> <!-- id=cgit -->
+</body>
+</html>
