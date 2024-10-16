@@ -1,0 +1,15 @@
+Source: cc33calibrator
+Section: utils
+Priority: optional
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Build-Depends: debhelper-compat (= 13), libnl-3-dev, libnl-cli-3-dev, libnl-genl-3-dev, cmake, pkg-config
+Standards-Version: 4.5.0
+Homepage: https://www.ti.com/tool/CC33XX-SOFTWARE
+
+Package: cc33calibrator
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, libnl-3-dev
+Description: Tool to Configure CC33xx WLAN Devices
+ cc33calibrator is a tool provided by TI to manually control radio frontend of
+ the cc33xx device. This tool can also be used for the production line testing
+ of the radio.

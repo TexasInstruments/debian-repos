@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --sourcedir=cc33calibrator --buildsystem=cmake --builddir=cc33calibrator/build
+
+override_dh_missing:
+	dh_missing --list-missing
+
