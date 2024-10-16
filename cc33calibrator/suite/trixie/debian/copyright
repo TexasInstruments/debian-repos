@@ -1,0 +1,96 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cc33xx-utils
+Upstream-Contact: <preferred name and address to reach the upstream project>
+Source: https://git.ti.com/cgit/cc33xx-wlan/cc33xx-utils
+
+Files:     cc33calibrator/Makefile
+           cc33calibrator/README
+           cc33calibrator/calibrator.c
+           cc33calibrator/calibrator.h
+           cc33calibrator/plt.h
+           cc33conf/Makefile
+           cc33conf/cc33xx-conf.conf
+           cc33conf/cc33xx-conf.ini
+           cc33conf/cc33xxconf
+           cc33conf/crc32.o
+           cc33conf/default.conf
+           cc33conf/dictionary.txt
+           cc33conf/main.o
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+Files:     cc33calibrator/cc33xx_debug.c
+           cc33calibrator/cc33xx_debug.h
+           cc33calibrator/cc33xx_plt.c
+           cc33calibrator/cc33xx_plt.h
+           cc33conf/cc33conf.h
+           cc33conf/crc32.c
+           cc33conf/crc32.h
+           cc33conf/main.c
+Copyright: 2011-2021 Texas Instruments
+           2012 Texas Instruments Inc.
+License:   GPL-2.0
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ version 2 as published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ 02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     cc33calibrator/nl80211.h
+Copyright: 2006-2008 Johannes Berg <johannes@sipsolutions.net>
+           2008 Colin McCabe <colin@cozybit.com>
+           2008 Jouni Malinen <jouni.malinen@atheros.com>
+           2008 Luis Carlos Cobo <luisca@cozybit.com>
+           2008 Michael Buesch <mb@bu3sch.de>
+           2008 Michael Wu <flamingice@sourmilk.net>
+           2008-2009 Luis R. Rodriguez <lrodriguez@atheros.com>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Files:     cc33conf/README
+Copyright: 2012 Texas Instruments Inc.
+License:   GPL-2.0
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 as
+ published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301
+ USA
+ .
+ EXAMPLES
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     cc33conf/conf.h
+Copyright: 2023 Texas Instruments
+License:   __NO_LICENSE__
+
