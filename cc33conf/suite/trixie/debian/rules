@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --sourcedir=cc33conf
+
+override_dh_missing:
+	dh_missing --list-missing

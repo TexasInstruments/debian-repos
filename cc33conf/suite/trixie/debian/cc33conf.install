@@ -1,0 +1,7 @@
+cc33xxconf /usr/sbin/cc33conf/
+dictionary.txt /usr/sbin/cc33conf/
+default.conf /usr/sbin/cc33conf/
+README /usr/sbin/cc33conf/
+cc33xx-conf.conf /usr/sbin/cc33conf/
+cc33xx-conf.ini /usr/sbin/cc33conf/
+conf.h /usr/sbin/cc33conf/
