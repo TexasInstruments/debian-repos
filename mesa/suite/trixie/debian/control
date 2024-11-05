@@ -7,19 +7,21 @@ Standards-Version: 4.1.4
 Build-Depends:
  debhelper-compat (= 13),
  directx-headers-dev (>= 1.613.0) [linux-amd64 linux-arm64],
+ flatbuffers-compiler [linux-arm64],
  glslang-tools [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
- meson (>= 1.2.3),
+ meson (>= 1.4.0),
  quilt (>= 0.63-8.2~),
  pkgconf,
- libdrm-dev (>= 2.4.119),
+ libdrm-dev (>= 2.4.121),
  libx11-dev,
  libxxf86vm-dev,
  libexpat1-dev,
+ libflatbuffers-dev [linux-arm64],
  libsensors-dev [!hurd-any],
  libxfixes-dev,
  libxext-dev,
  libva-dev (>= 1.6.0) [linux-any] <!pkg.mesa.nolibva>,
- libvdpau-dev (>= 1.1.1) [linux-any],
+ libvdpau-dev (>= 1.5) [linux-any],
  libvulkan-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
  x11proto-dev,
  linux-libc-dev (>= 2.6.31) [linux-any],
@@ -34,29 +36,36 @@ Build-Depends:
  libxcb-sync-dev,
  libxrandr-dev,
  libxshmfence-dev (>= 1.1),
+ libxtensor-dev [linux-arm64],
  libzstd-dev,
  python3,
  python3-mako,
  python3-ply,
+ python3-yaml,
+ python3-pycparser [arm64 armhf],
  python3-setuptools,
  flex,
  bison,
  libelf-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
  libwayland-dev (>= 1.15.0) [linux-any],
  libwayland-egl-backend-dev (>= 1.15.0) [linux-any],
- llvm-17-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
- libclang-17-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
- libclang-cpp17-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
- libclc-17-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
- wayland-protocols (>= 1.24),
+ llvm-19-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
+ libclang-19-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
+ libclang-cpp19-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
+ libclc-19-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
+ libclc-19 [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
+ wayland-protocols (>= 1.34),
  zlib1g-dev,
  libglvnd-core-dev (>= 1.3.2),
  valgrind [amd64 arm64 armhf i386 mips64el powerpc ppc64 ppc64el s390x],
- rustc [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
+ rustc (>= 1.73) [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
+ rustfmt [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
  bindgen (>= 0.66.1~) [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
- llvm-spirv-17 [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
- libclc-17 [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
- libllvmspirvlib-17-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
+ cbindgen [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
+ llvm-spirv-19 [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
+ libllvmspirvlib-19-dev [amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
+ librust-paste-dev [amd64 arm64 armhf i386 ppc64 riscv64 x32],
+ librust-syn-dev (>= 2.0.48) [amd64 arm64 armhf i386 ppc64 riscv64 x32],
 Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/xorg-team/lib/mesa.git
 Vcs-Browser: https://salsa.debian.org/xorg-team/lib/mesa
@@ -128,6 +137,7 @@ Architecture: linux-any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+ mesa-libgallium (= ${binary:Version}),
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: generic buffer management API -- runtime
@@ -159,6 +169,7 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libgbm1 (= ${binary:Version}) [!hurd-any],
+ mesa-libgallium (= ${binary:Version}),
 Provides: libegl-vendor
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
@@ -217,6 +228,7 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libgl1-mesa-dri,
+ mesa-libgallium (= ${binary:Version}),
 Provides: libglx-vendor
 Breaks:
  libopengl-perl (<< 0.6704+dfsg-2),
@@ -381,7 +393,7 @@ Section: libs
 Architecture: amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
 Pre-Depends: ${misc:Pre-Depends}
 Depends:
- libclc-17,
+ libclc-19,
  ocl-icd-libopencl1 | libopencl1,
  ${shlibs:Depends},
  ${misc:Depends},
@@ -404,5 +416,18 @@ Multi-Arch: same
 Description: DRM shim libraries
  This package provides drm-shim libraries which can be used for testing DRM drivers when
  none exists on the host
+
+Package: mesa-libgallium
+Section: libs
+Architecture: linux-any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: shared infrastructure for Mesa drivers
+ This package contains libgallium, a private library shared between
+ multiple Mesa drivers. This library is an implementation detail of Mesa
+ and should not be used directly by user code.
 
 # vim: tw=0
