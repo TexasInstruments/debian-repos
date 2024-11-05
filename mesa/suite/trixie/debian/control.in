@@ -64,8 +64,6 @@ Build-Depends:
  cbindgen [@RUSTICL_ARCHS@],
  llvm-spirv-@LLVM_VERSION@ [@RUSTICL_ARCHS@],
  libllvmspirvlib-@LLVM_VERSION@-dev [@LLVM_ARCHS@],
- librust-paste-dev [@NVK_ARCHS@],
- librust-syn-dev (>= 2.0.48) [@NVK_ARCHS@],
 Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/xorg-team/lib/mesa.git
 Vcs-Browser: https://salsa.debian.org/xorg-team/lib/mesa
@@ -137,7 +135,6 @@ Architecture: linux-any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- mesa-libgallium (= ${binary:Version}),
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: generic buffer management API -- runtime
@@ -169,7 +166,6 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libgbm1 (= ${binary:Version}) [!hurd-any],
- mesa-libgallium (= ${binary:Version}),
 Provides: libegl-vendor
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
@@ -228,7 +224,6 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libgl1-mesa-dri,
- mesa-libgallium (= ${binary:Version}),
 Provides: libglx-vendor
 Breaks:
  libopengl-perl (<< 0.6704+dfsg-2),
@@ -416,18 +411,5 @@ Multi-Arch: same
 Description: DRM shim libraries
  This package provides drm-shim libraries which can be used for testing DRM drivers when
  none exists on the host
-
-Package: mesa-libgallium
-Section: libs
-Architecture: linux-any
-Depends:
- ${shlibs:Depends},
- ${misc:Depends},
-Pre-Depends: ${misc:Pre-Depends}
-Multi-Arch: same
-Description: shared infrastructure for Mesa drivers
- This package contains libgallium, a private library shared between
- multiple Mesa drivers. This library is an implementation detail of Mesa
- and should not be used directly by user code.
 
 # vim: tw=0
