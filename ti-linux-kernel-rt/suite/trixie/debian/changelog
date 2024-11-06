@@ -1,3 +1,9 @@
+ti-linux-kernel-rt (10.01.05-rt-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Wed, 06 Nov 2024 16:06:04 +0530
+
 ti-linux-kernel (10.00.07-rt-1) trixie; urgency=medium
 
   * New upstream release.
