@@ -1,3 +1,9 @@
+mesa (23.2.1+git20240304+0e75e7ded3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Tue, 12 Nov 2024 22:05:14 +0530
+
 mesa (23.2.1+git20240304+b12290126ba-1) unstable; urgency=medium
 
   * Switch upstream to https://gitlab.freedesktop.org/StaticRocket/mesa/-/commits/powervr/kirkstone/22.3.5
