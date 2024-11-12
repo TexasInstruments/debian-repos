@@ -1,0 +1,14 @@
+Source: cc33conf
+Section: utils
+Priority: optional
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Build-Depends: debhelper-compat (= 13), cmake
+Standards-Version: 4.5.0
+Homepage: https://www.ti.com/tool/CC33XX-SOFTWARE
+
+Package: cc33conf
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Tool to Configure CC33xx WLAN Devices
+ cc33conf is a tool provided by TI to configure CC33xx WLAN devices. It can be
+ used to change RF parameters and other features of target.

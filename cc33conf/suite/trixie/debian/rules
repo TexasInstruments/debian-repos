@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --sourcedir=cc33conf --buildsystem=cmake --builddir=cc33conf/build
+
+override_dh_missing:
+	dh_missing --list-missing

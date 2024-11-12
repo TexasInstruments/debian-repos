@@ -1,0 +1,51 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cc33xx-utils
+Upstream-Contact: Texas Instruments
+Source: https://git.ti.com/cgit/cc33xx-wlan/cc33xx-utils/
+
+Files:     cc33calibrator/calibrator.c
+           cc33calibrator/calibrator.h
+           cc33calibrator/cc33xx_debug.c
+           cc33calibrator/cc33xx_debug.h
+           cc33calibrator/cc33xx_plt.c
+           cc33calibrator/cc33xx_plt.h
+           cc33calibrator/plt.h
+           cc33conf/cc33conf.h
+           cc33conf/conf.h
+           cc33conf/crc32.c
+           cc33conf/crc32.h
+           cc33conf/main.c
+Copyright: 1998-2024 Texas Instruments Incorporated - https://www.ti.com/
+           2021 Texas Instruments
+License:   BSD-3-Clause
+
+Files:     cc33conf/README
+Copyright: 2012 Texas Instruments Inc.
+License:   BSD-3-Clause
+
+License:   BSD-3-Clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+ .
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ .
+ 3. Neither the name of the copyright holder nor the names of its
+    contributors may be used to endorse or promote products derived from
+    this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
