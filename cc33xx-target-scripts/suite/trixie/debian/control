@@ -1,0 +1,14 @@
+Source: cc33xx-target-scripts
+Section: utils
+Priority: optional
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.0
+Homepage: https://www.ti.com/tool/CC33XX-SOFTWARE
+
+Package: cc33xx-target-scripts
+Architecture: all
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Tool to Control and Configure cc33xx WLAN Devices
+ cc33xx-target-scripts installs scripts and configs required to control and
+ configure cc33xx WLAN devices.
