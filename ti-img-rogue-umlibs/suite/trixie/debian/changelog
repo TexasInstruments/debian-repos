@@ -1,3 +1,9 @@
+ti-img-rogue-umlibs (24.1.6554834+git20240613+ba93a3e-1) trixie; urgency=low
+
+  * New upstream release.
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Mon, 12 Nov 2024 16:39:50 +0000
+
 ti-img-rogue-umlibs (24.1.6554834+git20240613+707e042-1) trixie; urgency=low
 
   * New upstream release.

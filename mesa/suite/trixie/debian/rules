@@ -178,6 +178,7 @@ confflags += \
 	-Db_ndebug=true \
 	-Dbuild-tests=true \
 	-Dtools=drm-shim \
+	-Dgallium-pvr-alias=tidss \
 	$(confflags_DIRECT_RENDERING) \
 	$(confflags_GBM) \
 	$(confflags_DRI3) \
