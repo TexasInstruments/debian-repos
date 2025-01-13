@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --buildsystem=cmake --sourcedir=lv_port_linux
+
+# dh_missing causes failure if any file in source is not installed somewhere, since compat 13.
+# There is no need for this package to install _every_ file since they come from different demos.
+# Therefore override it to do nothing.
+override_dh_missing:
