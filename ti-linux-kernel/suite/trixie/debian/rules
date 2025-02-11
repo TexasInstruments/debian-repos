@@ -4,14 +4,14 @@ srctree ?= .
 
 build-indep:
 build-arch:
-	$(MAKE) -j 2 KERNELRELEASE=6.6.58-k3    ARCH=arm64 	KBUILD_BUILD_VERSION=1 -f $(srctree)/Makefile defconfig ti_arm64_prune.config
-	$(MAKE) -j 2 KERNELRELEASE=6.6.58-k3    ARCH=arm64 	KBUILD_BUILD_VERSION=1 -f $(srctree)/Makefile
+	$(MAKE) -j 2 KERNELRELEASE=6.12.9-k3    ARCH=arm64 	KBUILD_BUILD_VERSION=1 -f $(srctree)/Makefile defconfig ti_arm64_prune.config
+	$(MAKE) -j 2 KERNELRELEASE=6.12.9-k3    ARCH=arm64 	KBUILD_BUILD_VERSION=1 -f $(srctree)/Makefile
 
 build: build-arch
 
 binary-indep:
 binary-arch: build-arch
-	$(MAKE) -j 2 KERNELRELEASE=6.6.58-k3    ARCH=arm64 	KBUILD_BUILD_VERSION=1 -f $(srctree)/Makefile bindeb-pkg
+	$(MAKE) -j 2 KERNELRELEASE=6.12.9-k3    ARCH=arm64 	KBUILD_BUILD_VERSION=1 -f $(srctree)/Makefile bindeb-pkg
 
 clean:
 	rm -rf debian/files debian/linux-*
