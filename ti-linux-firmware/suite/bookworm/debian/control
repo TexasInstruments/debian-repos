@@ -47,6 +47,21 @@ Architecture: all
 Description: TI IPC firmware for AM64
  This package provides TI IPC firmwares for remoteprocs on AM64
 
+Package: firmware-ti-eth-j7200
+Depends: ${misc:Depends}
+Architecture: all
+Description: Ethernet firmware for J7200
+ This package provides Ethernet firmware for J7200
+
+Package: firmware-ti-ipc-j7200
+Provides: firmware-ti-ipc
+Conflicts: firmware-ti-ipc
+Replaces: firmware-ti-ipc
+Depends: ${misc:Depends}
+Architecture: all
+Description: TI IPC firmware for J7200
+ This package provides TI IPC firmwares for remoteprocs on J7200
+
 Package: firmware-ti-ipc-j721e
 Provides: firmware-ti-ipc
 Conflicts: firmware-ti-ipc
