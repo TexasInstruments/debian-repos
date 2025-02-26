@@ -1,3 +1,9 @@
+ti-linux-firmware (11.00.04-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Mon, 24 Feb 2025 16:57:57 +0000
+
 ti-linux-firmware (11.00.03-1) trixie; urgency=medium
 
   * New upstream release.
