@@ -1,0 +1,32 @@
+Source: ti-lvgl-demo
+Section: embedded
+Priority: optional
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Build-Depends: debhelper-compat (= 13),
+               cmake,
+               libdrm-dev,
+               libsdl2-dev,
+               libsdl2-image-dev,
+               mosquitto,
+               mosquitto-dev,
+               libmosquitto1,
+               libmosquittopp1,
+               libmosquitto-dev,
+               mosquitto-clients,
+               build-essential,
+               libasound2t64,
+               libasound2-dev,
+               alsa-tools,
+               alsa-utils,
+               wayland-protocols,
+               ca-certificates
+Standards-Version: 4.5.0
+Homepage: https://github.com/texasinstruments/ti-lvgl-demo
+
+Package: ti-lvgl-demo
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: High Resolution OOB Demo for TI Platforms
+ ti-lvgl-demo is a high resolution OOB demo for TI platforms.
+ It outputs its graphics directly to the framebuffer, thus can
+ be used even on devices that lack a GPU.

@@ -38,7 +38,7 @@ echo "Building " $package_name " version " $deb_version
 if [ ! -f "${builddir}/${package_full_ll}.orig.tar.gz" ]; then
     mkdir -p "${sourcedir}"
     if [ ! -d "${sourcedir}/${package_name}" ]; then
-        git clone "${git_repo}" "${sourcedir}/${package_name}"
+        git clone ${git_clone_args} "${git_repo}" "${sourcedir}/${package_name}"
     fi
     git -C "${sourcedir}/${package_name}" remote update
     git -C "${sourcedir}/${package_name}" checkout "${last_tested_commit}"

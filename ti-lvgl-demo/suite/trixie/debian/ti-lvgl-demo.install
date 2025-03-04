@@ -1,0 +1,4 @@
+bin/lvglsim /usr/bin
+lvgl/demos/high_res/assets /usr/share/ti-lvgl-demo
+lvgl/demos/high_res/slides /usr/share/ti-lvgl-demo
+certs/AmazonRootCA1.pem /usr/share/ti-lvgl-demo/cert
