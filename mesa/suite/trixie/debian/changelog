@@ -1,3 +1,9 @@
+mesa (24.0.1+git20250304+82e6a9293c-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Tue, 04 Mar 2025 22:05:14 +0530
+
 mesa (23.2.1+git20240304+0e75e7ded3-1) unstable; urgency=medium
 
   * New upstream release.
