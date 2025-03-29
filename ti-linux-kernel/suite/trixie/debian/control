@@ -3,7 +3,7 @@ Section: kernel
 Priority: optional
 Maintainer: Andrew Davis <afd@ti.com>
 Rules-Requires-Root: no
-Build-Depends: bc, rsync, kmod, cpio, bison, flex | flex:native , , libssl-dev:native
+Build-Depends: bc, rsync, kmod, cpio, bison, flex | flex:native , , libssl-dev:native, libcrypto++-dev:native, libelf-dev:native
 Homepage: https://www.kernel.org/
 
 Package: linux-image-6.12.17-k3
