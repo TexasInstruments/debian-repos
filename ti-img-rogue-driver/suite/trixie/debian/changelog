@@ -1,3 +1,9 @@
+ti-img-rogue-driver (24.2.6643903+git20250625+8eaff654a887-1) trixie; urgency=low
+
+  * New upstream release.
+
+ -- Suhaas Joshi <s-joshi@ti.com>  Mon, 23 Jun 2025 16:38:18 +0000
+
 ti-img-rogue-driver (24.2.6643903+git20250318+023eb5afde7e-1) trixie; urgency=low
 
   * New upstream release.
