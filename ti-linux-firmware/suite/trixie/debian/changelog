@@ -1,3 +1,51 @@
+ti-linux-firmware (11.01.16-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Mon, 29 Sep 2025 04:15:20 +0000
+
+ti-linux-firmware (11.01.15-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Fri, 26 Sep 2025 16:58:55 +0000
+
+ti-linux-firmware (11.01.14-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Fri, 19 Sep 2025 15:25:15 +0000
+
+ti-linux-firmware (11.01.13-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Fri, 12 Sep 2025 17:59:45 +0000
+
+ti-linux-firmware (11.01.12-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Tue, 02 Sep 2025 17:10:19 +0000
+
+ti-linux-firmware (11.01.11-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Fri, 22 Aug 2025 20:56:07 +0000
+
+ti-linux-firmware (11.01.10-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Tue, 19 Aug 2025 01:17:19 +0000
+
+ti-linux-firmware (11.01.06-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Wed, 06 Aug 2025 22:05:58 +0000
+
 ti-linux-firmware (11.01.05-1) trixie; urgency=medium
 
   * New upstream release.
