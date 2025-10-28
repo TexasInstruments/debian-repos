@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: cc33xx-fw
 Upstream-Contact: Suhaas Joshi <s-joshi@ti.com>
-Source: https://git.ti.com/git/cc33xx-wlan/cc33xx-fw.git
+Source: https://git.ti.com/cgit/cc33xx-wlan/cc33xx-fw
 
 Files:     *
 Copyright: Copyright (C) 2019 Texas Instruments Incorporated
