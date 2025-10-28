@@ -1,7 +1,7 @@
 Source: cryptodev-linux
 Section: kernel
 Priority: optional
-Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Maintainer: Jonas Wood <jw@ti.com>
 Build-Depends: debhelper-compat (= 13), dh-sequence-dkms
 Standards-Version: 4.5.1
 Homepage: http://cryptodev-linux.org

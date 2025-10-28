@@ -1,7 +1,7 @@
 Source: ti-linux-firmware
 Section: kernel
 Priority: optional
-Maintainer: Sai Sree Kartheek Adivi <s-adivi@ti.com>
+Maintainer: Jonas Wood <jw@ti.com>
 Build-Depends:
  debhelper-compat (= 12),
  ca-certificates,

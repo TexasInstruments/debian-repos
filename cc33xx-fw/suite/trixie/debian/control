@@ -1,7 +1,7 @@
 Source: cc33xx-fw
 Section: kernel
 Priority: optional
-Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Maintainer: Jonas Wood <jw@ti.com>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.1
 Homepage: https://git.ti.com/cgit/cc33xx-wlan/cc33xx-fw

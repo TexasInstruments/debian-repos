@@ -1,7 +1,7 @@
 Source: ti-lvgl-demo
 Section: embedded
 Priority: optional
-Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Maintainer: Jonas Wood <jw@ti.com>
 Build-Depends: debhelper-compat (= 13),
                cmake,
                libdrm-dev,

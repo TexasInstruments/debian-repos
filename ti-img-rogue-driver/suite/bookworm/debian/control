@@ -1,7 +1,7 @@
 Source: ti-img-rogue-driver
 Section: kernel
 Priority: optional
-Maintainer: Andrew Davis <afd@ti.com>
+Maintainer: Jonas Wood <jw@ti.com>
 Build-Depends:
  debhelper-compat (= 12),
  dh-sequence-dkms,

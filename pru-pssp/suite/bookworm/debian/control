@@ -1,7 +1,7 @@
 Source: pru-pssp
 Section: libs
 Priority: optional
-Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Maintainer: Jonas Wood <jw@ti.com>
 Build-Depends: debhelper-compat (= 12)
 Standards-Version: 4.5.0
 Homepage: https://git.ti.com/cgit/pru-software-support-package/pru-software-support-package

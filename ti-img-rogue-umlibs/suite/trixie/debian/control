@@ -1,7 +1,7 @@
 Source: ti-img-rogue-umlibs
 Section: graphics
 Priority: optional
-Maintainer: Andrew Davis <afd@ti.com>
+Maintainer: Jonas Wood <jw@ti.com>
 Build-Depends:
  debhelper-compat (= 12),
  ca-certificates,

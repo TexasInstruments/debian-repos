@@ -1,7 +1,7 @@
 Source: ti-linux-kernel-rt
 Section: kernel
 Priority: optional
-Maintainer: Andrew Davis <afd@ti.com>
+Maintainer: Jonas Wood <jw@ti.com>
 Rules-Requires-Root: no
 Build-Depends: bc, rsync, kmod, cpio, bison, flex | flex:native , , libssl-dev:native, libelf-dev:native, libcrypto++-dev:native
 Homepage: https://www.kernel.org/

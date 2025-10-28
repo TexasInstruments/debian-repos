@@ -1,7 +1,7 @@
 Source: k3conf
 Section: devel
 Priority: optional
-Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Maintainer: Jonas Wood <jw@ti.com>
 Build-Depends: debhelper-compat (= 13), cmake
 Standards-Version: 4.5.0
 Homepage: https://git.ti.com/cgit/k3conf/k3conf
