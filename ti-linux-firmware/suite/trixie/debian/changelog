@@ -1,3 +1,9 @@
+ti-linux-firmware (11.02.03-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Thu, 30 Oct 2025 16:49:03 +0000
+
 ti-linux-firmware (11.01.16-1) trixie; urgency=medium
 
   * New upstream release.
