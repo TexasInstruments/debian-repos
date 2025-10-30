@@ -1,3 +1,9 @@
+k3conf (0.3+git20251030+cba7dc1-1) trixie; urgency=low
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Thu, 30 Oct 2025 19:15:02 +0000
+
 k3conf (0.3+git20240306+85a7433-1) trixie; urgency=low
 
   * New upstream release.
