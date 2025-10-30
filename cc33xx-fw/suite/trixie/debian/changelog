@@ -1,3 +1,9 @@
+cc33xx-fw (1.7.0.323+git20250907+0b4f850-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Thu, 30 Oct 2025 19:36:31 +0000
+
 cc33xx-fw (1.7.0.120-1+git20241018+988ded3a-1) UNRELEASED; urgency=low
 
   * Initial release.
