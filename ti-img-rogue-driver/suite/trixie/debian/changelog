@@ -1,3 +1,9 @@
+ti-img-rogue-driver (25.3.6908880+git20260225+d241b0d5df40-1) trixie; urgency=low
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Wed, 04 Mar 2026 19:11:29 +0000
+
 ti-img-rogue-driver (24.2.6643903+git20250625+8eaff654a887-1) trixie; urgency=low
 
   * New upstream release.
