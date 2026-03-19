@@ -222,7 +222,7 @@ allpkg = $(shell dh_listpackages -a)
 
 override_dh_installchangelogs:
 	dh_installchangelogs -a
-	dh_installchangelogs -pmesa-common-dev
+	dh_installchangelogs -pmesa-pvr-common-dev
 
 override_dh_install:
 	# purge .la files
@@ -237,31 +237,31 @@ override_dh_install:
 	rm -f debian/tmp/usr/lib/*/libgrl.a
 
 	# Copy the hardlinked *_dri.so correctly.
-	install -m755 -d debian/libgl1-mesa-dri/usr/lib/${DEB_HOST_MULTIARCH}/dri/
+	install -m755 -d debian/libgl1-mesa-pvr-dri/usr/lib/${DEB_HOST_MULTIARCH}/dri/
 	mv debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/dri/*_dri.so \
-	   debian/libgl1-mesa-dri/usr/lib/${DEB_HOST_MULTIARCH}/dri/
+	   debian/libgl1-mesa-pvr-dri/usr/lib/${DEB_HOST_MULTIARCH}/dri/
 
   ifneq ($(DEB_HOST_ARCH_OS), hurd)
 	# Copy the hardlinked vdpau drivers correctly.
-	install -m755 -d debian/mesa-vdpau-drivers/usr/lib/${DEB_HOST_MULTIARCH}/vdpau/
+	install -m755 -d debian/mesa-pvr-vdpau-drivers/usr/lib/${DEB_HOST_MULTIARCH}/vdpau/
 	mv debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/vdpau/libvdpau*.so* \
-	   debian/mesa-vdpau-drivers/usr/lib/${DEB_HOST_MULTIARCH}/vdpau/
+	   debian/mesa-pvr-vdpau-drivers/usr/lib/${DEB_HOST_MULTIARCH}/vdpau/
 
     ifeq (,$(filter pkg.mesa.nolibva,$(DEB_BUILD_PROFILES)))
 	# Copy the hardlinked va drivers correctly.
-	install -m755 -d debian/mesa-va-drivers/usr/lib/${DEB_HOST_MULTIARCH}/dri/
+	install -m755 -d debian/mesa-pvr-va-drivers/usr/lib/${DEB_HOST_MULTIARCH}/dri/
 	mv debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/dri/*_drv_video.so \
-	   debian/mesa-va-drivers/usr/lib/${DEB_HOST_MULTIARCH}/dri/
+	   debian/mesa-pvr-va-drivers/usr/lib/${DEB_HOST_MULTIARCH}/dri/
     endif
   endif
 
   ifneq (,$(filter $(DEB_HOST_ARCH), $(RUSTICL_ARCHS)))
-	install -m755 -d debian/mesa-opencl-icd/etc/OpenCL/vendors
+	install -m755 -d debian/mesa-pvr-opencl-icd/etc/OpenCL/vendors
 	mv debian/tmp/etc/OpenCL/vendors/rusticl.icd \
-	   debian/mesa-opencl-icd/etc/OpenCL/vendors
-	install -m755 -d debian/mesa-opencl-icd/usr/lib/${DEB_HOST_MULTIARCH}/
+	   debian/mesa-pvr-opencl-icd/etc/OpenCL/vendors
+	install -m755 -d debian/mesa-pvr-opencl-icd/usr/lib/${DEB_HOST_MULTIARCH}/
 	mv debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/libRusticlOpenCL* \
-	   debian/mesa-opencl-icd/usr/lib/${DEB_HOST_MULTIARCH}/
+	   debian/mesa-pvr-opencl-icd/usr/lib/${DEB_HOST_MULTIARCH}/
   endif
 
 	dh_install -a

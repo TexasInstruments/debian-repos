@@ -1,3 +1,10 @@
+mesa (24.0.1+git20250304+82e6a9293c-2) unstable; urgency=medium
+
+  * Rename *mesa* to *mesa-pvr* in pkg names to avoid conflicts with
+    upstream Debian packages, especially on boards without GPU.
+
+ -- Jonas Wood <jw@ti.com>  Thu, 19 Mar 2026 15:42:52 +0000
+
 mesa (24.0.1+git20250304+82e6a9293c-1) unstable; urgency=medium
 
   * New upstream release.

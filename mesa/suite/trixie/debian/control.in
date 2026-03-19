@@ -62,13 +62,16 @@ Vcs-Git: https://salsa.debian.org/xorg-team/lib/mesa.git
 Vcs-Browser: https://salsa.debian.org/xorg-team/lib/mesa
 Homepage: https://mesa3d.org/
 
-Package: libxatracker2
+Package: libxatracker2-pvr
 Section: libs
 Architecture: amd64 i386 x32
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
 Pre-Depends: ${misc:Pre-Depends}
+Provides: libxatracker2 (= ${binary:Version})
+Conflicts: libxatracker2
+Replaces: libxatracker2
 Multi-Arch: same
 Description: X acceleration library -- runtime
  This package contains the XA (X acceleration) library.  It is used exclusively
@@ -76,12 +79,15 @@ Description: X acceleration library -- runtime
  .
  XA is intended to be used by the vmware driver for virtualized X acceleration.
 
-Package: libxatracker-dev
+Package: libxatracker-dev-pvr
 Section: libdevel
 Architecture: amd64 i386 x32
 Depends:
- libxatracker2 (= ${binary:Version}),
+ libxatracker2-pvr (= ${binary:Version}),
  ${misc:Depends},
+Provides: libxatracker-dev (= ${binary:Version})
+Conflicts: libxatracker-dev
+Replaces: libxatracker-dev
 Multi-Arch: same
 Description: X acceleration library -- development files
  This package contains the XA (X acceleration) library.  It is used exclusively
@@ -92,7 +98,7 @@ Description: X acceleration library -- development files
  This package provides the development environment for compiling programs
  against the xatracker library.
 
-Package: libd3dadapter9-mesa
+Package: libd3dadapter9-mesa-pvr
 Section: libs
 Architecture: @WINE_ARCHS@
 Depends:
@@ -100,20 +106,26 @@ Depends:
  ${misc:Depends},
  libudev1 [linux-any],
 Pre-Depends: ${misc:Pre-Depends}
+Provides: libd3dadapter9-mesa (= ${binary:Version})
+Conflicts: libd3dadapter9-mesa
+Replaces: libd3dadapter9-mesa
 Multi-Arch: same
 Description: state-tracker for Direct3D9
  This package contains a Gallium3D state tracker that implements the Direct3D9
  API.  Combined with the gallium-nine branch of Wine, programs using D3D9 can
  achieve native (or better) graphics performance.
 
-Package: libd3dadapter9-mesa-dev
+Package: libd3dadapter9-mesa-pvr-dev
 Section: libdevel
 Architecture: @WINE_ARCHS@
 Depends:
- libd3dadapter9-mesa (= ${binary:Version}),
+ libd3dadapter9-mesa-pvr (= ${binary:Version}),
  libudev1 [linux-any],
  ${misc:Depends},
 Pre-Depends: ${misc:Pre-Depends}
+Provides: libd3dadapter9-mesa-dev (= ${binary:Version})
+Conflicts: libd3dadapter9-mesa-dev
+Replaces: libd3dadapter9-mesa-dev
 Multi-Arch: same
 Description: state-tracker for Direct3D9 -- development files
  This package contains a Gallium3D state tracker that implements the Direct3D9
@@ -122,13 +134,16 @@ Description: state-tracker for Direct3D9 -- development files
  .
  Development files
 
-Package: libgbm1
+Package: libgbm1-pvr
 Section: libs
 Architecture: linux-any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
 Pre-Depends: ${misc:Pre-Depends}
+Provides: libgbm1 (= ${binary:Version})
+Conflicts: libgbm1
+Replaces: libgbm1
 Multi-Arch: same
 Description: generic buffer management API -- runtime
  This package contains the GBM buffer management library.  It provides a
@@ -136,12 +151,15 @@ Description: generic buffer management API -- runtime
  .
  GBM is intended to be used as a native platform for EGL on drm or openwfd.
 
-Package: libgbm-dev
+Package: libgbm-dev-pvr
 Section: libdevel
 Architecture: linux-any
 Depends:
- libgbm1 (= ${binary:Version}),
+ libgbm1-pvr (= ${binary:Version}),
  ${misc:Depends},
+Provides: libgbm-dev (= ${binary:Version})
+Conflicts: libgbm-dev
+Replaces: libgbm-dev
 Multi-Arch: same
 Description: generic buffer management API -- development files
  This package contains the GBM buffer management library.  It provides a
@@ -152,14 +170,16 @@ Description: generic buffer management API -- development files
  This package provides the development environment for compiling programs
  against the GBM library.
 
-Package: libegl-mesa0
+Package: libegl-mesa-pvr0
 Section: libs
 Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- libgbm1 (= ${binary:Version}) [!hurd-any],
-Provides: libegl-vendor
+ libgbm1-pvr (= ${binary:Version}) [!hurd-any],
+Provides: libegl-vendor, libegl-mesa0 (= ${binary:Version})
+Conflicts: libegl-mesa0
+Replaces: libegl-mesa0
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: free implementation of the EGL API -- Mesa vendor library
@@ -169,13 +189,16 @@ Description: free implementation of the EGL API -- Mesa vendor library
  .
  This package contains the Mesa vendor library for EGL.
 
-Package: libegl1-mesa-dev
+Package: libegl1-mesa-pvr-dev
 Section: libdevel
 Architecture: any
 Depends:
  libegl-dev,
  libglvnd-dev,
  ${misc:Depends},
+Provides: libegl1-mesa-dev (= ${binary:Version})
+Conflicts: libegl1-mesa-dev
+Replaces: libegl1-mesa-dev
 Multi-Arch: same
 Description: free implementation of the EGL API -- development files
  This package contains the development environment required for compiling
@@ -186,38 +209,46 @@ Description: free implementation of the EGL API -- development files
  This package provides the development environment for compiling programs
  against the EGL library.
 
-Package: libgles2-mesa-dev
+Package: libgles2-mesa-pvr-dev
 Section: oldlibs
 Architecture: any
 Depends:
  libgles-dev,
  libglvnd-dev,
  ${misc:Depends},
+Provides: libgles2-mesa-dev (= ${binary:Version})
+Conflicts: libgles2-mesa-dev
+Replaces: libgles2-mesa-dev
 Multi-Arch: same
 Description: transitional dummy package
  This is a transitional dummy package, it can be safely removed.
 
-Package: libglapi-mesa
+Package: libglapi-mesa-pvr
 Section: libs
 Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
 Pre-Depends: ${misc:Pre-Depends}
+Provides: libglapi-mesa (= ${binary:Version})
+Conflicts: libglapi-mesa
+Replaces: libglapi-mesa
 Multi-Arch: same
 Description: free implementation of the GL API -- shared library
  The Mesa GL API module is responsible for dispatching all the gl*
  functions. It is intended to be mainly used by both the libgles1-mesa
  and libgles2-mesa packages.
 
-Package: libglx-mesa0
+Package: libglx-mesa-pvr0
 Section: libs
 Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- libgl1-mesa-dri,
-Provides: libglx-vendor
+ libgl1-mesa-pvr-dri,
+Provides: libglx-vendor, libglx-mesa0 (= ${binary:Version})
+Conflicts: libglx-mesa0
+Replaces: libglx-mesa0
 Breaks:
  libopengl-perl (<< 0.6704+dfsg-2),
  glx-diversions (<< 0.8.4~),
@@ -238,7 +269,7 @@ Description: free implementation of the OpenGL API -- GLX vendor library
  This package does not include the modules themselves: these can be found
  in the libgl1-mesa-dri package.
 
-Package: libgl1-mesa-dri
+Package: libgl1-mesa-pvr-dri
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -246,6 +277,9 @@ Depends:
  libvulkan1 [@LLVM_ARCHS@],
  ${shlibs:Depends},
  ${misc:Depends}
+Provides: libgl1-mesa-dri (= ${binary:Version})
+Conflicts: libgl1-mesa-dri
+Replaces: libgl1-mesa-dri
 Multi-Arch: same
 Description: free implementation of the OpenGL API -- DRI modules
  This version of Mesa provides GLX and DRI capabilities: it is capable of
@@ -258,18 +292,21 @@ Description: free implementation of the OpenGL API -- DRI modules
  For a complete description of Mesa, please look at the
  libglx-mesa0 package.
 
-Package: libgl1-mesa-dev
+Package: libgl1-mesa-pvr-dev
 Section: oldlibs
 Architecture: any
 Depends:
  libgl-dev,
  libglvnd-dev,
  ${misc:Depends},
+Provides: libgl1-mesa-dev (= ${binary:Version})
+Conflicts: libgl1-mesa-dev
+Replaces: libgl1-mesa-dev
 Multi-Arch: same
 Description: transitional dummy package
  This is a transitional dummy package, it can be safely removed.
 
-Package: mesa-common-dev
+Package: mesa-pvr-common-dev
 Section: libdevel
 Architecture: any
 Depends:
@@ -279,20 +316,25 @@ Depends:
  libdrm-dev (>= 2.4.95) [!hurd-any],
  ${misc:Depends},
 Breaks: libegl1-mesa-dev (<< 18.2.5-2)
-Replaces: libegl1-mesa-dev (<< 18.2.5-2)
+Provides: mesa-common-dev (= ${binary:Version})
+Conflicts: mesa-common-dev
+Replaces: mesa-common-dev, libegl1-mesa-dev (<< 18.2.5-2)
 Multi-Arch: same
 Description: Developer documentation for Mesa
  This package includes the specifications for the Mesa-specific OpenGL
  extensions, the complete set of release notes and the development header
  files common to all Mesa packages.
 
-Package: libosmesa6
+Package: libosmesa-pvr6
 Section: libs
 Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
 Pre-Depends: ${misc:Pre-Depends}
+Provides: libosmesa6 (= ${binary:Version})
+Conflicts: libosmesa6
+Replaces: libosmesa6
 Multi-Arch: same
 Description: Mesa Off-screen rendering extension
  OSmesa is a Mesa extension that allows programs to render to an
@@ -302,16 +344,16 @@ Description: Mesa Off-screen rendering extension
  This package provides both 16-bit and 32-bit versions of the off-screen
  renderer which do not require external libraries to work.
 
-Package: libosmesa6-dev
+Package: libosmesa-pvr6-dev
 Section: libdevel
 Architecture: any
 Depends:
- libosmesa6 (= ${binary:Version}),
- mesa-common-dev (= ${binary:Version}) | libgl-dev,
+ libosmesa-pvr6 (= ${binary:Version}),
+ mesa-pvr-common-dev (= ${binary:Version}) | libgl-dev,
  ${misc:Depends},
-Conflicts: libosmesa-dev
-Replaces: libosmesa-dev
-Provides: libosmesa-dev
+Conflicts: libosmesa-dev, libosmesa6-dev
+Replaces: libosmesa-dev, libosmesa6-dev
+Provides: libosmesa-dev, libosmesa6-dev (= ${binary:Version})
 Multi-Arch: same
 Description: Mesa Off-screen rendering extension -- development files
  This package provides the required environment for developing programs
@@ -319,7 +361,7 @@ Description: Mesa Off-screen rendering extension -- development files
  .
  For more information on OSmesa see the libosmesa6 package.
 
-Package: mesa-va-drivers
+Package: mesa-pvr-va-drivers
 Section: libs
 Architecture: linux-any
 Build-Profiles: <!pkg.mesa.nolibva>
@@ -330,8 +372,10 @@ Enhances:
  libva2,
 Provides:
  va-driver,
+ mesa-va-drivers (= ${binary:Version})
 Breaks: vdpau-va-driver (<< 0.7.4-5)
-Replaces: vdpau-va-driver (<< 0.7.4-5)
+Conflicts: mesa-va-drivers
+Replaces: vdpau-va-driver (<< 0.7.4-5), mesa-va-drivers
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Description: Mesa VA-API video acceleration drivers
@@ -341,7 +385,7 @@ Description: Mesa VA-API video acceleration drivers
  .
  This package enables support for VA-API for some gallium drivers.
 
-Package: mesa-vdpau-drivers
+Package: mesa-pvr-vdpau-drivers
 Section: libs
 Architecture: linux-any
 Depends:
@@ -352,6 +396,9 @@ Enhances:
  libvdpau1,
 Provides:
  vdpau-driver,
+ mesa-vdpau-drivers (= ${binary:Version})
+Conflicts: mesa-vdpau-drivers
+Replaces: mesa-vdpau-drivers
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Description: Mesa VDPAU video acceleration drivers
@@ -361,7 +408,7 @@ Description: Mesa VDPAU video acceleration drivers
  .
  This package enables support for VDPAU for some gallium drivers.
 
-Package: mesa-vulkan-drivers
+Package: mesa-pvr-vulkan-drivers
 Section: libs
 Architecture: @LLVM_ARCHS@
 Pre-Depends: ${misc:Pre-Depends}
@@ -370,13 +417,15 @@ Depends:
  python3:any,
  ${shlibs:Depends},
  ${misc:Depends}
-Provides: vulkan-icd
+Provides: vulkan-icd, mesa-vulkan-drivers (= ${binary:Version})
+Conflicts: mesa-vulkan-drivers
+Replaces: mesa-vulkan-drivers
 Multi-Arch: same
 Description: Mesa Vulkan graphics drivers
  Vulkan is a low-overhead 3D graphics and compute API. This package
  includes Vulkan drivers provided by the Mesa project.
 
-Package: mesa-opencl-icd
+Package: mesa-pvr-opencl-icd
 Section: libs
 Architecture: @LLVM_ARCHS@
 Pre-Depends: ${misc:Pre-Depends}
@@ -385,7 +434,9 @@ Depends:
  ocl-icd-libopencl1 | libopencl1,
  ${shlibs:Depends},
  ${misc:Depends},
-Provides: opencl-icd
+Provides: opencl-icd, mesa-opencl-icd (= ${binary:Version})
+Conflicts: mesa-opencl-icd
+Replaces: mesa-opencl-icd
 Multi-Arch: same
 Description: free implementation of the OpenCL API -- ICD runtime
  This package contains the mesa implementation of the OpenCL (Open Compute
@@ -393,13 +444,16 @@ Description: free implementation of the OpenCL API -- ICD runtime
  provides a standardized interface for computational analysis on graphical
  processing units.
 
-Package: mesa-drm-shim
+Package: mesa-pvr-drm-shim
 Section: libs
 Architecture: amd64 arm64 armel armhf i386 mips64el powerpc ppc64 ppc64el s390x sparc64
 Pre-Depends: ${misc:Pre-Depends}
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+Provides: mesa-drm-shim (= ${binary:Version})
+Conflicts: mesa-drm-shim
+Replaces: mesa-drm-shim
 Multi-Arch: same
 Description: DRM shim libraries
  This package provides drm-shim libraries which can be used for testing DRM drivers when
