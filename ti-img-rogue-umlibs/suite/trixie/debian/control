@@ -41,7 +41,13 @@ Replaces: ti-img-rogue-umlibs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- ti-img-rogue-driver-am62-dkms
+ ti-img-rogue-driver-am62-dkms,
+ libegl-mesa-pvr0,
+ libgbm1-pvr,
+ libgl1-mesa-pvr-dri,
+ libglapi-mesa-pvr,
+ libglx-mesa-pvr0,
+ mesa-pvr-vulkan-drivers
 Architecture: arm64
 Description: Rogue GPU userspace libraries for AM62
  Rogue GPU userspace libraries for AM62
@@ -75,7 +81,13 @@ Replaces: ti-img-rogue-umlibs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- ti-img-rogue-driver-am62p-dkms
+ ti-img-rogue-driver-am62p-dkms,
+ libegl-mesa-pvr0,
+ libgbm1-pvr,
+ libgl1-mesa-pvr-dri,
+ libglapi-mesa-pvr,
+ libglx-mesa-pvr0,
+ mesa-pvr-vulkan-drivers
 Architecture: arm64
 Description: Rogue GPU userspace libraries for AM62P
  Rogue GPU userspace libraries for AM62P
@@ -109,7 +121,13 @@ Replaces: ti-img-rogue-umlibs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- ti-img-rogue-driver-j721e-dkms
+ ti-img-rogue-driver-j721e-dkms,
+ libegl-mesa-pvr0,
+ libgbm1-pvr,
+ libgl1-mesa-pvr-dri,
+ libglapi-mesa-pvr,
+ libglx-mesa-pvr0,
+ mesa-pvr-vulkan-drivers
 Architecture: arm64
 Description: Rogue GPU userspace libraries for J721e
  Rogue GPU userspace libraries for J721e
@@ -143,7 +161,13 @@ Replaces: ti-img-rogue-umlibs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- ti-img-rogue-driver-j721s2-dkms
+ ti-img-rogue-driver-j721s2-dkms,
+ libegl-mesa-pvr0,
+ libgbm1-pvr,
+ libgl1-mesa-pvr-dri,
+ libglapi-mesa-pvr,
+ libglx-mesa-pvr0,
+ mesa-pvr-vulkan-drivers
 Architecture: arm64
 Description: Rogue GPU userspace libraries for J721s2
  Rogue GPU userspace libraries for J721s2
@@ -177,7 +201,13 @@ Replaces: ti-img-rogue-umlibs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- ti-img-rogue-driver-j784s4-dkms
+ ti-img-rogue-driver-j784s4-dkms,
+ libegl-mesa-pvr0,
+ libgbm1-pvr,
+ libgl1-mesa-pvr-dri,
+ libglapi-mesa-pvr,
+ libglx-mesa-pvr0,
+ mesa-pvr-vulkan-drivers
 Architecture: arm64
 Description: Rogue GPU userspace libraries for J784s4
  Rogue GPU userspace libraries for J784s4
