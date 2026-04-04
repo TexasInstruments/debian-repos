@@ -1,0 +1,26 @@
+Source: edgeai-apps-utils
+Section: libs
+Priority: optional
+Maintainer: Suhaas Joshi <s-joshi@ti.com>
+Build-Depends: cmake, debhelper-compat (= 13)
+Standards-Version: 4.5.1
+Homepage: https://git.ti.com/cgit/edgeai/edgeai-apps-utils
+Rules-Requires-Root: no
+
+Package: libedgeai-apps-utils
+Section: libs
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: EdgeAI Apps Utils
+ EdgeAI Apps Utils implements ARMv8 neon optimized utility functions
+ and also NV12 post process utility functions.
+
+Package: libedgeai-apps-utils-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends} libedgeai-apps-utils
+Description: EdgeAI Apps Utils
+ EdgeAI Apps Utils implements ARMv8 neon optimized utility functions
+ and also NV12 post process utility functions.
+ .
+ This package contains development files for libedgeai-apps-utils.
