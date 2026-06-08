@@ -92,6 +92,12 @@ Architecture: all
 Description: PRU HSR firmware for AM64
  This package provides PRU HSR firmware for AM64
 
+Package: firmware-ti-pruprp-am64
+Depends: ${misc:Depends}
+Architecture: all
+Description: PRU PRP firmware for AM64
+ This package provides PRU PRP firmware for AM64
+
 Package: firmware-ti-prusw-am64
 Depends: ${misc:Depends}
 Architecture: all

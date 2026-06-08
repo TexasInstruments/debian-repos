@@ -1,0 +1,6 @@
+/lib/firmware/ti-pruss/am64x-sr2-pru0-pruprp-fw.elf /lib/firmware/am64x-sr2-pru0-pruprp-fw.elf
+/lib/firmware/ti-pruss/am64x-sr2-pru1-pruprp-fw.elf /lib/firmware/am64x-sr2-pru1-pruprp-fw.elf
+/lib/firmware/ti-pruss/am64x-sr2-rtu0-pruprp-fw.elf /lib/firmware/am64x-sr2-rtu0-pruprp-fw.elf
+/lib/firmware/ti-pruss/am64x-sr2-rtu1-pruprp-fw.elf /lib/firmware/am64x-sr2-rtu1-pruprp-fw.elf
+/lib/firmware/ti-pruss/am64x-sr2-txpru0-pruprp-fw.elf /lib/firmware/am64x-sr2-txpru0-pruprp-fw.elf
+/lib/firmware/ti-pruss/am64x-sr2-txpru1-pruprp-fw.elf /lib/firmware/am64x-sr2-txpru1-pruprp-fw.elf
