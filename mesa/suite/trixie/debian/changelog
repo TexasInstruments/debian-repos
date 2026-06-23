@@ -1,3 +1,9 @@
+mesa (25.2.8+git20260619+0cb5bad52580-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Tue, 23 Jun 2026 20:21:31 +0000
+
 mesa (24.0.1+git20250304+82e6a9293c-2) unstable; urgency=medium
 
   * Rename *mesa* to *mesa-pvr* in pkg names to avoid conflicts with

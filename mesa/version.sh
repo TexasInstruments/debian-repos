@@ -1,3 +1,3 @@
 #!/bin/bash
 
-export git_repo="https://gitlab.freedesktop.org/StaticRocket/mesa.git"
+export git_repo="https://github.com/TexasInstruments/mesa.git"
