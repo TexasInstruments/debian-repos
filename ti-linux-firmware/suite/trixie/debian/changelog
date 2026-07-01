@@ -1,3 +1,9 @@
+ti-linux-firmware (12.01.00.03-1) trixie; urgency=medium
+
+  * New upstream release.
+
+ -- Jonas Wood <jw@ti.com>  Wed, 01 Jul 2026 21:05:00 +0000
+
 ti-linux-firmware (12.00.00.07-2) trixie; urgency=medium
 
   * Bug fix: Update naming 65->64 for 64 PRU ETH/HSR/SW
