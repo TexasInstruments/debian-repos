@@ -1,0 +1,6 @@
+This package installs to two locations:
+
+1. the .so file is installed in /usr/lib/
+2. the includes are installed in /usr/include/edgeai-apps-utils/
+
+Further, the entire source code is cloned in /opt/.
