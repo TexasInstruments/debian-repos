@@ -3,5 +3,8 @@
 %:
 	dh $@ --sourcedir=cc33conf --buildsystem=cmake --builddir=cc33conf/build
 
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+
 override_dh_missing:
 	dh_missing --list-missing

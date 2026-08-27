@@ -1,4 +1,4 @@
-cc33xxconf /usr/sbin/cc33conf/
+usr/bin/cc33xxconf /usr/sbin/cc33conf/
 dictionary.txt /etc/cc33conf/
 default.conf /etc/cc33conf/
 README /usr/share/cc33conf/
