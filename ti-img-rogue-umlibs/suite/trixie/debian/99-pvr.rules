@@ -1,2 +1,0 @@
-# Rules for PowerVR device nodes
-KERNEL=="pvr_sync", SUBSYSTEM=="misc", MODE="0660", OWNER="root", GROUP="video"

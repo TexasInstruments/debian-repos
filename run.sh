@@ -15,6 +15,7 @@ projdir="${topdir}/$1"
 sourcedir="${topdir}/build/sources"
 builddir="${topdir}/build/${DEB_SUITE}/$1"
 debcontroldir="${projdir}/suite/${DEB_SUITE}"
+debcommoncontroldir="${projdir}/suite/common"
 
 if [ ! -d ${projdir} ]; then
     echo "This project does not exist."
@@ -53,8 +54,13 @@ if [ ! -f "${builddir}/${package_name}_${deb_version}.dsc" ]; then
     # Extract original source tarball
     tar -xzmf "${builddir}/${package_full_ll}.orig.tar.gz" -C "${builddir}"
 
-    # Deploy our Debian control files
-    cp -rv "${debcontroldir}/debian" "${builddir}/${package_full}/"
+    # Deploy the default Debian control files, then apply suite overrides.
+    if [ -d "${debcommoncontroldir}/debian" ]; then
+        cp -av "${debcommoncontroldir}/debian" \
+            "${builddir}/${package_full}/"
+    fi
+    cp -av "${debcontroldir}/debian" \
+        "${builddir}/${package_full}/"
 
     # Build source package
     (cd "${builddir}/${package_full}" && dpkg-source -b .)

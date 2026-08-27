@@ -1,7 +1,0 @@
-pru-pssp: binary-from-other-architecture
-pru-pssp: statically-linked-binary
-pru-pssp: unstripped-binary-or-object
-pru-pssp: initial-upload-closes-no-bugs
-
-# the entire text is already included in the copyright file
-pru-pssp: copyright-refers-to-deprecated-bsd-license-file

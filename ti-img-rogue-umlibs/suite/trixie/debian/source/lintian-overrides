@@ -1,3 +1,0 @@
-# This is non-free firmware (--> restricted component)
-ti-img-rogue-umlibs source: source-is-missing *
-ti-img-rogue-umlibs source: source-contains-prebuilt-binary *
