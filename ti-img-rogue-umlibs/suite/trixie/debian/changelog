@@ -1,3 +1,9 @@
+ti-img-rogue-umlibs (26.1.6967606+git20260515+a59e0e6b92df-3) trixie; urgency=medium
+
+  * Remove *mesa*dev* pkgs from ti-img-rogue-umlibs depends list.
+
+ -- Jonas Wood <jw@ti.com>  Thu, 27 Aug 2026 20:37:13 +0000
+
 ti-img-rogue-umlibs (26.1.6967606+git20260515+a59e0e6b92df-2) trixie; urgency=medium
 
   * Update *mesa-pvr* naming scheme in ti-img-rogue-umlibs depends list following mesa v25.2.8.
