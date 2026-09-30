@@ -1,0 +1,2 @@
+usr/share/drirc.d/00-mesa-defaults.conf
+usr/lib/*/dri/virtio_gpu_drv_video.so
