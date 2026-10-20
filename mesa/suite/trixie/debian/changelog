@@ -1,3 +1,10 @@
+mesa (25.2.8+git20260619+0cb5bad52580-4) unstable; urgency=medium
+
+  * Align with Ubuntu Noble 24.04 suite:
+    Fix dependencies to allow install of ROS 2
+
+ -- Jonas Wood <jw@ti.com>  Tue, 20 Oct 2026 15:50:43 -0500
+
 mesa (25.2.8+git20260619+0cb5bad52580-3) unstable; urgency=medium
 
   * Fix circular dependency.

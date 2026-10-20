@@ -1,3 +1,9 @@
+mesa (25.2.8+git20260619+0cb5bad52580-4~noble1) unstable; urgency=medium
+
+  * Fix dependencies to allow install of ROS 2
+
+ -- Jonas Wood <jw@ti.com>  Tue, 20 Oct 2026 17:43:20 +0000
+
 mesa (25.2.8+git20260619+0cb5bad52580-3~noble1) unstable; urgency=medium
 
   * Rebuild for Ubuntu Noble 24.04
