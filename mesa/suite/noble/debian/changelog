@@ -1,3 +1,9 @@
+mesa (25.2.8+git20260619+0cb5bad52580-5~noble1) unstable; urgency=medium
+
+  * Fix more dependencies to allow install of ROS 2
+
+ -- Jonas Wood <jw@ti.com>  Wed, 28 Oct 2026 15:07:56 -0500
+
 mesa (25.2.8+git20260619+0cb5bad52580-4~noble1) unstable; urgency=medium
 
   * Fix dependencies to allow install of ROS 2

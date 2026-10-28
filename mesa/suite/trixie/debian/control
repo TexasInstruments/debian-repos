@@ -202,9 +202,9 @@ Depends:
  libdrm-dev (>= 2.4.95) [!hurd-any],
  ${misc:Depends},
 Breaks: libegl1-mesa-dev (<< 18.2.5-2)
-Provides: mesa-common-dev (= ${binary:Version}), mesa-pvr-common-dev
-Conflicts: mesa-common-dev, mesa-pvr-common-dev
-Replaces: mesa-common-dev, libegl1-mesa-dev (<< 18.2.5-2), mesa-pvr-common-dev
+Provides: mesa-common-dev (= ${binary:Version}), mesa-pvr-common-dev, libglvnd-dev
+Conflicts: mesa-common-dev, mesa-pvr-common-dev, libglvnd-dev
+Replaces: mesa-common-dev, libegl1-mesa-dev (<< 18.2.5-2), mesa-pvr-common-dev, libglvnd-dev
 Multi-Arch: same
 Description: Developer documentation for Mesa
  This package includes the specifications for the Mesa-specific OpenGL
