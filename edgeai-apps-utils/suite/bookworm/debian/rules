@@ -1,0 +1,6 @@
+#!/usr/bin/make -f
+
+export SOC=am62x
+
+%:
+	dh $@
